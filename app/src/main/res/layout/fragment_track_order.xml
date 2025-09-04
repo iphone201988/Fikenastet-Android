@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.fikenastet.ui.selling.track_order.TrackOrderVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.selling.track_order.TrackOrderFragment">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_20sdp">
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_38sdp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Back Button -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:onClick="@{v -> vm.onClick(v)}"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view" />
+
+                <!-- Notification -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivNotification"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:src="@drawable/notification"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+                <!-- Title -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Track My Order"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivNotification"
+                    app:layout_constraintEnd_toStartOf="@id/ivNotification"
+                    app:layout_constraintStart_toEndOf="@id/ivBack"
+                    app:layout_constraintTop_toTopOf="@id/ivNotification" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivLocation"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:src="@drawable/iv_item"
+                    app:layout_constraintStart_toStartOf="@+id/ivBack"
+                    app:layout_constraintTop_toBottomOf="@+id/ivNotification" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivLocation"
+                    app:layout_constraintStart_toEndOf="@+id/ivLocation"
+                    app:layout_constraintTop_toTopOf="@+id/ivLocation">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvItem"
+                        style="@style/TextView_500_Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Item"
+                        android:textColor="@color/app_text_hint"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvItemValue"
+                        style="@style/TextView_600_SemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="Shimano Reel 3000 XT"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvItem" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivSpecies"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/iv_ship"
+                    android:tint="@color/colorPrimary"
+                    app:layout_constraintStart_toStartOf="@+id/ivLocation"
+                    app:layout_constraintTop_toBottomOf="@+id/consLocation" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consSpecies"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivSpecies"
+                    app:layout_constraintStart_toEndOf="@+id/ivSpecies"
+                    app:layout_constraintTop_toTopOf="@+id/ivSpecies">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTotalPaid"
+                        style="@style/TextView_500_Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Order ID"
+                        android:textColor="@color/app_text_hint"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTotalPaidValue"
+                        style="@style/TextView_600_SemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="#FSK-2039482"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTotalPaid" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPermit"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/iv_card"
+                    app:layout_constraintStart_toStartOf="@+id/ivLocation"
+                    app:layout_constraintTop_toBottomOf="@+id/consSpecies" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consPermit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivPermit"
+                    app:layout_constraintStart_toEndOf="@+id/ivPermit"
+                    app:layout_constraintTop_toTopOf="@+id/ivPermit">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPaymentMethod"
+                        style="@style/TextView_500_Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paid via"
+                        android:textColor="@color/app_text_hint"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPaymentMethodValue"
+                        style="@style/TextView_600_SemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="Stripe (Escrow)"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPaymentMethod" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivSeason"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/iv_payment_method"
+                    app:layout_constraintStart_toStartOf="@+id/ivLocation"
+                    app:layout_constraintTop_toBottomOf="@+id/consPermit" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consSeason"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivSeason"
+                    app:layout_constraintStart_toEndOf="@+id/ivSeason"
+                    app:layout_constraintTop_toTopOf="@+id/ivSeason">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvShipping"
+                        style="@style/TextView_500_Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Paid"
+                        android:textColor="@color/app_text_hint"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvShippingValue"
+                        style="@style/TextView_600_SemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="$165 (incl. shipping)"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvShipping" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/tvView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintTop_toBottomOf="@+id/consSeason" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvShippingInfo"
+                    style="@style/TextView_600_SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Shipping via PostNord"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@+id/tvView"
+                    app:layout_constraintTop_toBottomOf="@+id/tvView" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivTrackingID"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/iv_tracking"
+                    app:layout_constraintStart_toStartOf="@+id/ivLocation"
+                    app:layout_constraintTop_toBottomOf="@+id/tvShippingInfo" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consTrackingID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivTrackingID"
+                    app:layout_constraintStart_toEndOf="@+id/ivTrackingID"
+                    app:layout_constraintTop_toTopOf="@+id/ivTrackingID">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTrackingID"
+                        style="@style/TextView_500_Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tracking ID"
+                        android:textColor="@color/app_text_hint"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTrackingIDValue"
+                        style="@style/TextView_600_SemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="PN-98374284"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTrackingID" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivEstimatedDelivery"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/iv_calendar"
+                    app:layout_constraintStart_toStartOf="@+id/ivLocation"
+                    app:layout_constraintTop_toBottomOf="@+id/consTrackingID" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consEstimatedDelivery"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivEstimatedDelivery"
+                    app:layout_constraintStart_toEndOf="@+id/ivEstimatedDelivery"
+                    app:layout_constraintTop_toTopOf="@+id/ivEstimatedDelivery">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvEstimatedDelivery"
+                        style="@style/TextView_500_Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estimated Delivery"
+                        android:textColor="@color/app_text_hint"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvEstimatedDeliveryValue"
+                        style="@style/TextView_600_SemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="May 31 – Jun 2 "
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvEstimatedDelivery" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <View
+                    android:id="@+id/tvView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintTop_toBottomOf="@+id/consEstimatedDelivery" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDeliveryProgress"
+                    style="@style/TextView_600_SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Delivery Progress"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@+id/tvView2"
+                    app:layout_constraintTop_toBottomOf="@+id/tvView2" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivVan"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/iv_van"
+                    app:layout_constraintStart_toStartOf="@+id/tvDeliveryProgress"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDeliveryProgress" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consVan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivVan"
+                    app:layout_constraintStart_toEndOf="@+id/ivVan"
+                    app:layout_constraintTop_toTopOf="@+id/ivVan">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvVan"
+                        style="@style/TextView_500_Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Status"
+                        android:textColor="@color/app_text_hint"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvVanValue"
+                        style="@style/TextView_600_SemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="In Transit "
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvVan" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivTickPaymentConfirmed"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:src="@drawable/tick"
+                    app:layout_constraintStart_toStartOf="@+id/ivVan"
+                    app:layout_constraintTop_toBottomOf="@+id/consVan" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/InterTextView_400_Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="Payment Confirmed"
+                    android:textColor="@color/app_text"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivTickPaymentConfirmed"
+                    app:layout_constraintStart_toEndOf="@+id/ivTickPaymentConfirmed"
+                    app:layout_constraintTop_toTopOf="@+id/ivTickPaymentConfirmed" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivTickShippingLabelCreated"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:src="@drawable/tick"
+                    app:layout_constraintStart_toStartOf="@+id/ivVan"
+                    app:layout_constraintTop_toBottomOf="@+id/ivTickPaymentConfirmed" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/InterTextView_400_Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="Shipping Label Created"
+                    android:textColor="@color/app_text"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivTickShippingLabelCreated"
+                    app:layout_constraintStart_toEndOf="@+id/ivTickShippingLabelCreated"
+                    app:layout_constraintTop_toTopOf="@+id/ivTickShippingLabelCreated" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivTickPackagePickedUp"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:src="@drawable/tick"
+                    app:layout_constraintStart_toStartOf="@+id/ivVan"
+                    app:layout_constraintTop_toBottomOf="@+id/ivTickShippingLabelCreated" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/InterTextView_400_Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="Package Picked Up"
+                    android:textColor="@color/app_text"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivTickPackagePickedUp"
+                    app:layout_constraintStart_toEndOf="@+id/ivTickPackagePickedUp"
+                    app:layout_constraintTop_toTopOf="@+id/ivTickPackagePickedUp" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivTickInTransit"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:src="@drawable/emty_tick"
+                    app:layout_constraintStart_toStartOf="@+id/ivVan"
+                    app:layout_constraintTop_toBottomOf="@+id/ivTickPackagePickedUp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/InterTextView_400_Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="In Transit"
+                    android:textColor="@color/app_text"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivTickInTransit"
+                    app:layout_constraintStart_toEndOf="@+id/ivTickInTransit"
+                    app:layout_constraintTop_toTopOf="@+id/ivTickInTransit" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDelivered"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:src="@drawable/emty_tick"
+                    app:layout_constraintStart_toStartOf="@+id/ivVan"
+                    app:layout_constraintTop_toBottomOf="@+id/ivTickInTransit" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/InterTextView_400_Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="Delivered"
+                    android:textColor="@color/app_text"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivDelivered"
+                    app:layout_constraintStart_toEndOf="@+id/ivDelivered"
+                    app:layout_constraintTop_toTopOf="@+id/ivDelivered" />
+
+                <View
+                    android:id="@+id/tvView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintTop_toBottomOf="@+id/ivDelivered" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFundsStatus"
+                    style="@style/TextView_600_SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="Funds Status"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@+id/tvView3"
+                    app:layout_constraintTop_toBottomOf="@+id/tvView3" />
+
+
+                <View
+                    android:layout_width="@dimen/_4sdp"
+                    android:layout_height="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/radius_oval"
+                    android:backgroundTint="@color/app_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvHotspotsValue"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHotspotsValue"
+                    app:layout_constraintTop_toTopOf="@+id/tvHotspotsValue" />
+
+                <View
+                    android:layout_width="@dimen/_4sdp"
+                    android:layout_height="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/radius_oval"
+                    android:backgroundTint="@color/app_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvHotspotsValue2"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHotspotsValue2"
+                    app:layout_constraintTop_toTopOf="@+id/tvHotspotsValue2" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHotspotsValue"
+                    style="@style/TextView_600_SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Held in Escrow"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@id/ivDelivered"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFundsStatus" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHotspotsValue2"
+                    style="@style/TextView_600_SemiBold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:text="Will be released to seller upon delivery"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/ivDelivered"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHotspotsValue" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consMapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/radius_border"
+                    android:onClick="@{v ->vm.onClick(v)}"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHotspotsValue2">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textMapView"
+                        style="@style/InterTextView_500_Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Track on Carrier Website"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iconFishMap"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:src="@drawable/famicons_fish"
+                        app:layout_constraintBottom_toBottomOf="@id/textMapView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/textMapView" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

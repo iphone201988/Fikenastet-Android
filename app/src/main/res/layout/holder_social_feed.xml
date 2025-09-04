@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.example.fikenastet.data.model.DummySocialFeed" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="callback"
+            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_10sdp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/radius_border"
+            android:backgroundTint="@color/bg_home_card"
+            android:paddingVertical="@dimen/_2sdp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:padding="@dimen/_5sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/iv_dummy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize15Percent"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:padding="@dimen/_5sdp"
+                android:background="@drawable/gradient_overlay"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize15Percent" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivPersonImage"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:padding="@dimen/_2sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/iv_dummy"
+                app:layout_constraintBottom_toBottomOf="@+id/iv1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize20Percent"
+                app:strokeColor="@color/colorPrimary"
+                app:strokeWidth="@dimen/_1sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserName"
+                style="@style/TextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@{bean.username}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPersonImage"
+                app:layout_constraintStart_toEndOf="@+id/ivPersonImage"
+                app:layout_constraintTop_toTopOf="@+id/ivPersonImage" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFav"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:src="@drawable/fav"
+                android:tint="@color/red"
+                app:layout_constraintStart_toStartOf="@+id/iv1"
+                app:layout_constraintTop_toBottomOf="@+id/iv1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFavCount"
+                style="@style/TextView_400_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="1.24k"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivFav"
+                app:layout_constraintStart_toEndOf="@+id/ivFav"
+                app:layout_constraintTop_toTopOf="@+id/ivFav" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivChat"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:onClick="@{v ->callback.onItemClick(v, bean, pos)}"
+                android:src="@drawable/round_chat"
+                app:layout_constraintBottom_toBottomOf="@+id/ivFav"
+                app:layout_constraintStart_toEndOf="@+id/tvFavCount"
+                app:layout_constraintTop_toTopOf="@+id/ivFav" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvChatCount"
+                style="@style/TextView_400_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:onClick="@{v ->callback.onItemClick(v, bean, pos)}"
+                android:text="1.24k"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivChat"
+                app:layout_constraintStart_toEndOf="@+id/ivChat"
+                app:layout_constraintTop_toTopOf="@+id/ivChat" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMessageFish"
+                style="@style/TextView_400_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/radius_border"
+                android:backgroundTint="@color/app_text"
+                android:paddingHorizontal="@dimen/_7sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:text="Fish Message"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivChat"
+                app:layout_constraintEnd_toEndOf="@+id/iv1"
+                app:layout_constraintTop_toTopOf="@+id/ivChat" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDesFish"
+                style="@style/TextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:text="Fish caught:"
+                android:textColor="@color/app_text_hint"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toStartOf="@+id/ivFav"
+                app:layout_constraintTop_toBottomOf="@+id/ivFav" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDesFishValue"
+                style="@style/TextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="7.8kg Pike"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDesFish"
+                app:layout_constraintStart_toEndOf="@+id/tvDesFish"
+                app:layout_constraintTop_toTopOf="@+id/tvDesFish" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHasTag"
+                style="@style/TextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:text="#caughtBig"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintStart_toStartOf="@+id/tvDesFish"
+                app:layout_constraintTop_toBottomOf="@+id/tvDesFish" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

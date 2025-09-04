@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.fikenastet.ui.dashboard.permits.buy_permit.BuyPermitVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.dashboard.permits.buy_permit.BuyPermitFragment">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Back Button -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:onClick="@{v -> vm.onClick(v)}"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+
+        <!-- Notification -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNotification"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:src="@drawable/notification"
+            app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+        <!-- Title -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/TextView_500_Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buy Permit"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ivNotification"
+            app:layout_constraintEnd_toStartOf="@id/ivNotification"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
+            app:layout_constraintTop_toTopOf="@id/ivNotification" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPermitDuration"
+            style="@style/TextView_500_Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Select Permit Duration"
+            android:textColor="@color/app_text_hint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivBack" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOneDay"
+            style="@style/TextView_400_Regular"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_43sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/radius_stroke"
+            android:gravity="start|center"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:text="1 Day - $20"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/app_text_hint"
+            app:layout_constraintTop_toBottomOf="@+id/tvPermitDuration" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOneWeek"
+            style="@style/TextView_400_Regular"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_43sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/radius_stroke"
+            android:gravity="start|center"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:text="Week - $70"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/app_text_hint"
+            app:layout_constraintEnd_toStartOf="@+id/tvOneMonth"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOneDay" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOneMonth"
+            style="@style/TextView_400_Regular"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_43sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@drawable/radius_stroke"
+            android:gravity="start|center"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:text="1 Month - $180"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/app_text_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvOneWeek"
+            app:layout_constraintTop_toBottomOf="@+id/tvOneDay" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPermitStartDate"
+            style="@style/TextView_500_Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Permit Start Date"
+            android:textColor="@color/app_text_hint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOneMonth" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStartDate"
+            style="@style/TextView_400_Regular"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_43sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/radius_stroke"
+            android:gravity="start|center"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:text="DD/MM/YYYY"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/app_text_hint"
+            app:layout_constraintTop_toBottomOf="@+id/tvPermitStartDate" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:src="@drawable/iv_calendar"
+            app:layout_constraintBottom_toBottomOf="@+id/tvStartDate"
+            app:layout_constraintEnd_toEndOf="@+id/tvStartDate"
+            app:layout_constraintTop_toTopOf="@+id/tvStartDate" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvChoosePaymentMethod"
+            style="@style/TextView_500_Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Choose Payment Method"
+            android:textColor="@color/app_text_hint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStartDate" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSwish"
+            style="@style/TextView_400_Regular"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_43sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/radius_stroke"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:text="Swish"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/app_text_hint"
+            app:layout_constraintEnd_toStartOf="@+id/tvStrip"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvChoosePaymentMethod" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStrip"
+            style="@style/TextView_400_Regular"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_43sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@drawable/radius_stroke"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:text="Stripe"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/app_text_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvSwish"
+            app:layout_constraintTop_toBottomOf="@+id/tvChoosePaymentMethod" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consPay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/radius_border"
+            android:onClick="@{v ->vm.onClick(v)}"
+            android:paddingHorizontal="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@+id/tvStrip">
+
+            <TextView
+                android:id="@+id/textGetStarted"
+                style="@style/InterTextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{v ->vm.onClick(v)}"
+                android:text="@string/confirm_and_pay"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iconFish"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:src="@drawable/famicons_fish"
+                app:layout_constraintBottom_toBottomOf="@id/textGetStarted"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textGetStarted" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

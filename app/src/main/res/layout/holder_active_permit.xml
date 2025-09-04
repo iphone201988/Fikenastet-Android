@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.example.fikenastet.data.model.DummyAllLake" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="callback"
+            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:background="@drawable/radius_border"
+        android:backgroundTint="@color/bg_home_card"
+        android:clipToPadding="false"
+        android:paddingVertical="@dimen/_12sdp"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingEnd="@dimen/_12sdp">
+
+        <!-- Title -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWeightType"
+            style="@style/TextView_600_SemiBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{bean.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPermitStatus"
+            style="@style/TextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Active"
+            android:textColor="@color/green"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/iv_active"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPermitStatus"
+            app:layout_constraintEnd_toStartOf="@+id/tvPermitStatus"
+            app:layout_constraintTop_toTopOf="@+id/tvPermitStatus" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@+id/tvWeightType"
+            app:layout_constraintTop_toBottomOf="@+id/tvWeightType">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCalender"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/iv_calendar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!-- Location -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLocation"
+                style="@style/TextView_500_Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Active"
+                android:textColor="@color/app_text_hint"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toEndOf="@+id/ivCalender"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTime"
+                style="@style/TextView_600_SemiBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="June 2, 2025 – June 9, 2025"
+                app:layout_constraintStart_toStartOf="@+id/tvLocation"
+                app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/consTime" />
+
+        <!-- Group container for PDF & Lake Info -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consBottomRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider">
+
+            <!-- PDF Icon -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPdf"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:onClick="@{v -> callback.onItemClick(v, bean, pos)}"
+                android:src="@drawable/iv_pdf"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- PDF Text -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPdf"
+                style="@style/TextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:onClick="@{v -> callback.onItemClick(v, bean, pos)}"
+                android:text="Recipe"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/ivPdf"
+                app:layout_constraintStart_toEndOf="@id/ivPdf"
+                app:layout_constraintTop_toTopOf="@id/ivPdf" />
+
+            <!-- Lake Info Icon -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLakeInfo"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_45sdp"
+                android:src="@drawable/map_bottom"
+                android:tint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@id/ivPdf"
+                app:layout_constraintStart_toEndOf="@id/tvPdf"
+                app:layout_constraintTop_toTopOf="@id/ivPdf" />
+
+            <!-- Lake Info Text -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLakeInfo"
+                style="@style/TextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="Lake info"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@id/ivLakeInfo"
+                app:layout_constraintStart_toEndOf="@id/ivLakeInfo"
+                app:layout_constraintTop_toTopOf="@id/ivLakeInfo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

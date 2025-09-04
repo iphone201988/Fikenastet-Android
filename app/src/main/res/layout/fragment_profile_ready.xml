@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.fikenastet.ui.auth.AuthCommonVM" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".ui.auth.LoginFragment">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:onClick="@{v ->vm.onClick(v)}"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWelcome"
+                style="@style/TextView_600_SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="Welcome, John_Doe !"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintStart_toStartOf="@+id/ivBack"
+                app:layout_constraintTop_toBottomOf="@+id/ivBack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDes"
+                style="@style/TextView_500_Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Let’s get your profile ready for fishing"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivPersonImage"
+                android:layout_width="@dimen/_95sdp"
+                android:layout_height="@dimen/_95sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:padding="@dimen/_2sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/iv_dummy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDes"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize15Percent"
+                app:strokeColor="@color/colorPrimary"
+                app:strokeWidth="2dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUploadPic"
+                style="@style/TextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Edit profile pic"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivPersonImage" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtEmail"
+                style="@style/TextView_400_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_43sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/radius_stroke"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:text="JohnDoe@gmail.com"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintTop_toBottomOf="@+id/tvUploadPic" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/email"
+                app:layout_constraintBottom_toBottomOf="@+id/edtEmail"
+                app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+                app:layout_constraintTop_toTopOf="@+id/edtEmail" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtLocation"
+                style="@style/TextView_400_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_43sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/radius_stroke"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:text="Hundai Ofc, Boston"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/location"
+                app:layout_constraintBottom_toBottomOf="@+id/edtLocation"
+                app:layout_constraintEnd_toEndOf="@+id/edtLocation"
+                app:layout_constraintTop_toTopOf="@+id/edtLocation" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtShortBio"
+                style="@style/TextView_400_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/radius_stroke"
+                android:gravity="start"
+                android:hint="Write a short bio..."
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:textColor="@color/app_text_hint"
+                android:textColorHint="@color/app_text_hint"
+                app:layout_constraintTop_toBottomOf="@+id/edtLocation" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvSkillLevel"
+                style="@style/TextView_400_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_43sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/radius_stroke"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:text="Skill level"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintTop_toBottomOf="@+id/edtShortBio" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/iv_drop"
+                app:layout_constraintBottom_toBottomOf="@+id/tvSkillLevel"
+                app:layout_constraintEnd_toEndOf="@+id/tvSkillLevel"
+                app:layout_constraintTop_toTopOf="@+id/tvSkillLevel" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consSaveAndContinue"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/radius_border"
+                android:onClick="@{v ->vm.onClick(v)}"
+                android:paddingHorizontal="@dimen/_15sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tvSkillLevel">
+
+                <TextView
+                    android:id="@+id/textGetStarted"
+                    style="@style/InterTextView_500_Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save &amp; Continue"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iconFish"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/famicons_fish"
+                    app:layout_constraintBottom_toBottomOf="@id/textGetStarted"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textGetStarted" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/InterTextView_300_Light"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:paddingBottom="@dimen/_20sdp"
+                android:text="@string/we_ll_use_this_info_to_personalize_your_feed_maps_and_community_experience_you_can_update_it_anytime_in_your_profile"
+                android:textColor="@color/app_text_hint"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@+id/consSaveAndContinue"
+                app:layout_constraintStart_toStartOf="@+id/consSaveAndContinue"
+                app:layout_constraintTop_toBottomOf="@+id/consSaveAndContinue" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

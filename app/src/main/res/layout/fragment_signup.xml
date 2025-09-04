@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.fikenastet.ui.auth.AuthCommonVM" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".ui.auth.LoginFragment">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:onClick="@{v ->vm.onClick(v)}"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWelcome"
+                style="@style/TextView_600_SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="Create account"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintStart_toStartOf="@+id/ivBack"
+                app:layout_constraintTop_toBottomOf="@+id/ivBack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDes"
+                style="@style/TextView_500_Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Join the community of passionate anglers!"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivPersonImage"
+                android:layout_width="@dimen/_95sdp"
+                android:layout_height="@dimen/_95sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:padding="@dimen/_2sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/iv_dummy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDes"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize15Percent"
+                app:strokeColor="@color/colorPrimary"
+                app:strokeWidth="2dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUploadPic"
+                style="@style/TextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Upload profile pic"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivPersonImage" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtUsername"
+                style="@style/TextView_400_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_43sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/radius_stroke"
+                android:hint="Enter username"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:textColorHint="@color/app_text_hint"
+                app:layout_constraintTop_toBottomOf="@+id/tvUploadPic" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/user"
+                app:layout_constraintBottom_toBottomOf="@+id/edtUsername"
+                app:layout_constraintEnd_toEndOf="@+id/edtUsername"
+                app:layout_constraintTop_toTopOf="@+id/edtUsername" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtEmail"
+                style="@style/TextView_400_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_43sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/radius_stroke"
+                android:hint="Enter email"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:textColorHint="@color/app_text_hint"
+                app:layout_constraintTop_toBottomOf="@+id/edtUsername" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/email"
+                app:layout_constraintBottom_toBottomOf="@+id/edtEmail"
+                app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+                app:layout_constraintTop_toTopOf="@+id/edtEmail" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtPassword"
+                style="@style/TextView_400_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_43sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/radius_stroke"
+                android:hint="Enter password"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:textColorHint="@color/app_text_hint"
+                app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/solar_eye"
+                app:layout_constraintBottom_toBottomOf="@+id/edtPassword"
+                app:layout_constraintEnd_toEndOf="@+id/edtPassword"
+                app:layout_constraintTop_toTopOf="@+id/edtPassword" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtConfirmPassword"
+                style="@style/TextView_400_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_43sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/radius_stroke"
+                android:hint="Confirm password"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:textColorHint="@color/app_text_hint"
+                app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/solar_eye"
+                app:layout_constraintBottom_toBottomOf="@+id/edtConfirmPassword"
+                app:layout_constraintEnd_toEndOf="@+id/edtConfirmPassword"
+                app:layout_constraintTop_toTopOf="@+id/edtConfirmPassword" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtLocation"
+                style="@style/TextView_400_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_43sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/radius_stroke"
+                android:hint="Enter location"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:textColorHint="@color/app_text_hint"
+                app:layout_constraintTop_toBottomOf="@+id/edtConfirmPassword" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/location"
+                app:layout_constraintBottom_toBottomOf="@+id/edtLocation"
+                app:layout_constraintEnd_toEndOf="@+id/edtLocation"
+                app:layout_constraintTop_toTopOf="@+id/edtLocation" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTickAge"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/tick"
+                app:layout_constraintStart_toStartOf="@+id/edtLocation"
+                app:layout_constraintTop_toBottomOf="@+id/edtLocation" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/InterTextView_400_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I’m 18 or older"
+                android:textColor="@color/app_text"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="@+id/ivTickAge"
+                app:layout_constraintStart_toEndOf="@+id/ivTickAge"
+                app:layout_constraintBottom_toBottomOf="@+id/ivTickAge"/>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTickPrivacy"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/tick"
+                app:layout_constraintStart_toStartOf="@+id/edtLocation"
+                app:layout_constraintTop_toBottomOf="@+id/ivTickAge" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/InterTextView_400_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I agree to the Terms of Service and Privacy"
+                android:textColor="@color/app_text"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toTopOf="@+id/ivTickPrivacy"
+                app:layout_constraintStart_toEndOf="@+id/ivTickPrivacy"
+                app:layout_constraintBottom_toBottomOf="@+id/ivTickPrivacy"/>
+
+
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:id="@+id/consRegisterButton"
+                   android:layout_width="match_parent"
+                   android:layout_height="@dimen/_40sdp"
+                   android:layout_marginHorizontal="@dimen/_15sdp"
+                   android:layout_marginTop="@dimen/_25sdp"
+                   android:layout_marginBottom="@dimen/_15sdp"
+                   android:background="@drawable/radius_border"
+                   android:onClick="@{v ->vm.onClick(v)}"
+                   android:paddingHorizontal="@dimen/_15sdp"
+                   app:layout_constraintTop_toBottomOf="@+id/ivTickPrivacy">
+
+                   <TextView
+                       android:id="@+id/textGetStarted"
+                       style="@style/InterTextView_500_Medium"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="@string/register"
+                       android:textColor="@color/white"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent" />
+
+                   <ImageView
+                       android:id="@+id/iconFish"
+                       android:layout_width="@dimen/_18sdp"
+                       android:layout_height="@dimen/_18sdp"
+                       android:src="@drawable/famicons_fish"
+                       app:layout_constraintBottom_toBottomOf="@id/textGetStarted"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintTop_toTopOf="@id/textGetStarted" />
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:id="@+id/clContainer"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/_15sdp"
+                   android:paddingBottom="@dimen/_20sdp"
+                   app:layout_constraintEnd_toEndOf="@+id/consRegisterButton"
+                   app:layout_constraintStart_toStartOf="@+id/consRegisterButton"
+                   app:layout_constraintTop_toBottomOf="@+id/consRegisterButton">
+
+                   <TextView
+                       android:id="@+id/tvRegisterPrompt"
+                       style="@style/TextView_400_Regular"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Already have an account? "
+                       android:textSize="@dimen/_13ssp"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent" />
+
+                   <TextView
+                       android:id="@+id/tvRegisterLink"
+                       style="@style/TextView_500_Medium"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:clickable="true"
+                       android:focusable="true"
+                       android:text="@string/login"
+                       android:onClick="@{v ->vm.onClick(v)}"
+                       android:textColor="@color/colorPrimary"
+                       android:textSize="@dimen/_13ssp"
+                       app:layout_constraintBottom_toBottomOf="@id/tvRegisterPrompt"
+                       app:layout_constraintStart_toEndOf="@id/tvRegisterPrompt"
+                       app:layout_constraintTop_toTopOf="@id/tvRegisterPrompt" />
+
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

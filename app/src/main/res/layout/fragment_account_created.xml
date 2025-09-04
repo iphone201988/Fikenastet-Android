@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.fikenastet.ui.auth.AuthCommonVM" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/_20sdp"
+            tools:context=".ui.auth.LoginFragment">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:onClick="@{v ->vm.onClick(v)}"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWelcome"
+                style="@style/TextView_600_SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="Account created successfully"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintStart_toStartOf="@+id/ivBack"
+                app:layout_constraintTop_toBottomOf="@+id/ivBack" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDes"
+                style="@style/TextView_500_Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Let’s show you how to get the\nmost out of it."
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCatch"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:src="@drawable/resource_catch"
+                app:layout_constraintStart_toStartOf="@+id/tvDes"
+                app:layout_constraintTop_toBottomOf="@+id/tvDes" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCatchTitle"
+                style="@style/TextView_600_SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:text="Log Your Catch"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toEndOf="@+id/ivCatch"
+                app:layout_constraintTop_toTopOf="@+id/ivCatch" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCatchDes"
+                style="@style/TextView_400_Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:text="Document your fishing adventures with\nphotos, locations, and stats —\nshare or keep private."
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvCatchTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvCatchTitle" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMap"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/map"
+                app:layout_constraintStart_toStartOf="@+id/ivCatch"
+                app:layout_constraintTop_toBottomOf="@+id/tvCatchDes" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMapTitle"
+                style="@style/TextView_600_SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:text="@string/explore_the_map"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toEndOf="@+id/ivMap"
+                app:layout_constraintTop_toTopOf="@+id/ivMap" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMapDes"
+                style="@style/TextView_400_Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:text="@string/find_lakes_check_local_fishing_rules_and_nview_hotspots_or_public_catches_near_you"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvMapTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvMapTitle" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPermit"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/permit"
+                app:layout_constraintStart_toStartOf="@+id/ivMap"
+                app:layout_constraintTop_toBottomOf="@+id/tvMapDes" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPermitTitle"
+                style="@style/TextView_600_SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:text="@string/get_fishing_permits"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toEndOf="@+id/ivPermit"
+                app:layout_constraintTop_toTopOf="@+id/ivPermit" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPermitDes"
+                style="@style/TextView_400_Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:text="Buy lake-specific permits directly in the app and keep them saved for easy access."
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvPermitTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvPermitTitle" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivGear"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/gear"
+                app:layout_constraintStart_toStartOf="@+id/ivPermit"
+                app:layout_constraintTop_toBottomOf="@+id/tvPermitDes" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGearTitle"
+                style="@style/TextView_600_SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:text="Buy &amp; Sell Gear"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toEndOf="@+id/ivGear"
+                app:layout_constraintTop_toTopOf="@+id/ivGear" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGearDes"
+                style="@style/TextView_400_Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:text="Use our secure marketplace to trade\nequipment with other anglers —\nwith shipping built in!"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvGearTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvGearTitle" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivForum"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/fourm"
+                app:layout_constraintStart_toStartOf="@+id/ivGear"
+                app:layout_constraintTop_toBottomOf="@+id/tvGearDes" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvForumTitle"
+                style="@style/TextView_600_SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:text="Join the Forum"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toEndOf="@+id/ivForum"
+                app:layout_constraintTop_toTopOf="@+id/ivForum" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvForumDes"
+                style="@style/TextView_400_Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:text="Ask questions, share tips, and connect with other fishing enthusiasts. share or keep private."
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tvForumTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvForumTitle" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consGotItButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@drawable/radius_border"
+                android:onClick="@{v ->vm.onClick(v)}"
+                android:paddingHorizontal="@dimen/_15sdp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/textGetStarted"
+                    style="@style/InterTextView_500_Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/got_it_take_me_to_the_app"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iconFish"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/famicons_fish"
+                    app:layout_constraintBottom_toBottomOf="@id/textGetStarted"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textGetStarted" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+</layout>

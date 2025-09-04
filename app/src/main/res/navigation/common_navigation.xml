@@ -1,0 +1,108 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/common_navigation"
+    tools:ignore="InvalidNavigation">
+
+    <action
+        android:id="@+id/navigateToAllLakeFragment"
+        app:destination="@id/fragmentAllLake" />
+
+    <action
+        android:id="@+id/navigateToLakeDetailsFragment"
+        app:destination="@id/fragmentLakeDetails" />
+
+    <action
+        android:id="@+id/navigateToBuyPermitFragment"
+        app:destination="@id/fragmentBuyPermit" />
+
+    <action
+        android:id="@+id/navigateToPermitPurchasedFragment"
+        app:destination="@id/fragmentPermitPurchased" />
+
+    <action
+        android:id="@+id/navigateToProductDetailFragment"
+        app:destination="@id/fragmentProductDetail" />
+
+    <action
+        android:id="@+id/navigateToOrderConfirmedFragment"
+        app:destination="@id/fragmentOrderConfirmed" />
+    <action
+        android:id="@+id/navigateToTrackOrderFragment"
+        app:destination="@id/fragmentTrackOrder" />
+
+    <action
+        android:id="@+id/navigateToPostNewListingFragment"
+        app:destination="@id/fragmentPostNewListing" />
+
+
+    <!-- by manvi -->
+    <action
+        android:id="@+id/navigateToThreadDetailFragment"
+        app:destination="@id/fragmentThreadDetail" />
+    <action
+        android:id="@+id/navigateToReportAbuseFragment"
+        app:destination="@id/fragmentReportAbuse" />
+    <action
+        android:id="@+id/navigateToNewThread"
+        app:destination="@id/fragmentNewThread" />
+
+
+    <fragment
+        android:id="@+id/fragmentAllLake"
+        android:name="com.example.fikenastet.ui.dashboard.all_lake.AllLakeFragment"
+        tools:layout="@layout/fragment_all_lake" />
+
+    <fragment
+        android:id="@+id/fragmentLakeDetails"
+        android:name="com.example.fikenastet.ui.common_classes.lake_details.LakeDetailsFragment"
+        tools:layout="@layout/fragment_lake_details" />
+
+    <fragment
+        android:id="@+id/fragmentBuyPermit"
+        android:name="com.example.fikenastet.ui.dashboard.permits.buy_permit.BuyPermitFragment"
+        tools:layout="@layout/fragment_buy_permit" />
+    <fragment
+        android:id="@+id/fragmentPermitPurchased"
+        android:name="com.example.fikenastet.ui.dashboard.permits.purchased.PermitPurchasedFragment"
+        tools:layout="@layout/fragment_permit_purchased" />
+
+    <fragment
+        android:id="@+id/fragmentProductDetail"
+        android:name="com.example.fikenastet.ui.selling.p_details.ProductDetailFragment"
+        tools:layout="@layout/fragment_product_detail" />
+    <fragment
+        android:id="@+id/fragmentOrderConfirmed"
+        android:name="com.example.fikenastet.ui.selling.order_confirmed.OrderConfirmedFragment"
+        tools:layout="@layout/fragment_order_confirmed" />
+
+    <fragment
+        android:id="@+id/fragmentTrackOrder"
+        android:name="com.example.fikenastet.ui.selling.track_order.TrackOrderFragment"
+        tools:layout="@layout/fragment_track_order" />
+
+    <fragment
+        android:id="@+id/fragmentPostNewListing"
+        android:name="com.example.fikenastet.ui.selling.post_listing.PostNewListingFragment"
+        tools:layout="@layout/fragment_post_new_listing" />
+
+
+
+    <!-- by manvi -->
+    <fragment
+        android:id="@+id/fragmentThreadDetail"
+        android:name="com.example.fikenastet.ui.dashboard.profile.threads.ThreadDetailFragment"
+        tools:layout="@layout/fragment_thread_detail" />
+
+    <fragment
+        android:id="@+id/fragmentReportAbuse"
+        android:name="com.example.fikenastet.ui.dashboard.profile.threads.ReportAbuseFragment"
+        tools:layout="@layout/fragment_report_abuse" />
+
+    <fragment
+        android:id="@+id/fragmentNewThread"
+        android:name="com.example.fikenastet.ui.dashboard.profile.threads.NewThreadFragment"
+        tools:layout="@layout/fragment_new_thread" />
+
+
+</navigation>

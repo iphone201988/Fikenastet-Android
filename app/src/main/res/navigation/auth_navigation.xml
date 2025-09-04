@@ -1,0 +1,86 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navigation"
+    tools:ignore="InvalidNavigation">
+
+    <action
+        android:id="@+id/navigateToSplashFragment"
+        app:destination="@id/fragmentSplash" />
+
+    <action
+        android:id="@+id/navigateToLoginFragment"
+        app:destination="@id/fragmentLogin" />
+
+    <action
+        android:id="@+id/navigateToForgetFragment"
+        app:destination="@id/fragmentForget" />
+    <action
+        android:id="@+id/navigateToVerifyFragment"
+        app:destination="@id/fragmentVerify" />
+
+    <action
+        android:id="@+id/navigateToPasswordFragment"
+        app:destination="@id/fragmentPassword" />
+
+    <action
+        android:id="@+id/navigateToPasswordSuccessFragment"
+        app:destination="@id/fragmentPasswordSuccess" />
+
+
+    <action
+        android:id="@+id/navigateToSignUpFragment"
+        app:destination="@id/fragmentSignUp" />
+
+    <action
+        android:id="@+id/navigateToProfileReadyFragment"
+        app:destination="@id/fragmentProfileReady" />
+
+    <action
+        android:id="@+id/navigateToAccountCreatedFragment"
+        app:destination="@id/fragmentAccountCreated" />
+
+
+    <fragment
+        android:id="@+id/fragmentSplash"
+        android:name="com.example.fikenastet.ui.auth.SplashFragment"
+        tools:layout="@layout/fragment_splash" />
+
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.example.fikenastet.ui.auth.LoginFragment"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/fragmentForget"
+        android:name="com.example.fikenastet.ui.auth.ForgetFragment"
+        tools:layout="@layout/fragment_froget" />
+    <fragment
+        android:id="@+id/fragmentVerify"
+        android:name="com.example.fikenastet.ui.auth.VerifyFragment"
+        tools:layout="@layout/fragment_verify" />
+    <fragment
+        android:id="@+id/fragmentPassword"
+        android:name="com.example.fikenastet.ui.auth.PasswordFragment"
+        tools:layout="@layout/fragment_password" />
+
+    <fragment
+        android:id="@+id/fragmentPasswordSuccess"
+        android:name="com.example.fikenastet.ui.auth.PasswordSuccessFragment"
+        tools:layout="@layout/fragment_password_success" />
+    <fragment
+        android:id="@+id/fragmentSignUp"
+        android:name="com.example.fikenastet.ui.auth.SignUpFragment"
+        tools:layout="@layout/fragment_signup" />
+    <fragment
+        android:id="@+id/fragmentProfileReady"
+        android:name="com.example.fikenastet.ui.auth.ProfileReadyFragment"
+        tools:layout="@layout/fragment_profile_ready" />
+
+    <fragment
+        android:id="@+id/fragmentAccountCreated"
+        android:name="com.example.fikenastet.ui.auth.AccountCreatedFragment"
+        tools:layout="@layout/fragment_account_created" />
+
+
+</navigation>

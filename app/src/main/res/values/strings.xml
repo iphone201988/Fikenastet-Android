@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Base 2025</string>
+
+    <string name="session_expired">session_expired</string>
+    <string name="alert">Alert</string>
+    <string name="post_detail">Post Detail</string>
+    <string name="please_try_again">Please try again</string>
+    <string name="plz_wait">Plz wait</string>
+    <string name="error_found">Error Found</string>
+    <string name="click_me">Click Me</string>
+    <string name="android_base_2025">Android Base 2025</string>
+    <string name="todo">TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="we_ll_use_this_info_to_personalize_your_feed_maps_and_community_experience_you_can_update_it_anytime_in_your_profile">We’ll use this info to personalize your feed, maps,\nand community experience. You can update it\nanytime in your profile.</string>
+    <string name="find_lakes_check_local_fishing_rules_and_nview_hotspots_or_public_catches_near_you">Find lakes, check local fishing rules, and\nview hotspots or public catches near you.</string>
+    <string name="explore_the_map">Explore the Map</string>
+    <string name="get_fishing_permits">Get Fishing Permits</string>
+    <string name="got_it_take_me_to_the_app">Got it – Take me to the App</string>
+    <string name="welcome">Welcome,</string>
+    <string name="username">\@John_doe</string>
+    <string name="todays_quate">Todays quate:</string>
+    <string name="social_feed">Social Feed</string>
+    <string name="confirm_and_pay">Confirm and Pay</string>
+    <string name="all_fishing_permits">All Fishing Permits</string>
+    <string name="share_permit">Share permit</string>
+    <string name="overview">Overview</string>
+    <string name="results">Results</string>
+    <string name="your_profile">Your Profile</string>
+    <string name="thread_detail">Thread Detail</string>
+    <string name="thread_title">Thread Title</string>
+    <string name="started_by">Started By</string>
+    <string name="category">Category</string>
+    <string name="original_post">Original Post</string>
+    <string name="post_reply">Post Reply</string>
+    <string name="report_abuse">Report Abuse</string>
+    <string name="add_a_reply">Add a Reply</string>
+    <string name="please_describe">Please Describe</string>
+    <string name="submit">Submit</string>
+    <string name="post_thread">Post Thread</string>
+    <string name="start_a_new_thread">Start a New Thread</string>
+</resources>
