@@ -24,7 +24,6 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="@dimen/_15sdp"
                 android:background="@color/white">
 
 
@@ -38,7 +37,9 @@
                     android:id="@+id/ivNotification"
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
                     android:src="@drawable/notification"
+                    android:onClick="@{v->vm.onClick(v)}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -48,6 +49,7 @@
                     android:layout_height="@dimen/_20sdp"
                     android:layout_marginEnd="@dimen/_12sdp"
                     android:src="@drawable/chat"
+                    android:onClick="@{v->vm.onClick(v)}"
                     app:layout_constraintBottom_toBottomOf="@+id/ivNotification"
                     app:layout_constraintEnd_toStartOf="@+id/ivNotification"
                     app:layout_constraintTop_toTopOf="@+id/ivNotification" />
@@ -58,6 +60,7 @@
                     style="@style/TextView_600_SemiBold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
                     android:text="@string/welcome"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/_13ssp"
@@ -105,6 +108,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_18sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="If you try to drown a fish, the ocean will laugh at\nyou"
                     android:textColor="@color/app_text_hint"
@@ -119,6 +123,7 @@
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_28sdp"
                     android:layout_marginBottom="@dimen/_15sdp"
+                    android:layout_marginHorizontal="@dimen/_15sdp"
                     android:background="@drawable/radius_border"
                     android:onClick="@{v ->vm.onClick(v)}"
                     android:paddingHorizontal="@dimen/_15sdp"
@@ -167,6 +172,7 @@
                         android:id="@+id/rvCardHome"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
                         android:nestedScrollingEnabled="false"
                         android:paddingVertical="@dimen/_8sdp"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -182,6 +188,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
                     android:text="@string/social_feed"
                     android:textSize="@dimen/_15ssp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -191,6 +198,7 @@
                     style="@style/TextView_300_Light"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_15sdp"
                     android:text="See all"
                     android:textColor="@color/colorPrimary"
                     app:layout_constraintBottom_toBottomOf="@+id/tvSocialPost"

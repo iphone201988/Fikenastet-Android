@@ -68,8 +68,62 @@ class CommonActivity : BaseActivity<ActivityCommonBinding>() {
                             "NewThread"->{
                                 setStartDestination(R.id.fragmentNewThread)
                             }
+                            "AllThreads"->{
+                                setStartDestination(R.id.fragmentAllThreads)
+                            }
                             "ReportAbuse"->{
                                 setStartDestination(R.id.fragmentReportAbuse)
+                            }
+                            "ChangePassword"->{
+                                setStartDestination(R.id.fragmentChangePassword)
+                            }
+                            "NotificationsEnabled"->{
+                                setStartDestination(R.id.fragmentNotificationsEnabled)
+                            }
+                            "Payment"->{
+                                setStartDestination(R.id.fragmentPayment)
+                            }
+                            "AddCard"->{
+                                setStartDestination(R.id.fragmentAddCard)
+                            }
+                            "EditProfile"->{
+                                setStartDestination(R.id.fragmentEditProfile)
+                            }
+                            "Followers"->{
+                                setStartDestination(R.id.fragmentFollower)
+                            }
+                            "Following"->{
+                                setStartDestination(R.id.fragmentFollowing)
+                            }
+                            "MyLakes"->{
+                                setStartDestination(R.id.fragmentMyLakes)
+                            }
+                            "MyLakeDetail"->{
+                                setStartDestination(R.id.fragmentMyLakeDetail)
+                            }
+                            "AddNewLake"->{
+                                setStartDestination(R.id.fragmentAddNewLake)
+                            }
+                            "AddFeed"->{
+                                setStartDestination(R.id.fragmentAddFeed)
+                            }
+                            "MessageList"->{
+                                setStartDestination(R.id.fragmentMessageList)
+                            }
+                            "OtherProfile"->{
+                                setStartDestination(R.id.fragmentOtherUser)
+                            }
+                            "CatchLog"->{
+                                setStartDestination(R.id.fragmentCatchLog)
+                            }
+                            "AddCatchLog"->{
+                                setStartDestination(R.id.fragmentAddCatchLog)
+                            }
+                            "ViewCatchLog"->{
+                                setStartDestination(R.id.fragmentViewCatchLog)
+                            }
+                            "Notifications"->{
+                                setStartDestination(R.id.fragmentNotifications)
                             }
                         }
                     }

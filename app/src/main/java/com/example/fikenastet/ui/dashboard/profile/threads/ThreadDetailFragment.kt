@@ -55,7 +55,7 @@ class ThreadDetailFragment : BaseFragment<FragmentThreadDetailBinding>() {
 
                 }
 
-                R.id.consButton -> {
+                R.id.consButton,R.id.textButton -> {
 
                 }
             }

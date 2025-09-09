@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="colorPrimary">#87BDF1</color>
+    <color name="blue">#009DFF</color>
     <color name="app_text">#384959</color>
     <color name="app_text_hint">#7D7D7D</color>
     <color name="bg_home_card">#F8FBFF</color>
@@ -11,7 +12,12 @@
     <color name="red">#FF3F3F</color>
     <color name="green">#00E01A</color>
     <color name="full_gray">#9E9E9E</color>
+    <color name="light_blue">#EAF5FF</color>
+    <color name="light_graph_color">#F1F7FF</color>
 
     <color name="black_full83">#D4000000</color>
     <color name="black_full0">#00000000</color>
+    <color name="grey">#C4C4C4</color>
+
+
 </resources>

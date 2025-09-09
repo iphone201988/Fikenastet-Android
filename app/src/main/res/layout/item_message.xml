@@ -6,13 +6,21 @@
         <variable
             name="bean"
             type="com.example.fikenastet.data.model.DummyComment" />
+        <variable
+            name="pos"
+            type="Integer" />
+        <variable
+            name="callback"
+            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/bg_home_card"
         android:layout_marginVertical="@dimen/_6sdp"
+        android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
         android:background="@drawable/radius_border_chat"
         android:paddingVertical="@dimen/_5sdp"
         android:paddingHorizontal="@dimen/_5sdp">

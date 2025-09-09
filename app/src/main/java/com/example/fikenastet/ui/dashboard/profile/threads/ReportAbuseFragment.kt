@@ -7,6 +7,7 @@ import com.example.fikenastet.R
 import com.example.fikenastet.base.BaseFragment
 import com.example.fikenastet.base.BaseViewModel
 import com.example.fikenastet.base.SimpleRecyclerViewAdapter
+import com.example.fikenastet.data.model.ReplyModel
 import com.example.fikenastet.databinding.FragmentReportAbuseBinding
 import com.example.fikenastet.databinding.ItemReportBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ReportAbuseFragment : BaseFragment<FragmentReportAbuseBinding>() {
     private val viewModel: ThreadsVM by viewModels()
-    private lateinit var reportAdapter: SimpleRecyclerViewAdapter<String, ItemReportBinding>
+    private lateinit var reportAdapter: SimpleRecyclerViewAdapter<ReplyModel, ItemReportBinding>
     override fun getLayoutResource(): Int {
         return R.layout.fragment_report_abuse
     }
@@ -25,6 +26,7 @@ class ReportAbuseFragment : BaseFragment<FragmentReportAbuseBinding>() {
 
     override fun onCreateView(view: View) {
         // view
+        binding.tvTitle.text = "Report"
         initView()
         // click
         initOnClick()
@@ -45,7 +47,7 @@ class ReportAbuseFragment : BaseFragment<FragmentReportAbuseBinding>() {
                 R.id.ivNotification->{
 
                 }
-                R.id.consButton->{
+                R.id.consButton, R.id.textButton -> {
 
                 }
             }
@@ -58,16 +60,33 @@ class ReportAbuseFragment : BaseFragment<FragmentReportAbuseBinding>() {
 
     // adapter
     private fun initAdapter() {
-        val reportList =
-            listOf<String>("non fishing content", "rule violations", "abuse", "spam", "others")
         reportAdapter = SimpleRecyclerViewAdapter(R.layout.item_report, BR.bean) { v, m, pos ->
             when (v.id) {
-
+                R.id.ivTick -> {
+                    if (reportAdapter.list[pos].isSelected == false) {
+                        reportAdapter.list[pos].isSelected = true
+                        reportAdapter.notifyItemChanged(pos, m)
+                    } else {
+                        reportAdapter.list[pos].isSelected = false
+                        reportAdapter.notifyItemChanged(pos, m)
+                    }
+                }
             }
 
         }
-        reportAdapter.list = reportList
+        reportAdapter.list = getList()
         binding.rvReply.adapter = reportAdapter
+    }
+
+
+    private fun getList(): ArrayList<ReplyModel> {
+        val list = ArrayList<ReplyModel>()
+        list.add(ReplyModel("non fishing content"))
+        list.add(ReplyModel("rule violations"))
+        list.add(ReplyModel("abuse"))
+        list.add(ReplyModel("spam"))
+        list.add(ReplyModel("others"))
+        return list
     }
 
 }

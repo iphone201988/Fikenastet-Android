@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="bean"
+            type="com.example.fikenastet.data.model.MyLakesModel" />
+        <variable
+            name="pos"
+            type="Integer" />
+        <variable
+            name="callback"
+            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_2sdp"
+        android:paddingVertical="@dimen/_4sdp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/clMain"
+            android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
+            android:background="@drawable/radius_border"
+            android:backgroundTint="@color/bg_home_card"
+            android:paddingVertical="@dimen/_2sdp">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLakeName"
+                style="@style/TextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@{bean.name}"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLakeDes"
+                style="@style/TextView_300_Light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Fishes: Pike, Zander"
+                android:textColor="@color/app_text_hint"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLakeName" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_500_Medium"
+                android:text="@{bean.status}"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginEnd="@dimen/_13sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLakeDes"
+                app:layout_constraintTop_toTopOf="@+id/tvLakeName" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_110sdp"
+                android:padding="@dimen/_5sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/lake"
+                android:layout_marginTop="@dimen/_2sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLakeDes"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize16Percent" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPermitLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/TextView_400_Regular"
+                android:text="@string/permits_sold"
+                android:textSize="@dimen/_12ssp"
+                android:singleLine="true"
+                android:layout_marginStart="@dimen/_13sdp"
+                android:textColor="@color/app_text_hint"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvRevenueLabel"
+                app:layout_constraintTop_toBottomOf="@id/iv1" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPermit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/TextView_600_SemiBold"
+                android:text="@{bean.permitSold}"
+                android:layout_marginStart="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="@id/iv1"
+                app:layout_constraintEnd_toStartOf="@id/tvRevenue"
+                app:layout_constraintTop_toBottomOf="@id/tvPermitLabel" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRevenueLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/TextView_400_Regular"
+                android:text="Revenue"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/app_text_hint"
+                app:layout_constraintStart_toEndOf="@id/tvPermitLabel"
+                app:layout_constraintEnd_toStartOf="@id/consEdit"
+                app:layout_constraintTop_toTopOf="@id/tvPermitLabel" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRevenue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/TextView_600_SemiBold"
+                android:text="@{bean.revenue}"
+                android:layout_marginStart="@dimen/_12sdp"
+                app:layout_constraintStart_toEndOf="@id/tvPermit"
+                app:layout_constraintEnd_toStartOf="@id/consEdit"
+                app:layout_constraintTop_toTopOf="@id/tvPermit" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consEdit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
+                app:layout_constraintTop_toTopOf="@id/tvPermitLabel"
+                app:layout_constraintStart_toEndOf="@id/tvRevenueLabel"
+                app:layout_constraintEnd_toStartOf="@id/consDelete"
+                app:layout_constraintBottom_toBottomOf="@id/tvPermit">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivEdit"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/iv_edit"
+                    app:layout_constraintEnd_toStartOf="@id/tvEdit"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEdit"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:text="Edit"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivEdit"
+                    app:layout_constraintTop_toTopOf="@id/ivEdit" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consDelete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_13sdp"
+                android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
+                app:layout_constraintTop_toTopOf="@id/tvPermitLabel"
+                app:layout_constraintStart_toEndOf="@id/consEdit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tvPermit">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDelete"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/iv_delete"
+                    app:layout_constraintEnd_toStartOf="@id/tvDelete"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDelete"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:text="Delete"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivDelete"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivDelete"
+                    app:layout_constraintTop_toTopOf="@id/ivDelete" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

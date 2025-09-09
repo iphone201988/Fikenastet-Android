@@ -1,5 +1,6 @@
 package com.example.fikenastet.ui.selling.message
 
+import android.content.Intent
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.example.fikenastet.BR
@@ -10,6 +11,7 @@ import com.example.fikenastet.base.SimpleRecyclerViewAdapter
 import com.example.fikenastet.data.model.DummyComment
 import com.example.fikenastet.databinding.FragmentMessageBinding
 import com.example.fikenastet.databinding.ItemMessageBinding
+import com.example.fikenastet.ui.chat.ChatActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -46,10 +48,11 @@ class MessageFragment : BaseFragment<FragmentMessageBinding>() {
     private fun initAdapterComment() {
         adapterComment =
             SimpleRecyclerViewAdapter(R.layout.item_message, BR.bean) { view, value, _ ->
-                /*if (view.id == R.id.consMain) {
-                    binding.etGender.setText(value)
-                    bottomSheetCommon.dismiss()
-                }*/
+                when(view.id){
+                    R.id.clMain->{
+                        startActivity(Intent(requireActivity(),ChatActivity::class.java))
+                    }
+                }
             }
         binding.rvComment.adapter = adapterComment
         adapterComment.list = commentList

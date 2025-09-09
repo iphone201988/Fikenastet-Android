@@ -25,51 +25,46 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/radius_border"
-            android:backgroundTint="@color/bg_home_card"
-            android:paddingVertical="@dimen/_2sdp">
+            android:layout_height="match_parent">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv1"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_120sdp"
-                android:padding="@dimen/_5sdp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/iv_dummy"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize15Percent"
-                app:strokeColor="@color/black"
-                app:strokeWidth="1dp" />
+<!--            <com.google.android.material.imageview.ShapeableImageView-->
+<!--                android:id="@+id/iv1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_120sdp"-->
+<!--                android:padding="@dimen/_5sdp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/iv_dummy"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize15Percent"-->
+<!--                app:strokeColor="@color/black"-->
+<!--                app:strokeWidth="1dp" />-->
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ivOverlay"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_120sdp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:padding="@dimen/_5sdp"
-                android:background="@drawable/gradient_overlay"
-                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize15Percent" />
+<!--            <com.google.android.material.imageview.ShapeableImageView-->
+<!--                android:id="@+id/ivOverlay"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_120sdp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:padding="@dimen/_5sdp"-->
+<!--                android:background="@drawable/gradient_overlay"-->
+<!--                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize15Percent" />-->
 
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivPersonImage"
                 android:layout_width="@dimen/_30sdp"
                 android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:padding="@dimen/_2sdp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/iv_dummy"
-                app:layout_constraintBottom_toBottomOf="@+id/iv1"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize20Percent"
                 app:strokeColor="@color/colorPrimary"
                 app:strokeWidth="@dimen/_1sdp" />
-
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvUserName"
                 style="@style/TextView_500_Medium"
@@ -82,12 +77,20 @@
                 app:layout_constraintBottom_toBottomOf="@+id/ivPersonImage"
                 app:layout_constraintStart_toEndOf="@+id/ivPersonImage"
                 app:layout_constraintTop_toTopOf="@+id/ivPersonImage" />
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_220sdp"
+                android:src="@drawable/iv_dummy"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toBottomOf="@id/ivPersonImage"/>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivFav"
                 android:layout_width="@dimen/_16sdp"
                 android:layout_height="@dimen/_16sdp"
-                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:src="@drawable/fav"
                 android:tint="@color/red"

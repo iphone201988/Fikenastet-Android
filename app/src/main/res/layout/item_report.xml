@@ -5,10 +5,13 @@
     <data>
         <variable
             name="bean"
-            type="String" />
+            type="com.example.fikenastet.data.model.ReplyModel" />
         <variable
             name="pos"
             type="Integer" />
+        <variable
+            name="callback"
+            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +22,8 @@
             android:id="@+id/ivTick"
             android:layout_width="@dimen/_15sdp"
             android:layout_height="@dimen/_15sdp"
-            android:src="@drawable/tick"
+            android:src="@{bean.isSelected()?@drawable/tick:@drawable/emty_tick}"
+            android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
         <androidx.appcompat.widget.AppCompatTextView
@@ -28,7 +32,7 @@
             android:layout_height="wrap_content"
             style="@style/TextView_400_Regular"
             android:layout_marginHorizontal="@dimen/_6sdp"
-            android:text="@string/please_describe"
+            android:text="@{bean.title}"
             android:textSize="@dimen/_12ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toEndOf="@id/ivTick"

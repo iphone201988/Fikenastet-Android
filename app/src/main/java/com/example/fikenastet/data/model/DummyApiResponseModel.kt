@@ -30,3 +30,28 @@ data class SellDataList(
 )
 
 data class ReplyModel(val title: String?, var isSelected: Boolean? = false)
+
+sealed class ThreadListItem {
+    data class Header(val title: String) : ThreadListItem()
+    data class ThreadData(val data: ThreadItemData) : ThreadListItem()
+}
+
+data class ThreadItemData( // your original model
+    val header: String,
+    val title: String,
+    val author: String,
+    val replies: Int,
+    val timeAgo: String,
+    val postedByMe:Boolean=false
+)
+
+data class FollowersFragmentModel(var selected: Boolean? = false)
+
+data class MyLakesModel(val name :String?,val status : String?,val permitSold:String?,val revenue:String?)
+
+sealed class NotificationsItem {
+    data class NotificationDate(val date :String) : NotificationsItem()
+    data class NotificationData(val notification: NotificationModelData) : NotificationsItem()
+}
+
+data class NotificationModelData( val name :String?,val title:String?,val createdAt:String?)

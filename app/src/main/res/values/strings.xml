@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Base 2025</string>
+    <string name="app_name">Fikenastet</string>
 
     <string name="session_expired">session_expired</string>
     <string name="alert">Alert</string>
@@ -41,4 +41,43 @@
     <string name="submit">Submit</string>
     <string name="post_thread">Post Thread</string>
     <string name="start_a_new_thread">Start a New Thread</string>
+    <string name="post_content">Post Content</string>
+    <string name="guidelines">Guidelines</string>
+    <string name="be_respectful_and_stay_on_topic">• Be respectful and stay on topic</string>
+    <string name="no_spam_offensive_content_or_self_promotion">• No spam, offensive content, or self-promotion</string>
+    <string name="posts_are_pre_checked_by_ai_before_publishing">• Posts are pre-checked by AI before publishing</string>
+    <string name="all_forum">All Forum</string>
+    <string name="start_new_thread">Start New Thread</string>
+    <string name="posts">Posts</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="feed">Feed</string>
+    <string name="forums">Forums</string>
+    <string name="settings">Settings</string>
+    <string name="lake_owner_panel">Lake Owner Panel</string>
+    <string name="export_all_user_data">Export all user data</string>
+    <string name="change_password">Change Password</string>
+    <string name="update">Update</string>
+    <string name="notifications">Notifications</string>
+    <string name="push_notifications">Push Notifications</string>
+    <string name="add_new_payment_method">Add New Payment Method</string>
+    <string name="name_on_card">Name on card</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="cvv">CVV</string>
+    <string name="card_number">Card Number</string>
+    <string name="payment_amp_orders"><![CDATA[Payment & Orders]]></string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="load_more">Load more</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="fishing_since_i_could_walk_pike_zander_fan"><![CDATA[Fishing since I could walk. Pike & Zander fan.]]></string>
+    <string name="my_lakes">My Lakes</string>
+    <string name="add_new_lake">Add new lake</string>
+    <string name="permits_sold">Permits Sold</string>
+    <string name="sales">Sales</string>
+    <string name="add_feed">Add Feed</string>
+    <string name="fish_caught">Fish Caught</string>
+    <string name="messages">Messages</string>
+    <string name="select_species">Select Species</string>
+    <string name="weight_kg">Weight(kg)</string>
+    <string name="bait_used">Bait used</string>
 </resources>

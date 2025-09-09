@@ -14,10 +14,10 @@ import com.github.mikephil.charting.utils.ViewPortHandler
 class TopRoundedBarChartRenderer(
     chart: BarDataProvider,
     animator: ChartAnimator,
-    viewPortHandler: ViewPortHandler
+    viewPortHandler: ViewPortHandler,
 ) : BarChartRenderer(chart, animator, viewPortHandler) {
 
-    private val radius = 20f  // Corner radius in pixels
+    private val radius = 10f  // Corner radius in pixels
 
     override fun drawDataSet(c: Canvas, dataSet: IBarDataSet, index: Int) {
         val trans = mChart.getTransformer(dataSet.axisDependency)

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.fikenastet.ui.dashboard.profile.feeds.FeedVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.dashboard.profile.feeds.AddFeedsFragment">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Back Button -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:onClick="@{v -> vm.onClick(v)}"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+
+        <!-- Notification -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNotification"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:src="@drawable/notification"
+            app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+        <!-- Title -->
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextView_500_Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_feed"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ivNotification"
+            app:layout_constraintEnd_toStartOf="@id/ivNotification"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
+            app:layout_constraintTop_toTopOf="@id/ivNotification" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUploadLabel"
+            style="@style/TextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:text="Upload Lake photo (least 1 photos)"
+            android:textColor="@color/app_text_hint"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/tvAddMore"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivBack" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddMore"
+            style="@style/TextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="+ Add more"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvUploadLabel"
+            app:layout_constraintBottom_toBottomOf="@id/tvUploadLabel"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consUploadPic"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:background="@drawable/radius_stroke"
+            app:layout_constraintTop_toBottomOf="@+id/tvUploadLabel">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivUpload"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:src="@drawable/iv_upload"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextView_400_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="Upload Photos"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="@+id/ivUpload"
+                app:layout_constraintStart_toStartOf="@+id/ivUpload"
+                app:layout_constraintTop_toBottomOf="@+id/ivUpload" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFeeds"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:orientation="horizontal"
+            tools:itemCount="3"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_feed"
+            app:layout_constraintTop_toBottomOf="@id/tvUploadLabel"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFishCaughtLabel"
+            style="@style/TextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/fish_caught"
+            android:textColor="@color/app_text_hint"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/consUploadPic" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etFishCaught"
+            style="@style/TextView_400_Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/_5sdp"
+            android:minHeight="@dimen/_43sdp"
+            android:singleLine="true"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_38sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/etTag"
+            android:background="@drawable/radius_stroke"
+            android:hint="Enter here"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:textColorHint="@color/app_text_hint"
+            app:layout_constraintTop_toBottomOf="@+id/tvFishCaughtLabel" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:src="@drawable/famicons_fish"
+            app:tint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/etFishCaught"
+            app:layout_constraintEnd_toEndOf="@+id/etFishCaught"
+            app:layout_constraintTop_toTopOf="@+id/etFishCaught" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTagLabel"
+            style="@style/TextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="Add Tags"
+            android:textColor="@color/app_text_hint"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/tvAddMoreTag"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etFishCaught" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddMoreTag"
+            style="@style/TextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="+ Add more"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTagLabel"
+            app:layout_constraintBottom_toBottomOf="@id/tvTagLabel"/>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etTag"
+            style="@style/TextView_400_Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/_5sdp"
+            android:minHeight="@dimen/_43sdp"
+            android:singleLine="true"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_38sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:imeOptions="actionDone"
+            android:background="@drawable/radius_stroke"
+            android:hint="Enter here"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:textColorHint="@color/app_text_hint"
+            app:layout_constraintTop_toBottomOf="@+id/tvTagLabel" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:src="@drawable/fish_rev"
+            app:layout_constraintBottom_toBottomOf="@+id/etTag"
+            app:layout_constraintEnd_toEndOf="@+id/etTag"
+            app:layout_constraintTop_toTopOf="@+id/etTag" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/radius_border"
+            android:onClick="@{v ->vm.onClick(v)}"
+            android:paddingHorizontal="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/textGetStarted"
+                style="@style/InterTextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post Feed"
+                android:onClick="@{v ->vm.onClick(v)}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iconFish"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:src="@drawable/famicons_fish"
+                app:layout_constraintBottom_toBottomOf="@id/textGetStarted"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textGetStarted" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

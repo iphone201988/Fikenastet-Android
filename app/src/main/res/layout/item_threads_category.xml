@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="bean"
+            type="String"/>
+        <variable
+            name="pos"
+            type="Integer" />
+        <variable
+            name="size"
+            type="Integer" />
+        <variable
+            name="callback"
+            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:onClick="@{v->callback.onItemClick(v,bean,pos)}">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPostedBy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextView_400_Regular"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@{bean}"
+            android:textColor="@color/app_text_hint"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/colorPrimary"
+            pos_reply="@{pos}"
+            size_reply="@{size}"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPostedBy" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

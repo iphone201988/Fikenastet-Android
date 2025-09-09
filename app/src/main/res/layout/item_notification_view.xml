@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_notification"
+        android:padding="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_10sdp">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/InterTextView_500_Medium"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/black"
+            android:text="PerchPro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/InterTextView_400_Regular"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:textColor="@color/colorPrimary"
+            android:text="liked your catch: “2.8kg Zander”"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvName"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/InterTextView_300_Light"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/grey"
+            android:text="2m ago"
+         app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

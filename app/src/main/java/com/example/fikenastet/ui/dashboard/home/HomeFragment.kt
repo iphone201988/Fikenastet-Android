@@ -1,5 +1,6 @@
 package com.example.fikenastet.ui.dashboard.home
 
+import android.content.Intent
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.example.fikenastet.BR
@@ -16,6 +17,7 @@ import com.example.fikenastet.databinding.FragmentHomeBinding
 import com.example.fikenastet.databinding.HolderHomeCardBinding
 import com.example.fikenastet.databinding.HolderSocialFeedBinding
 import com.example.fikenastet.databinding.ItemCommentBinding
+import com.example.fikenastet.ui.dashboard.common_activity.CommonActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,7 +39,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
 
     private fun initOnClick() {
-
+        viewModel.onClick.observe(viewLifecycleOwner){
+            when(it?.id){
+                R.id.ivChatHome->{
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "MessageList")
+                    startActivity(intent)
+                }
+                R.id.ivNotification->{
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
+                }
+            }
+        }
     }
 
     private fun initView() {

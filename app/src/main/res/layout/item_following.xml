@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="bean"
+            type="com.example.fikenastet.data.model.FollowersFragmentModel" />
+        <variable
+            name="pos"
+            type="Integer" />
+        <variable
+            name="callback"
+            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+        <import type="android.view.View"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
+        android:layout_marginBottom="@dimen/_10sdp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivImage"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:background="@color/colorPrimary"
+            android:scaleType="centerCrop"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize12Percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivImage2"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:src="@drawable/iv_dummy"
+            android:scaleType="centerCrop"
+            android:padding="@dimen/_1sdp"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize12Percent"
+            app:layout_constraintTop_toTopOf="@id/ivImage"
+            app:layout_constraintStart_toStartOf="@id/ivImage"
+            app:layout_constraintEnd_toEndOf="@id/ivImage"
+            app:layout_constraintBottom_toBottomOf="@id/ivImage"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/TextView_500_Medium"
+            android:text="johnDoe_007"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintTop_toTopOf="@id/ivImage"
+            app:layout_constraintStart_toEndOf="@id/ivImage"
+            app:layout_constraintBottom_toBottomOf="@id/ivImage"
+            app:layout_constraintEnd_toStartOf="@id/tvFollowStatus"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFollowStatus"
+            style="@style/InterTextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_stroke_high"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:visibility="@{bean.selected?View.VISIBLE:View.GONE}"
+            android:text="unfollow"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintTop_toTopOf="@id/ivImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/ivImage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -36,7 +36,7 @@
         app:destination="@id/fragmentPostNewListing" />
 
 
-    <!-- by manvi -->
+    <!-- by M -->
     <action
         android:id="@+id/navigateToThreadDetailFragment"
         app:destination="@id/fragmentThreadDetail" />
@@ -46,6 +46,58 @@
     <action
         android:id="@+id/navigateToNewThread"
         app:destination="@id/fragmentNewThread" />
+    <action
+        android:id="@+id/navigateToChangePassword"
+        app:destination="@id/fragmentChangePassword" />
+    <action
+        android:id="@+id/navigateToNotificationsEnabled"
+        app:destination="@id/fragmentNotificationsEnabled" />
+    <action
+        android:id="@+id/navigateToAddCard"
+        app:destination="@id/fragmentAddCard" />
+    <action
+        android:id="@+id/navigateToPayment"
+        app:destination="@id/fragmentPayment" />
+    <action
+        android:id="@+id/navigateToEditProfile"
+        app:destination="@id/fragmentEditProfile" />
+    <action
+        android:id="@+id/navigateToFollower"
+        app:destination="@id/fragmentFollower" />
+    <action
+        android:id="@+id/navigateToFollowing"
+        app:destination="@id/fragmentFollowing" />
+
+    <action
+        android:id="@+id/navigateToMyLakes"
+        app:destination="@id/fragmentMyLakes" />
+    <action
+        android:id="@+id/navigateToMyLakeDetail"
+        app:destination="@id/fragmentMyLakeDetail" />
+    <action
+        android:id="@+id/navigateToAddNewLake"
+        app:destination="@id/fragmentAddNewLake" />
+    <action
+        android:id="@+id/navigateToAddFeed"
+        app:destination="@id/fragmentAddFeed" />
+    <action
+        android:id="@+id/navigateToMessageList"
+        app:destination="@id/fragmentMessageList" />
+    <action
+        android:id="@+id/navigateToOtherUser"
+        app:destination="@id/fragmentOtherUser" />
+    <action
+        android:id="@+id/navigateToAddCatchLog"
+        app:destination="@id/fragmentAddCatchLog" />
+    <action
+        android:id="@+id/navigateToCatchLog"
+        app:destination="@id/fragmentCatchLog" />
+    <action
+        android:id="@+id/navigateToViewCatchLog"
+        app:destination="@id/fragmentViewCatchLog" />
+    <action
+        android:id="@+id/navigateToNotifications"
+        app:destination="@id/fragmentNotifications" />
 
 
     <fragment
@@ -88,7 +140,7 @@
 
 
 
-    <!-- by manvi -->
+    <!-- by M -->
     <fragment
         android:id="@+id/fragmentThreadDetail"
         android:name="com.example.fikenastet.ui.dashboard.profile.threads.ThreadDetailFragment"
@@ -103,6 +155,78 @@
         android:id="@+id/fragmentNewThread"
         android:name="com.example.fikenastet.ui.dashboard.profile.threads.NewThreadFragment"
         tools:layout="@layout/fragment_new_thread" />
+    <fragment
+        android:id="@+id/fragmentAllThreads"
+        android:name="com.example.fikenastet.ui.dashboard.profile.threads.AllThreadsFragment"
+        tools:layout="@layout/fragment_all_threads" />
+    <fragment
+        android:id="@+id/fragmentChangePassword"
+        android:name="com.example.fikenastet.ui.settings.change_password.ChangePasswordFragment"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/fragmentNotificationsEnabled"
+        android:name="com.example.fikenastet.ui.settings.notification_enabled.NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/fragmentAddCard"
+        android:name="com.example.fikenastet.ui.settings.payment.AddCardFragment"
+        tools:layout="@layout/fragment_add_card" />
+    <fragment
+        android:id="@+id/fragmentPayment"
+        android:name="com.example.fikenastet.ui.settings.payment.PaymentFragment"
+        tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/fragmentEditProfile"
+        android:name="com.example.fikenastet.ui.dashboard.profile.EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/fragmentFollower"
+        android:name="com.example.fikenastet.ui.common_classes.follower_following.FollowersFragment"
+        tools:layout="@layout/fragment_followers" />
+    <fragment
+        android:id="@+id/fragmentFollowing"
+        android:name="com.example.fikenastet.ui.common_classes.follower_following.FollowingFragment"
+        tools:layout="@layout/fragment_following" />
+    <fragment
+        android:id="@+id/fragmentMyLakes"
+        android:name="com.example.fikenastet.ui.settings.lake_owner_panel.MyLakesFragment"
+        tools:layout="@layout/fragment_my_lakes" />
+    <fragment
+        android:id="@+id/fragmentMyLakeDetail"
+        android:name="com.example.fikenastet.ui.settings.lake_owner_panel.MyLakeDetailFragment"
+        tools:layout="@layout/fragment_my_lake_detail" />
+    <fragment
+        android:id="@+id/fragmentAddNewLake"
+        android:name="com.example.fikenastet.ui.settings.lake_owner_panel.AddNewLakeFragment"
+        tools:layout="@layout/fragment_add_new_lake" />
+    <fragment
+        android:id="@+id/fragmentAddFeed"
+        android:name="com.example.fikenastet.ui.dashboard.profile.feeds.AddFeedsFragment"
+        tools:layout="@layout/fragment_add_feeds" />
+    <fragment
+        android:id="@+id/fragmentMessageList"
+        android:name="com.example.fikenastet.ui.chat.MessageListFragment"
+        tools:layout="@layout/fragment_message_list" />
+    <fragment
+        android:id="@+id/fragmentOtherUser"
+        android:name="com.example.fikenastet.ui.otherUserProfile.OtherUserFragment"
+        tools:layout="@layout/fragment_other_user" />
+    <fragment
+        android:id="@+id/fragmentCatchLog"
+        android:name="com.example.fikenastet.ui.dashboard.profile.catch_log.CatchLogFragment"
+        tools:layout="@layout/fragment_catch_log" />
+    <fragment
+        android:id="@+id/fragmentAddCatchLog"
+        android:name="com.example.fikenastet.ui.dashboard.profile.catch_log.AddCatchLogFragment"
+        tools:layout="@layout/fragment_add_catch_log" />
+    <fragment
+        android:id="@+id/fragmentViewCatchLog"
+        android:name="com.example.fikenastet.ui.dashboard.profile.catch_log.ViewCatchReportFragment"
+        tools:layout="@layout/fragment_view_catch_report" />
+    <fragment
+        android:id="@+id/fragmentNotifications"
+        android:name="com.example.fikenastet.ui.notifications.NotificationsFragment"
+        tools:layout="@layout/fragment_notification" />
 
 
 </navigation>

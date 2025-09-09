@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="bean"
+            type="String" />
+        <variable
+            name="pos"
+            type="Integer" />
+        <variable
+            name="size"
+            type="Integer" />
+        <variable
+            name="callback"
+            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_5sdp">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSettings"
+            style="@style/InterTextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_stroke_high"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_8sdp"
+            android:text="@{bean}"
+            size_reply2="@{size}"
+            pos_reply2="@{pos}"
+            android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.fikenastet.ui.settings.lake_owner_panel.MyLakesVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.settings.lake_owner_panel.AddNewLakeFragment">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Back Button -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:onClick="@{v -> vm.onClick(v)}"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+
+        <!-- Notification -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNotification"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:src="@drawable/notification"
+            app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+        <!-- Title -->
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextView_500_Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_new_lake"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ivNotification"
+            app:layout_constraintEnd_toStartOf="@id/ivNotification"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
+            app:layout_constraintTop_toTopOf="@id/ivNotification" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivBack">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:text="Lake Name"
+                    android:textColor="@color/app_text_hint"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etTitle"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/radius_stroke"
+                    android:hint="Enter here"
+                    android:imeOptions="actionNext"
+                    android:minHeight="@dimen/_43sdp"
+                    android:nextFocusForward="@id/etLakeInfo"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/app_text_hint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUploadLabel"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Upload Lake photo (least 1 photos)"
+                    android:textColor="@color/app_text_hint"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toStartOf="@id/tvAddMore"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etTitle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddMore"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="+ Add more"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvUploadLabel"
+                    app:layout_constraintBottom_toBottomOf="@id/tvUploadLabel"/>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consUploadPic"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:background="@drawable/radius_stroke"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUploadLabel">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivUpload"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:src="@drawable/iv_upload"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextView_400_Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="Upload Photos"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintEnd_toEndOf="@+id/ivUpload"
+                        app:layout_constraintStart_toStartOf="@+id/ivUpload"
+                        app:layout_constraintTop_toBottomOf="@+id/ivUpload" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLakeInfo"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="General Lake Information"
+                    android:textColor="@color/app_text_hint"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/consUploadPic" />
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etLakeInfo"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="@drawable/radius_stroke"
+                    android:hint="Enter here"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@id/etLakeLocation"
+                    android:gravity="start"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:textColorHint="@color/app_text_hint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLakeInfo"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLakeLocation"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Lake Location"
+                    android:textColor="@color/app_text_hint"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etLakeInfo" />
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etLakeLocation"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/radius_stroke"
+                    android:hint="Enter here"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@id/etDepthInfo"
+                    android:minHeight="@dimen/_43sdp"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/app_text_hint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLakeLocation" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDepthInfo"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Depth Info"
+                    android:textColor="@color/app_text_hint"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etLakeLocation" />
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etDepthInfo"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/radius_stroke"
+                    android:hint="Enter here"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@id/etOneDay"
+                    android:minHeight="@dimen/_43sdp"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/app_text_hint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDepthInfo" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSeasonLabel"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Season"
+                    android:textColor="@color/app_text_hint"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etDepthInfo" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSeason"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_43sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/radius_stroke"
+                    android:hint="Select"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:textColorHint="@color/app_text_hint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSeasonLabel" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDropArrow"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/iv_drop"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvSeason"
+                    app:layout_constraintEnd_toEndOf="@+id/tvSeason"
+                    app:layout_constraintTop_toTopOf="@+id/tvSeason" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPermitLabel"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Permit"
+                    android:textColor="@color/app_text_hint"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSeason" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPermit"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_43sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/radius_stroke"
+                    android:hint="Required"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:textColorHint="@color/app_text_hint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPermitLabel" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDropArrow2"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/iv_drop"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPermit"
+                    app:layout_constraintEnd_toEndOf="@+id/tvPermit"
+                    app:layout_constraintTop_toTopOf="@+id/tvPermit" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddSpecies"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Add Species"
+                    android:textColor="@color/app_text_hint"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPermit"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSpecies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:spanCount="2"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tvAddSpecies"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddPermitPrices"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Add Permit Prices"
+                    android:textColor="@color/app_text_hint"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvSpecies"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOneDayLabel"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="For one day"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@id/tvOneWeekLabel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAddPermitPrices"/>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etOneDay"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/radius_stroke"
+                    android:hint="For one day"
+                    android:imeOptions="actionNext"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:nextFocusForward="@id/etOneWeek"
+                    android:minHeight="@dimen/_43sdp"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/app_text_hint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOneDayLabel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/etOneWeek"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOneWeekLabel"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="For one Week"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvOneDayLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvAddPermitPrices"/>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etOneWeek"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/radius_stroke"
+                    android:hint="For one Week"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@id/etOneMonth"
+                    android:minHeight="@dimen/_43sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/app_text_hint"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOneDayLabel"
+                    app:layout_constraintStart_toEndOf="@id/etOneDay"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOneMonthLabel"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="For one month"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etOneDay"/>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etOneMonth"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/radius_stroke"
+                    android:hint="For one month"
+                    android:imeOptions="actionNext"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:nextFocusForward="@id/etAddRules"
+                    android:minHeight="@dimen/_43sdp"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/app_text_hint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOneMonthLabel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddRules"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Add Local Rules &amp; Regulations"
+                    android:textColor="@color/app_text_hint"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etOneMonth"/>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etAddRules"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/radius_stroke"
+                    android:hint="Add here"
+                    android:imeOptions="actionNext"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:nextFocusForward="@id/etAddHotspots"
+                    android:minHeight="@dimen/_43sdp"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_52sdp"
+                    android:textColorHint="@color/app_text_hint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAddRules"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/InterTextView_500_Medium"
+                    android:textSize="@dimen/_12ssp"
+                    android:text="Add"
+                    android:gravity="start"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/radius_border"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    app:layout_constraintBottom_toBottomOf="@+id/etAddRules"
+                    app:layout_constraintEnd_toEndOf="@+id/etAddRules"
+                    app:layout_constraintTop_toTopOf="@+id/etAddRules" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAddRules"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/etAddRules"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddLakeHotspots"
+                    style="@style/TextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Add lake hotspots for fissing"
+                    android:textColor="@color/app_text_hint"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvAddRules"/>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etAddHotspots"
+                    style="@style/TextView_400_Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/radius_stroke"
+                    android:hint="Add here"
+                    android:imeOptions="actionDone"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:minHeight="@dimen/_43sdp"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_52sdp"
+                    android:textColorHint="@color/app_text_hint"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAddLakeHotspots"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAdd2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/InterTextView_500_Medium"
+                    android:textSize="@dimen/_12ssp"
+                    android:text="Add"
+                    android:gravity="start"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/radius_border"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    app:layout_constraintBottom_toBottomOf="@+id/etAddHotspots"
+                    app:layout_constraintEnd_toEndOf="@+id/etAddHotspots"
+                    app:layout_constraintTop_toTopOf="@+id/etAddHotspots" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAddHotspots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/etAddHotspots"
+                    />
+                <!--  Recycler View-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/radius_border"
+                    android:onClick="@{v ->vm.onClick(v)}"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    app:layout_constraintTop_toBottomOf="@id/rvAddHotspots">
+
+                    <TextView
+                        android:id="@+id/textGetStarted"
+                        style="@style/InterTextView_500_Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/post_thread"
+                        android:onClick="@{v ->vm.onClick(v)}"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iconFish"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:src="@drawable/famicons_fish"
+                        app:layout_constraintBottom_toBottomOf="@id/textGetStarted"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/textGetStarted" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNoteLabel"
+                    style="@style/InterTextView_500_Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Note:"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/consButton"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNote"
+                    style="@style/InterTextView_400_Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="All new lakes must be approved by an admin before permits can be sold to users."
+                    android:textColor="@color/app_text_hint"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvNoteLabel"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
