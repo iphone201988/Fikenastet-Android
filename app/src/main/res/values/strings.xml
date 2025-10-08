@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Fikenastet</string>
 
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">"AIzaSyDa8Q6sOTVOL3JOa3iUNAhVypOVSgBXJm8" </string>
+
     <string name="session_expired">session_expired</string>
     <string name="alert">Alert</string>
     <string name="post_detail">Post Detail</string>
@@ -80,4 +82,9 @@
     <string name="select_species">Select Species</string>
     <string name="weight_kg">Weight(kg)</string>
     <string name="bait_used">Bait used</string>
+    <string name="submit_for_admin_approval">Submit for Admin Approval</string>
+    <string name="blocked_user">Blocked User</string>
+    <string name="unblock">Unblock</string>
+    <string name="account_integrity">Account Integrity</string>
+    <string name="privacy">Privacy</string>
 </resources>

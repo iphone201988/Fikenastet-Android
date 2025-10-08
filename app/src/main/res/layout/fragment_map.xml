@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.dashboard.map.MapFragmentVM" />
+            type="com.fisken_astet.fikenastet.ui.dashboard.map.MapFragmentVM" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -48,8 +48,8 @@
             <!-- Notification -->
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivNotification"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
+                android:layout_width="@dimen/_19sdp"
+                android:layout_height="@dimen/_19sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:src="@drawable/notification"
                 app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:text="Explore Fishing Waters"
                 android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/_16ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintBottom_toBottomOf="@id/ivNotification"
                 app:layout_constraintEnd_toStartOf="@id/ivNotification"
                 app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -96,7 +96,7 @@
                     android:singleLine="true"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/iconFish"
                     app:layout_constraintStart_toStartOf="parent"
@@ -125,6 +125,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Bottom Sheet -->
+        <!-- Bottom Sheet -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/bottomSheetLayout"
             android:layout_width="match_parent"
@@ -134,9 +135,7 @@
             android:background="@drawable/bg_bottom_sheet"
             android:elevation="@dimen/_5sdp"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
-
-
-            <View
+        <View
                 android:id="@+id/viewBottom"
                 android:layout_width="@dimen/_50sdp"
                 android:layout_height="@dimen/_3sdp"
@@ -152,6 +151,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_15sdp"
+                android:textSize="@dimen/_11ssp"
                 android:text="Nearby Lakes"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/viewBottom" />
@@ -164,6 +164,7 @@
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:text="See all"
+                android:textSize="@dimen/_11ssp"
                 android:onClick="@{v ->vm.onClick(v)}"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -188,6 +189,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:text="Lake Mälaren"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/colorPrimary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -213,7 +215,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:text="Fishes:"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_9ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
@@ -223,7 +225,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:text="Pike, Zander"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_9ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/tvFishesName"
                     app:layout_constraintStart_toEndOf="@+id/tvFishesName"
                     app:layout_constraintTop_toTopOf="@+id/tvFishesName" />
@@ -236,6 +238,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:text="Lake name:"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/colorPrimary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvFishesName" />
@@ -246,7 +249,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:text="Lake Mälaren"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/tvLakeName"
                     app:layout_constraintStart_toEndOf="@+id/tvLakeName"
                     app:layout_constraintTop_toTopOf="@+id/tvLakeName" />
@@ -260,6 +263,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:text="Permit requirements:"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/colorPrimary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvLakeName" />
@@ -270,7 +274,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:text="Yes"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/tvPermitReq"
                     app:layout_constraintStart_toEndOf="@+id/tvPermitReq"
                     app:layout_constraintTop_toTopOf="@+id/tvPermitReq" />
@@ -283,6 +287,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:text="Local rules:"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/colorPrimary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvPermitReq" />
@@ -293,7 +298,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:text="No smoking, no trashing."
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/tvLocalRules"
                     app:layout_constraintStart_toEndOf="@+id/tvLocalRules"
                     app:layout_constraintTop_toTopOf="@+id/tvLocalRules" />
@@ -306,6 +311,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:text="General lake info:"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/colorPrimary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvLocalRules" />
@@ -316,7 +322,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:text="No smoking, no trashing."
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/tvLakeInfo"
                     app:layout_constraintStart_toEndOf="@+id/tvLakeInfo"
                     app:layout_constraintTop_toTopOf="@+id/tvLakeInfo" />
@@ -338,7 +344,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:text="Permit"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/ivPermit"
                     app:layout_constraintStart_toEndOf="@+id/ivPermit"
                     app:layout_constraintTop_toTopOf="@+id/ivPermit" />

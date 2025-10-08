@@ -19,7 +19,7 @@
             android:background="@drawable/radius_border"
             android:padding="@dimen/_5sdp"
             android:text="Yesterday"
-            android:textSize="@dimen/_10ssp"
+            android:textSize="@dimen/_9ssp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

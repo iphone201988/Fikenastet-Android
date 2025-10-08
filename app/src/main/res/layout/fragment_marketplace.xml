@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.dashboard.marketplace.MarketPlaceVM" />
+            type="com.fisken_astet.fikenastet.ui.dashboard.marketplace.MarketPlaceVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:text="Marketplace"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -72,7 +72,7 @@
             android:onClick="@{v ->vm.onClick(v)}"
             android:textColor="@color/colorPrimary"
             android:textColorHint="@color/colorPrimary"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintEnd_toStartOf="@+id/tvFavourites"
             app:layout_constraintStart_toStartOf="@+id/ivBack"
             app:layout_constraintTop_toBottomOf="@+id/ivBack" />
@@ -89,7 +89,7 @@
             android:paddingVertical="@dimen/_6sdp"
             android:text="Favourites"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintBottom_toBottomOf="@+id/tvSale"
             app:layout_constraintEnd_toStartOf="@+id/tvCategory"
             app:layout_constraintStart_toEndOf="@+id/tvSale"
@@ -106,7 +106,7 @@
             android:paddingVertical="@dimen/_6sdp"
             android:text="Category"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintBottom_toBottomOf="@+id/tvSale"
             app:layout_constraintEnd_toEndOf="@+id/ivNotification"
             app:layout_constraintStart_toEndOf="@+id/tvFavourites"
@@ -140,7 +140,7 @@
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/iconFish"
                 app:layout_constraintStart_toStartOf="parent"

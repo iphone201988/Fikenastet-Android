@@ -7,7 +7,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.settings.lake_owner_panel.MyLakesVM" />
+            type="com.fisken_astet.fikenastet.ui.settings.lake_owner_panel.MyLakesVM" />
 
     </data>
 
@@ -36,8 +36,8 @@
         <!-- Notification -->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivNotification"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:src="@drawable/notification"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:text="@string/lake_owner_panel"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -63,6 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_37sdp"
+            android:textSize="@dimen/_13ssp"
             android:text="@string/my_lakes"
             app:layout_constraintTop_toBottomOf="@id/ivBack"
             app:layout_constraintStart_toStartOf="@id/ivBack"/>
@@ -71,7 +72,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/tvLakes"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
             android:layout_marginHorizontal="@dimen/_12sdp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_my_lakes"

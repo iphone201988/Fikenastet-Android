@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.dashboard.profile.threads.ThreadsVM" />
+            type="com.fisken_astet.fikenastet.ui.dashboard.profile.threads.ThreadsVM" />
 
     </data>
 
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:text="@string/thread_detail"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -70,7 +70,7 @@
             android:layout_marginTop="@dimen/_25sdp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:text="@string/thread_title"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,6 +80,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
+            android:textSize="@dimen/_13ssp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:text="Best Baits for Spring Pike"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +94,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:text="@string/started_by"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +105,8 @@
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
             android:layout_marginHorizontal="@dimen/_15sdp"
-            android:text="'@'anglerTobias"
+            android:text="\@anglerTobias"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvStartedLabel" />
@@ -116,7 +118,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:text="@string/category"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -128,6 +130,7 @@
             style="@style/TextView_600_SemiBold"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:text="Techniques &amp; Tips"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCategoryLabel" />
@@ -139,7 +142,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:text="@string/original_post"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -149,6 +152,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
+            android:textSize="@dimen/_13ssp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:text="I’ve had good luck with spinnerbaits and soft plastics when the water's still cold. What’s working for you all this spring?"
             app:layout_constraintStart_toStartOf="parent"
@@ -171,6 +175,7 @@
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:text="12 Replies"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/viewLine" />
@@ -189,7 +194,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/TextView_500_Medium"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:text="Load more"
             android:onClick="@{v->vm.onClick(v)}"
             android:textColor="@color/colorPrimary"
@@ -214,6 +219,7 @@
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:text="Add a Reply"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/viewLine2" />
@@ -250,7 +256,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/post_reply"
-                android:onClick="@{v ->vm.onClick(v)}"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

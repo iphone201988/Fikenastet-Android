@@ -5,7 +5,7 @@
 
         <variable
             name="bean"
-            type="com.example.fikenastet.data.model.DummyApiItem" />
+            type="com.fisken_astet.fikenastet.data.model.DummyApiItem" />
 
         <variable
             name="pos"
@@ -13,7 +13,7 @@
 
         <variable
             name="callback"
-            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+            type="com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
     </data>
 
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"

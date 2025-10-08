@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.auth.AuthCommonVM" />
+            type="com.fisken_astet.fikenastet.ui.auth.AuthCommonVM" />
     </data>
 
     <ScrollView
@@ -69,7 +69,7 @@
                 android:layout_marginTop="@dimen/_25sdp"
                 android:padding="@dimen/_2sdp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/iv_dummy"
+                android:src="@drawable/iv_user_icon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDes"
@@ -84,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:text="Edit profile pic"
+                android:onClick="@{v->vm.onClick(v)}"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -99,8 +100,13 @@
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:background="@drawable/radius_stroke"
-                android:paddingHorizontal="@dimen/_12sdp"
-                android:text="JohnDoe@gmail.com"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_30sdp"
+                android:hint="Enter username"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@id/edtLocation"
+                android:textColorHint="@color/app_text_hint"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintTop_toBottomOf="@+id/tvUploadPic" />
 
@@ -108,7 +114,7 @@
                 android:layout_width="@dimen/_14sdp"
                 android:layout_height="@dimen/_14sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
-                android:src="@drawable/email"
+                android:src="@drawable/user"
                 app:layout_constraintBottom_toBottomOf="@+id/edtEmail"
                 app:layout_constraintEnd_toEndOf="@+id/edtEmail"
                 app:layout_constraintTop_toTopOf="@+id/edtEmail" />
@@ -118,20 +124,29 @@
                 android:id="@+id/edtLocation"
                 style="@style/TextView_400_Regular"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_43sdp"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_43sdp"
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_3sdp"
                 android:background="@drawable/radius_stroke"
-                android:paddingHorizontal="@dimen/_12sdp"
-                android:text="Hundai Ofc, Boston"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_30sdp"
+                android:hint="Enter Location"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@id/edtShortBio"
+                android:textColorHint="@color/app_text_hint"
+                android:gravity="center_vertical"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLocation"
                 android:layout_width="@dimen/_18sdp"
                 android:layout_height="@dimen/_18sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
+                android:onClick="@{v->vm.onClick(v)}"
                 android:src="@drawable/location"
                 app:layout_constraintBottom_toBottomOf="@+id/edtLocation"
                 app:layout_constraintEnd_toEndOf="@+id/edtLocation"
@@ -146,15 +161,19 @@
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/radius_stroke"
-                android:gravity="start"
+                android:gravity="top|start"
                 android:hint="Write a short bio..."
+                android:imeOptions="actionDone"
                 android:paddingHorizontal="@dimen/_12sdp"
                 android:paddingVertical="@dimen/_8sdp"
-                android:textColor="@color/app_text_hint"
+                android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/app_text_hint"
-                app:layout_constraintTop_toBottomOf="@+id/edtLocation" />
+                android:overScrollMode="always"
+                android:inputType="textMultiLine"
+                android:singleLine="false"
+                app:layout_constraintTop_toBottomOf="@+id/edtLocation"/>
 
-            <androidx.appcompat.widget.AppCompatEditText
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvSkillLevel"
                 style="@style/TextView_400_Regular"
                 android:layout_width="match_parent"
@@ -164,17 +183,31 @@
                 android:background="@drawable/radius_stroke"
                 android:paddingHorizontal="@dimen/_12sdp"
                 android:text="Skill level"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:gravity="center_vertical"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintTop_toBottomOf="@+id/edtShortBio" />
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSkillArrow"
                 android:layout_width="@dimen/_14sdp"
                 android:layout_height="@dimen/_14sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:src="@drawable/iv_drop"
+                android:onClick="@{v->vm.onClick(v)}"
                 app:layout_constraintBottom_toBottomOf="@+id/tvSkillLevel"
                 app:layout_constraintEnd_toEndOf="@+id/tvSkillLevel"
                 app:layout_constraintTop_toTopOf="@+id/tvSkillLevel" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSkills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/holder_skills"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:visibility="gone"
+                tools:itemCount="3"
+                app:layout_constraintTop_toBottomOf="@id/tvSkillLevel"/>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -187,7 +220,7 @@
                 android:background="@drawable/radius_border"
                 android:onClick="@{v ->vm.onClick(v)}"
                 android:paddingHorizontal="@dimen/_15sdp"
-                app:layout_constraintTop_toBottomOf="@+id/tvSkillLevel">
+                app:layout_constraintTop_toBottomOf="@+id/rvSkills">
 
                 <TextView
                     android:id="@+id/textGetStarted"

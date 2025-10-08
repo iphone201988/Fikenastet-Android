@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.dashboard.all_lake.AllLakeVM" />
+            type="com.fisken_astet.fikenastet.ui.dashboard.all_lake.AllLakeVM" />
 
 
 
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:text="All Lakes"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"

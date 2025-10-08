@@ -7,7 +7,13 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.auth.AuthCommonVM" />
+            type="com.fisken_astet.fikenastet.ui.auth.AuthCommonVM" />
+        <variable
+            name="ageCheck"
+            type="Boolean" />
+        <variable
+            name="termsCheck"
+            type="Boolean" />
     </data>
 
     <ScrollView
@@ -69,7 +75,7 @@
                 android:layout_marginTop="@dimen/_25sdp"
                 android:padding="@dimen/_2sdp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/iv_dummy"
+                android:src="@drawable/iv_user_icon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDes"
@@ -84,6 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:text="Upload profile pic"
+                android:onClick="@{v->vm.onClick(v)}"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/_13ssp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +107,12 @@
                 android:layout_marginTop="@dimen/_20sdp"
                 android:background="@drawable/radius_stroke"
                 android:hint="Enter username"
-                android:paddingHorizontal="@dimen/_12sdp"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@id/edtEmail"
+                android:paddingEnd="@dimen/_30sdp"
+                android:paddingStart="@dimen/_12sdp"
+                android:singleLine="true"
+                android:inputType="text"
                 android:textColorHint="@color/app_text_hint"
                 app:layout_constraintTop_toBottomOf="@+id/tvUploadPic" />
 
@@ -122,7 +134,12 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/radius_stroke"
                 android:hint="Enter email"
-                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_30sdp"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@id/edtPassword"
+                android:paddingStart="@dimen/_12sdp"
+                android:singleLine="true"
+                android:inputType="textEmailAddress"
                 android:textColorHint="@color/app_text_hint"
                 app:layout_constraintTop_toBottomOf="@+id/edtUsername" />
 
@@ -145,16 +162,23 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/radius_stroke"
                 android:hint="Enter password"
-                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_30sdp"
+                android:paddingStart="@dimen/_12sdp"
+                android:imeOptions="actionNext"
+                android:nextFocusForward="@id/edtConfirmPassword"
+                android:singleLine="true"
+                android:inputType="textPassword"
                 android:textColorHint="@color/app_text_hint"
                 app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPassword"
                 android:layout_width="@dimen/_18sdp"
                 android:layout_height="@dimen/_18sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:src="@drawable/solar_eye"
+                android:onClick="@{v->vm.onClick(v)}"
                 app:layout_constraintBottom_toBottomOf="@+id/edtPassword"
                 app:layout_constraintEnd_toEndOf="@+id/edtPassword"
                 app:layout_constraintTop_toTopOf="@+id/edtPassword" />
@@ -169,16 +193,22 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/radius_stroke"
                 android:hint="Confirm password"
-                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_30sdp"
+                android:paddingStart="@dimen/_12sdp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:inputType="textPassword"
                 android:textColorHint="@color/app_text_hint"
                 app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
 
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivConfirmPassword"
                 android:layout_width="@dimen/_18sdp"
                 android:layout_height="@dimen/_18sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:src="@drawable/solar_eye"
+                android:onClick="@{v->vm.onClick(v)}"
                 app:layout_constraintBottom_toBottomOf="@+id/edtConfirmPassword"
                 app:layout_constraintEnd_toEndOf="@+id/edtConfirmPassword"
                 app:layout_constraintTop_toTopOf="@+id/edtConfirmPassword" />
@@ -189,11 +219,15 @@
                 style="@style/TextView_400_Regular"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_43sdp"
+                android:visibility="gone"
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:background="@drawable/radius_stroke"
                 android:hint="Enter location"
-                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingEnd="@dimen/_30sdp"
+                android:paddingStart="@dimen/_12sdp"
+                android:singleLine="true"
+                android:inputType="text"
                 android:textColorHint="@color/app_text_hint"
                 app:layout_constraintTop_toBottomOf="@+id/edtConfirmPassword" />
 
@@ -203,6 +237,7 @@
                 android:layout_height="@dimen/_18sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:src="@drawable/location"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/edtLocation"
                 app:layout_constraintEnd_toEndOf="@+id/edtLocation"
                 app:layout_constraintTop_toTopOf="@+id/edtLocation" />
@@ -214,11 +249,13 @@
                 android:layout_height="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_1sdp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:src="@drawable/tick"
+                android:src="@{ageCheck?@drawable/tick:@drawable/emty_tick}"
+                android:onClick="@{v->vm.onClick(v)}"
                 app:layout_constraintStart_toStartOf="@+id/edtLocation"
                 app:layout_constraintTop_toBottomOf="@+id/edtLocation" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAgeCheck"
                 style="@style/InterTextView_400_Regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -226,6 +263,7 @@
                 android:textColor="@color/app_text"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:textSize="@dimen/_12ssp"
+                android:onClick="@{v->vm.onClick(v)}"
                 app:layout_constraintTop_toTopOf="@+id/ivTickAge"
                 app:layout_constraintStart_toEndOf="@+id/ivTickAge"
                 app:layout_constraintBottom_toBottomOf="@+id/ivTickAge"/>
@@ -237,20 +275,24 @@
                 android:layout_height="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_1sdp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:src="@drawable/tick"
+                android:src="@{termsCheck?@drawable/tick:@drawable/emty_tick}"
+                android:onClick="@{v->vm.onClick(v)}"
                 app:layout_constraintStart_toStartOf="@+id/edtLocation"
                 app:layout_constraintTop_toBottomOf="@+id/ivTickAge" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPrivacy"
                 style="@style/InterTextView_400_Regular"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="I agree to the Terms of Service and Privacy"
                 android:textColor="@color/app_text"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:textSize="@dimen/_12ssp"
+                android:onClick="@{v->vm.onClick(v)}"
                 app:layout_constraintTop_toTopOf="@+id/ivTickPrivacy"
                 app:layout_constraintStart_toEndOf="@+id/ivTickPrivacy"
+                app:layout_constraintEnd_toEndOf="@id/edtConfirmPassword"
                 app:layout_constraintBottom_toBottomOf="@+id/ivTickPrivacy"/>
 
 

@@ -5,7 +5,7 @@
     <data>
         <variable
             name="callback"
-            type="com.example.fikenastet.base.utils.BaseCustomDialog.Listener" />
+            type="com.fisken_astet.fikenastet.base.utils.BaseCustomDialog.Listener" />
 
     </data>
 
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
             android:text="Delete Catch"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="@dimen/_16ssp"
             android:textColor="@color/colorPrimary"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginTop="@dimen/_15sdp"
+                android:onClick="@{v->callback.onViewClick(v)}"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/radius_border"
                 android:paddingHorizontal="@dimen/_15sdp"
@@ -79,6 +80,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_15sdp"
                 android:background="@drawable/radius_border"
+                android:onClick="@{v->callback.onViewClick(v)}"
                 android:backgroundTint="@color/app_text"
                 android:paddingHorizontal="@dimen/_15sdp"
                 app:layout_constraintBottom_toBottomOf="parent">

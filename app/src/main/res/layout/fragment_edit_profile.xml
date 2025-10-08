@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.dashboard.profile.ProfileFragmentVM" />
+            type="com.fisken_astet.fikenastet.ui.settings.SettingsVM" />
 
     </data>
 
@@ -35,8 +35,8 @@
         <!-- Notification -->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivNotification"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:src="@drawable/notification"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:text="@string/edit_profile"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -64,7 +64,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivImage"
@@ -82,7 +84,7 @@
             android:id="@+id/ivImage2"
             android:layout_width="@dimen/_90sdp"
             android:layout_height="@dimen/_90sdp"
-            android:src="@drawable/iv_dummy"
+            android:src="@drawable/iv_user_icon"
             android:scaleType="centerCrop"
             android:padding="@dimen/_1sdp"
             app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize16Percent"
@@ -98,6 +100,8 @@
             android:layout_height="wrap_content"
             android:text="Edit profile pic"
             android:layout_marginTop="@dimen/_8sdp"
+            android:textSize="@dimen/_13ssp"
+            android:onClick="@{v->vm.onClick(v)}"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="@id/ivImage"
             app:layout_constraintStart_toStartOf="@id/ivImage"
@@ -110,11 +114,12 @@
             android:paddingVertical="@dimen/_5sdp"
             android:minHeight="@dimen/_43sdp"
             android:singleLine="true"
+            android:hint="Enter Email"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:paddingEnd="@dimen/_35sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:background="@drawable/radius_stroke"
-            android:hint="JohnDoe@gmail.com"
+            android:enabled="false"
             android:inputType="textEmailAddress"
             android:imeOptions="actionNext"
             android:nextFocusForward="@id/etName"
@@ -140,8 +145,8 @@
             android:singleLine="true"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:paddingEnd="@dimen/_35sdp"
+            android:hint="Enter username"
             android:layout_marginTop="@dimen/_10sdp"
-            android:hint="JohnDoe_007"
             android:background="@drawable/radius_stroke"
             android:inputType="text"
             android:imeOptions="actionNext"
@@ -169,7 +174,7 @@
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:paddingEnd="@dimen/_35sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:hint="Hundai Ofc, Boston"
+            android:hint="Enter Location"
             android:background="@drawable/radius_stroke"
             android:inputType="text"
             android:imeOptions="actionNext"
@@ -179,10 +184,12 @@
             android:textColorHint="@color/colorPrimary"
             app:layout_constraintTop_toBottomOf="@+id/etName" />
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLocation"
             android:layout_width="@dimen/_16sdp"
             android:layout_height="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:src="@drawable/location"
+            android:onClick="@{v->vm.onClick(v)}"
             app:layout_constraintBottom_toBottomOf="@+id/etLocation"
             app:layout_constraintEnd_toEndOf="@+id/etLocation"
             app:layout_constraintTop_toTopOf="@+id/etLocation" />
@@ -195,10 +202,13 @@
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:gravity="start"
-            android:hint="@string/fishing_since_i_could_walk_pike_zander_fan"
+            android:hint="Write a short bio..."
             android:background="@drawable/radius_stroke"
             android:imeOptions="actionDone"
             android:textColor="@color/app_text_hint"
+            android:overScrollMode="always"
+            android:inputType="textMultiLine"
+            android:singleLine="false"
             android:paddingHorizontal="@dimen/_12sdp"
             android:textColorHint="@color/app_text_hint"
             app:layout_constraintTop_toBottomOf="@+id/etLocation" />

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.settings.SettingsVM" />
+            type="com.fisken_astet.fikenastet.ui.settings.SettingsVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,8 +34,8 @@
         <!-- Notification -->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivNotification"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:src="@drawable/notification"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:text="@string/notifications"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -63,7 +63,7 @@
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_25sdp"
             android:text="@string/push_notifications"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -78,6 +78,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/radius_stroke"
             android:text="Enabled"
+            android:onClick="@{v->vm.onClick(v)}"
             android:textColor="@color/colorPrimary"
             android:gravity="center_vertical"
             android:paddingHorizontal="@dimen/_12sdp"
@@ -97,11 +98,8 @@
             android:id="@+id/rvNotifications"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/radius_stroke"
-            tools:listitem="@layout/item_threads_category"
             android:visibility="gone"
-            android:layout_marginHorizontal="@dimen/_15sdp"
+            tools:listitem="@layout/holder_skills"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/tvCategory"
             />

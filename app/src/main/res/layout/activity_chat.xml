@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.chat.ChatActivityVM" />
+            type="com.fisken_astet.fikenastet.ui.chat.ChatActivityVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,23 +40,48 @@
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_marginEnd="@dimen/_15sdp"
-            android:src="@drawable/notification"
+            android:src="@drawable/ic_info"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/ivBack" />
-
-        <!-- Title -->
-        <androidx.appcompat.widget.AppCompatTextView
-            style="@style/TextView_500_Medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Message"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
-            app:layout_constraintBottom_toBottomOf="@id/ivNotification"
-            app:layout_constraintEnd_toStartOf="@id/ivNotification"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivUserImage"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            app:strokeColor="@color/colorPrimary"
+            app:strokeWidth="@dimen/_1sdp"
+            android:src="@drawable/iv_dummy"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="@dimen/_8sdp"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            app:layout_constraintTop_toTopOf="@id/ivBack"
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
             app:layout_constraintStart_toEndOf="@id/ivBack"
-            app:layout_constraintTop_toTopOf="@id/ivNotification" />
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/TextView_600_SemiBold"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginHorizontal="@dimen/_6sdp"
+            android:text="Smith Williams"
+            app:layout_constraintStart_toEndOf="@id/ivUserImage"
+            app:layout_constraintEnd_toStartOf="@id/ivNotification"
+            app:layout_constraintTop_toTopOf="@id/ivUserImage"
+            app:layout_constraintBottom_toBottomOf="@id/ivUserImage"/>
+
+<!--        &lt;!&ndash; Title &ndash;&gt;-->
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            style="@style/TextView_500_Medium"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Message"-->
+<!--            android:textColor="@color/colorPrimary"-->
+<!--            android:textSize="@dimen/_13ssp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/ivNotification"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/ivNotification"-->
+<!--            app:layout_constraintStart_toEndOf="@id/ivBack"-->
+<!--            app:layout_constraintTop_toTopOf="@id/ivNotification" />-->
 
 
         <!-- RecyclerView for messages -->
@@ -91,7 +116,7 @@
             android:paddingHorizontal="@dimen/_15sdp"
             android:textColor="@color/app_text_hint"
             android:textColorHint="@color/app_text_hint"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@+id/consChat"
             app:layout_constraintTop_toTopOf="@+id/consChat" />
 

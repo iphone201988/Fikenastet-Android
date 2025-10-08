@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.settings.SettingsVM" />
+            type="com.fisken_astet.fikenastet.ui.settings.SettingsVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,8 +34,8 @@
         <!-- Notification -->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivNotification"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:src="@drawable/notification"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:text="@string/payment_amp_orders"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -79,6 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
+            android:textSize="@dimen/_13ssp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:text="@string/transaction_history"
             app:layout_constraintTop_toBottomOf="@id/rvCards"
@@ -100,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 android:onClick="@{v->vm.onClick(v)}"
                 android:textColor="@color/colorPrimary"
                 android:text="@string/load_more"

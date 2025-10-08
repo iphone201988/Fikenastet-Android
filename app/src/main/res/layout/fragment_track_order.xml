@@ -7,12 +7,13 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.selling.track_order.TrackOrderVM" />
+            type="com.fisken_astet.fikenastet.ui.selling.track_order.TrackOrderVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         tools:context=".ui.selling.track_order.TrackOrderFragment">
 
 
@@ -38,17 +39,18 @@
                     android:id="@+id/ivBack"
                     android:layout_width="@dimen/_28sdp"
                     android:layout_height="@dimen/_28sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginStart="@dimen/_15sdp"
                     android:onClick="@{v -> vm.onClick(v)}"
                     android:src="@drawable/ic_back"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/view" />
+                    app:layout_constraintTop_toTopOf="@id/view" />
 
                 <!-- Notification -->
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivNotification"
-                    android:layout_width="@dimen/_22sdp"
-                    android:layout_height="@dimen/_22sdp"
+                    android:layout_width="@dimen/_19sdp"
+                    android:layout_height="@dimen/_19sdp"
                     android:layout_marginEnd="@dimen/_15sdp"
                     android:src="@drawable/notification"
                     app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -62,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:text="Track My Order"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/_16ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintBottom_toBottomOf="@id/ivNotification"
                     app:layout_constraintEnd_toStartOf="@id/ivNotification"
                     app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -94,7 +96,7 @@
                         android:layout_height="wrap_content"
                         android:text="Item"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,7 +108,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="Shimano Reel 3000 XT"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvItem" />
 
@@ -141,7 +143,7 @@
                         android:layout_height="wrap_content"
                         android:text="Order ID"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -153,7 +155,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="#FSK-2039482"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvTotalPaid" />
 
@@ -187,7 +189,7 @@
                         android:layout_height="wrap_content"
                         android:text="Paid via"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -199,7 +201,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="Stripe (Escrow)"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvPaymentMethod" />
 
@@ -231,7 +233,7 @@
                         android:layout_height="wrap_content"
                         android:text="Total Paid"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -242,9 +244,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
-                        android:text="$165 (incl. shipping)"
-                        android:textSize="@dimen/_14ssp"
+                        android:text="$165"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvShipping" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvInclShipping"
+                        style="@style/TextView_600_SemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text=" (incl. shipping)"
+                        android:textSize="@dimen/_13ssp"
+                        android:textColor="@color/colorPrimary"
+                        app:layout_constraintStart_toEndOf="@id/tvShippingValue"
                         app:layout_constraintTop_toBottomOf="@+id/tvShipping" />
 
 
@@ -267,7 +281,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:text="Shipping via PostNord"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="@+id/tvView"
                     app:layout_constraintTop_toBottomOf="@+id/tvView" />
 
@@ -296,7 +310,7 @@
                         android:layout_height="wrap_content"
                         android:text="Tracking ID"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -308,7 +322,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="PN-98374284"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvTrackingID" />
 
@@ -341,7 +356,7 @@
                         android:layout_height="wrap_content"
                         android:text="Estimated Delivery"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -353,7 +368,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="May 31 – Jun 2 "
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvEstimatedDelivery" />
 
@@ -378,7 +393,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:text="Delivery Progress"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="@+id/tvView2"
                     app:layout_constraintTop_toBottomOf="@+id/tvView2" />
 
@@ -408,7 +423,7 @@
                         android:layout_height="wrap_content"
                         android:text="Status"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -420,7 +435,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="In Transit "
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvVan" />
 
@@ -445,7 +460,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="Payment Confirmed"
                     android:textColor="@color/app_text"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/ivTickPaymentConfirmed"
                     app:layout_constraintStart_toEndOf="@+id/ivTickPaymentConfirmed"
                     app:layout_constraintTop_toTopOf="@+id/ivTickPaymentConfirmed" />
@@ -468,7 +483,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="Shipping Label Created"
                     android:textColor="@color/app_text"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/ivTickShippingLabelCreated"
                     app:layout_constraintStart_toEndOf="@+id/ivTickShippingLabelCreated"
                     app:layout_constraintTop_toTopOf="@+id/ivTickShippingLabelCreated" />
@@ -490,7 +505,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="Package Picked Up"
                     android:textColor="@color/app_text"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/ivTickPackagePickedUp"
                     app:layout_constraintStart_toEndOf="@+id/ivTickPackagePickedUp"
                     app:layout_constraintTop_toTopOf="@+id/ivTickPackagePickedUp" />
@@ -513,7 +528,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="In Transit"
                     android:textColor="@color/app_text"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/ivTickInTransit"
                     app:layout_constraintStart_toEndOf="@+id/ivTickInTransit"
                     app:layout_constraintTop_toTopOf="@+id/ivTickInTransit" />
@@ -536,7 +551,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="Delivered"
                     android:textColor="@color/app_text"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/ivDelivered"
                     app:layout_constraintStart_toEndOf="@+id/ivDelivered"
                     app:layout_constraintTop_toTopOf="@+id/ivDelivered" />
@@ -557,7 +572,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:text="Funds Status"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="@+id/tvView3"
                     app:layout_constraintTop_toBottomOf="@+id/tvView3" />
 
@@ -591,7 +606,7 @@
                     android:layout_marginStart="@dimen/_12sdp"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="Held in Escrow"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="@id/ivDelivered"
                     app:layout_constraintTop_toBottomOf="@+id/tvFundsStatus" />
 
@@ -604,7 +619,7 @@
                     android:layout_marginTop="@dimen/_2sdp"
                     android:layout_marginEnd="@dimen/_15sdp"
                     android:text="Will be released to seller upon delivery"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/ivDelivered"
                     app:layout_constraintTop_toBottomOf="@+id/tvHotspotsValue" />

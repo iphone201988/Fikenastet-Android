@@ -40,47 +40,55 @@
         android:id="@+id/navigateToAccountCreatedFragment"
         app:destination="@id/fragmentAccountCreated" />
 
+    <action
+        android:id="@+id/navigateToTwoAuthFragment"
+        app:destination="@id/fragmentTwoAuth" />
+
 
     <fragment
         android:id="@+id/fragmentSplash"
-        android:name="com.example.fikenastet.ui.auth.SplashFragment"
+        android:name="com.fisken_astet.fikenastet.ui.auth.SplashFragment"
         tools:layout="@layout/fragment_splash" />
 
     <fragment
         android:id="@+id/fragmentLogin"
-        android:name="com.example.fikenastet.ui.auth.LoginFragment"
+        android:name="com.fisken_astet.fikenastet.ui.auth.LoginFragment"
         tools:layout="@layout/fragment_login" />
 
     <fragment
         android:id="@+id/fragmentForget"
-        android:name="com.example.fikenastet.ui.auth.ForgetFragment"
+        android:name="com.fisken_astet.fikenastet.ui.auth.ForgetFragment"
         tools:layout="@layout/fragment_froget" />
     <fragment
         android:id="@+id/fragmentVerify"
-        android:name="com.example.fikenastet.ui.auth.VerifyFragment"
+        android:name="com.fisken_astet.fikenastet.ui.auth.VerifyFragment"
         tools:layout="@layout/fragment_verify" />
     <fragment
         android:id="@+id/fragmentPassword"
-        android:name="com.example.fikenastet.ui.auth.PasswordFragment"
+        android:name="com.fisken_astet.fikenastet.ui.auth.PasswordFragment"
         tools:layout="@layout/fragment_password" />
 
     <fragment
         android:id="@+id/fragmentPasswordSuccess"
-        android:name="com.example.fikenastet.ui.auth.PasswordSuccessFragment"
+        android:name="com.fisken_astet.fikenastet.ui.auth.PasswordSuccessFragment"
         tools:layout="@layout/fragment_password_success" />
     <fragment
         android:id="@+id/fragmentSignUp"
-        android:name="com.example.fikenastet.ui.auth.SignUpFragment"
+        android:name="com.fisken_astet.fikenastet.ui.auth.SignUpFragment"
         tools:layout="@layout/fragment_signup" />
     <fragment
         android:id="@+id/fragmentProfileReady"
-        android:name="com.example.fikenastet.ui.auth.ProfileReadyFragment"
+        android:name="com.fisken_astet.fikenastet.ui.auth.ProfileReadyFragment"
         tools:layout="@layout/fragment_profile_ready" />
 
     <fragment
         android:id="@+id/fragmentAccountCreated"
-        android:name="com.example.fikenastet.ui.auth.AccountCreatedFragment"
+        android:name="com.fisken_astet.fikenastet.ui.auth.AccountCreatedFragment"
         tools:layout="@layout/fragment_account_created" />
+    <fragment
+        android:id="@+id/fragmentTwoAuth"
+        android:name="com.fisken_astet.fikenastet.ui.settings.twoFactorAuth.TwoFactorAuthFragment"
+        tools:layout="@layout/fragment_two_factor_auth" />
 
 
 </navigation>

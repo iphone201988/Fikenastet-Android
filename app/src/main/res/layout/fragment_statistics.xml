@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.selling.statistics.StatisticsVM" />
+            type="com.fisken_astet.fikenastet.ui.selling.statistics.StatisticsVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -59,7 +59,7 @@
                 android:layout_marginBottom="@dimen/_12sdp"
                 android:text="Seller rating"
                 android:textColor="@color/full_gray"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvSellerRatingPrice" />
@@ -90,6 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginEnd="@dimen/_15sdp"
+            android:onClick="@{v->vm.onClick(v)}"
             android:background="@drawable/radius_border_middle"
             android:backgroundTint="@color/bg_home_card"
             app:layout_constraintBottom_toBottomOf="@+id/consSellerRating"
@@ -121,7 +122,7 @@
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:text="Product sold\nthis week"
                 android:textColor="@color/full_gray"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.settings.SettingsVM" />
+            type="com.fisken_astet.fikenastet.ui.settings.SettingsVM" />
 
     </data>
 
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:text="@string/add_new_payment_method"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -65,7 +65,7 @@
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_25sdp"
             android:text="@string/name_on_card"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -95,7 +95,7 @@
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:text="@string/expiry_date"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tvCvv"
@@ -128,7 +128,7 @@
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:text="@string/cvv"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toEndOf="@id/tvYear"
             app:layout_constraintEnd_toEndOf="parent"
@@ -143,7 +143,7 @@
             android:singleLine="true"
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@drawable/radius_stroke"
-            android:hint="Enter Cvv"
+            android:hint="Enter cvv"
             android:inputType="number"
             android:imeOptions="actionNext"
             android:nextFocusForward="@id/etNumber"
@@ -161,7 +161,7 @@
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:text="@string/card_number"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

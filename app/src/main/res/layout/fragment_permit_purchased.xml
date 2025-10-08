@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.dashboard.permits.buy_permit.BuyPermitVM" />
+            type="com.fisken_astet.fikenastet.ui.dashboard.permits.buy_permit.BuyPermitVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:text="Permit Purchased"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -78,7 +78,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:text="Lake Mälaren"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="@dimen/_17ssp"
             app:layout_constraintStart_toStartOf="@+id/ivLakeImage"
             app:layout_constraintTop_toBottomOf="@+id/ivLakeImage" />
 
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5sdp"
             android:text="1 Week Permit"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="@+id/tvLake"
             app:layout_constraintTop_toBottomOf="@+id/tvLake" />
 
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:text="Valid"
                 android:textColor="@color/app_text_hint"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -130,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:text="June 2, 2025 – June 9, 2025"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
 
@@ -164,7 +164,7 @@
                 android:layout_height="wrap_content"
                 android:text="Payment Method"
                 android:textColor="@color/app_text_hint"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -176,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:text="Swish"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvSpecies" />
 
@@ -210,7 +210,7 @@
                 android:layout_height="wrap_content"
                 android:text="Permit ID"
                 android:textColor="@color/app_text_hint"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -222,7 +222,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:text="#MLR-0923812"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvPermit" />
 
@@ -254,7 +254,7 @@
                 android:layout_height="wrap_content"
                 android:text="PDF file"
                 android:textColor="@color/app_text_hint"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -266,7 +266,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
                 android:text="PDF sent to your email"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvSeason" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -287,7 +287,6 @@
                 style="@style/InterTextView_500_Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="@{v ->vm.onClick(v)}"
                 android:text="@string/share_permit"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -323,7 +322,6 @@
                 style="@style/InterTextView_500_Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="@{v ->vm.onClick(v)}"
                 android:text="@string/all_fishing_permits"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"

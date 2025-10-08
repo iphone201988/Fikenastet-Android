@@ -9,7 +9,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.selling.message.MessageVM" />
+            type="com.fisken_astet.fikenastet.ui.selling.message.MessageVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

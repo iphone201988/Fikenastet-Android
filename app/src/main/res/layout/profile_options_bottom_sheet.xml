@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="callback"
+            type="com.fisken_astet.fikenastet.base.utils.BaseCustomBottomSheet.Listener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_sheet"
+        android:clipToPadding="false">
+        <View
+            android:id="@+id/viewBottom"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/radius_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBlock"
+            style="@style/InterTextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/radius_stroke_high"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:gravity="center"
+            android:onClick="@{v->callback.onViewClick(v)}"
+            android:paddingVertical="@dimen/_8sdp"
+            android:text="Block User"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewBottom" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvReport"
+            style="@style/InterTextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/radius_stroke_high"
+            android:onClick="@{v->callback.onViewClick(v)}"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_8sdp"
+            android:text="Report User"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBlock" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRemove"
+            style="@style/InterTextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:background="@drawable/radius_stroke_high"
+            android:onClick="@{v->callback.onViewClick(v)}"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_8sdp"
+            android:text="Remove Followers"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvReport"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -6,7 +6,7 @@
 
         <variable
             name="bean"
-            type="com.example.fikenastet.data.model.DummySocialFeed" />
+            type="com.fisken_astet.fikenastet.data.model.DummySocialFeed" />
 
         <variable
             name="pos"
@@ -14,7 +14,7 @@
 
         <variable
             name="callback"
-            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+            type="com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

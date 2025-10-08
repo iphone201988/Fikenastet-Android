@@ -6,7 +6,7 @@
 
         <variable
             name="bean"
-            type="com.example.fikenastet.data.model.DummyAllLake" />
+            type="com.fisken_astet.fikenastet.data.model.DummyAllLake" />
 
         <variable
             name="pos"
@@ -14,11 +14,11 @@
 
         <variable
             name="callback"
-            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+            type="com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_240sdp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_5sdp"
         android:background="@drawable/radius_border"
@@ -35,6 +35,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@{bean.name}"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +49,7 @@
             android:layout_marginTop="@dimen/_2sdp"
             android:text="Lake Mälaren"
             android:textColor="@color/app_text_hint"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvWeightType" />
@@ -73,7 +74,7 @@
             android:layout_marginTop="@dimen/_6sdp"
             android:text="Date"
             android:textColor="@color/app_text_hint"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider1" />
 
@@ -84,6 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
             android:text="May 27, 2025"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvDateLabel" />
 
@@ -96,6 +98,7 @@
             android:layout_marginStart="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_6sdp"
             android:text="Time"
+            android:visibility="gone"
             android:textColor="@color/app_text_hint"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintStart_toEndOf="@id/tvDate"
@@ -108,6 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
             android:text="06:45"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="@id/tvTimeLabel"
             app:layout_constraintTop_toBottomOf="@id/tvTimeLabel" />
 
@@ -122,7 +126,7 @@
             android:paddingEnd="@dimen/_20sdp"
             android:text="Weather"
             android:textColor="@color/app_text_hint"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintStart_toEndOf="@+id/tvTime"
             app:layout_constraintTop_toBottomOf="@id/divider1" />
 
@@ -133,6 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
             android:text="Cloudy"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="@+id/tvWeatherLabel"
             app:layout_constraintTop_toBottomOf="@id/tvWeatherLabel" />
 
@@ -157,7 +162,7 @@
             android:layout_marginTop="@dimen/_6sdp"
             android:text="Bait"
             android:textColor="@color/app_text_hint"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider2" />
 
@@ -168,6 +173,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
             android:text="Spinnerbait"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvBaitLabel" />
 
@@ -181,8 +187,8 @@
             android:layout_marginTop="@dimen/_6sdp"
             android:text="Visibility"
             android:textColor="@color/app_text_hint"
-            android:textSize="@dimen/_12ssp"
-            app:layout_constraintStart_toStartOf="@+id/tvTimeLabel"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="@+id/tvWeatherLabel"
             app:layout_constraintTop_toBottomOf="@id/divider2" />
 
         <!-- Like Icon -->
@@ -193,6 +199,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
             android:text="Public"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="@+id/tvVisibilityLabel"
             app:layout_constraintTop_toBottomOf="@id/tvVisibilityLabel" />
 
@@ -224,7 +231,7 @@
             android:layout_marginStart="@dimen/_5sdp"
             android:text="1.24k"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintStart_toEndOf="@id/ivLike"
             app:layout_constraintTop_toTopOf="@id/ivLike" />
 
@@ -246,7 +253,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:text="1.24k"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintStart_toEndOf="@id/ivComment"
             app:layout_constraintTop_toTopOf="@id/ivComment" />
 

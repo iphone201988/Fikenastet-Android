@@ -6,7 +6,7 @@
 
         <variable
             name="bean"
-            type="com.example.fikenastet.data.model.DummyAllLake" />
+            type="com.fisken_astet.fikenastet.data.model.DummyPermitData" />
 
         <variable
             name="pos"
@@ -14,7 +14,8 @@
 
         <variable
             name="callback"
-            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+            type="com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+        <import type="android.view.View"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,8 +36,9 @@
             style="@style/TextView_600_SemiBold"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
             android:text="@{bean.name}"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivPermit"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,6 +56,7 @@
 
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPermit"
             android:layout_width="@dimen/_16sdp"
             android:layout_height="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_5sdp"
@@ -90,7 +93,7 @@
                 android:layout_marginTop="@dimen/_2sdp"
                 android:text="Active"
                 android:textColor="@color/app_text_hint"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toEndOf="@+id/ivCalender"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -100,6 +103,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_3sdp"
+                android:textSize="@dimen/_13ssp"
                 android:text="June 2, 2025 – June 9, 2025"
                 app:layout_constraintStart_toStartOf="@+id/tvLocation"
                 app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
@@ -132,7 +136,7 @@
                 android:id="@+id/ivPdf"
                 android:layout_width="@dimen/_16sdp"
                 android:layout_height="@dimen/_16sdp"
-                android:src="@drawable/iv_pdf"
+                android:src="@drawable/iv_doc"
                 android:onClick="@{v -> callback.onItemClick(v, bean, pos)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -148,7 +152,7 @@
                 android:text="Recipe"
                 android:onClick="@{v -> callback.onItemClick(v, bean, pos)}"
                 android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintBottom_toBottomOf="@id/ivPdf"
                 app:layout_constraintStart_toEndOf="@id/ivPdf"
                 app:layout_constraintTop_toTopOf="@id/ivPdf" />
@@ -161,6 +165,7 @@
                 android:layout_marginStart="@dimen/_45sdp"
                 android:src="@drawable/map_bottom"
                 android:tint="@color/colorPrimary"
+                android:onClick="@{v -> callback.onItemClick(v, bean, pos)}"
                 app:layout_constraintBottom_toBottomOf="@id/ivPdf"
                 app:layout_constraintStart_toEndOf="@id/tvPdf"
                 app:layout_constraintTop_toTopOf="@id/ivPdf" />
@@ -173,11 +178,161 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:text="Lake info"
+                android:onClick="@{v -> callback.onItemClick(v, bean, pos)}"
                 android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintBottom_toBottomOf="@id/ivLakeInfo"
                 app:layout_constraintStart_toEndOf="@id/ivLakeInfo"
                 app:layout_constraintTop_toTopOf="@id/ivLakeInfo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMinimiseBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:visibility="@{bean.selected?View.VISIBLE:View.GONE}"
+            app:layout_constraintTop_toBottomOf="@id/consBottomRow">
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_400_Regular"
+                android:textSize="@dimen/_11ssp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:text="Younger:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider2"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMinimise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_600_SemiBold"
+                android:textSize="@dimen/_9ssp"
+                android:textColor="@color/colorPrimary"
+                android:text="Minimise"
+                android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv1"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSub1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_500_Medium"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/app_text"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="• Nykvarn Municipality"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv1"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSub2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_500_Medium"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/app_text"
+                android:text="• Service"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSub1"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSub3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_500_Medium"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/app_text"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="• Boat ramp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSub2"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSub4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_500_Medium"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/app_text"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="• The fishing license is valid\n   throughout Yngern."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSub3"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_400_Regular"
+                android:textSize="@dimen/_11ssp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="Lake area:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSub4"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSub5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_500_Medium"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/app_text"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="• 1430 hectares"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv2"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_400_Regular"
+                android:textSize="@dimen/_11ssp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="Accessibility:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSub5"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSub6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_500_Medium"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/app_text"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="• The lake is large and patchy and there\n  are many fishing spots to discover. In\n  winter, the ice provides greater\n  opportunities to reach attractive\n  fishing spots."
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv3"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_400_Regular"
+                android:textSize="@dimen/_11ssp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="Public transport:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSub6"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSub7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_500_Medium"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/app_text"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="• Commuter train from T-centralen, get\n  off at Östertälje, change to a bus\n  towards"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv4"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

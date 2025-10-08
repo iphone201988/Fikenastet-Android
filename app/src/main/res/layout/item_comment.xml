@@ -52,7 +52,7 @@
                 android:layout_marginTop="@dimen/_2sdp"
                 android:textColor="@color/app_text_hint"
                 android:text="Amazing!!!"
-                android:textSize="@dimen/_11ssp"
+                android:textSize= "@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="@+id/tvUserName"
                 app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
 

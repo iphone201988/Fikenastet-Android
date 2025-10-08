@@ -5,13 +5,13 @@
     <data>
         <variable
             name="bean"
-            type="com.example.fikenastet.data.model.ReplyModel" />
+            type="com.fisken_astet.fikenastet.data.model.ReplyModel" />
         <variable
             name="pos"
             type="Integer" />
         <variable
             name="callback"
-            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+            type="com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,8 +33,8 @@
             style="@style/TextView_400_Regular"
             android:layout_marginHorizontal="@dimen/_6sdp"
             android:text="@{bean.title}"
-            android:textSize="@dimen/_12ssp"
-            android:textColor="@color/app_text_hint"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/app_text"
             app:layout_constraintStart_toEndOf="@id/ivTick"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/ivTick"/>

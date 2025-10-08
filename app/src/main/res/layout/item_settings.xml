@@ -14,7 +14,7 @@
             type="Integer" />
         <variable
             name="callback"
-            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+            type="com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
 
     </data>
 
@@ -34,7 +34,7 @@
             size_reply2="@{size}"
             pos_reply2="@{pos}"
             android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>

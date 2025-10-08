@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.selling.p_details.ProductVM" />
+            type="com.fisken_astet.fikenastet.ui.selling.p_details.ProductVM" />
     </data>
 
     <ScrollView
@@ -32,6 +32,7 @@
                 android:id="@+id/ivBack"
                 android:layout_width="@dimen/_28sdp"
                 android:layout_height="@dimen/_28sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:onClick="@{v -> vm.onClick(v)}"
                 android:src="@drawable/ic_back"
@@ -41,8 +42,8 @@
             <!-- Notification -->
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivNotification"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
+                android:layout_width="@dimen/_19sdp"
+                android:layout_height="@dimen/_19sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:src="@drawable/notification"
                 app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -56,23 +57,39 @@
                 android:layout_height="wrap_content"
                 android:text="Product Detail"
                 android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/_16ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintBottom_toBottomOf="@id/ivNotification"
                 app:layout_constraintEnd_toStartOf="@id/ivNotification"
                 app:layout_constraintStart_toEndOf="@id/ivBack"
                 app:layout_constraintTop_toTopOf="@id/ivNotification" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMessages"
+                style="@style/InterTextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Messages"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                android:background="@drawable/radius_stroke_high"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="@id/ivNotification"
+                app:layout_constraintTop_toBottomOf="@id/ivNotification" />
+
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivLakeImage"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_150sdp"
+                android:layout_height="@dimen/_155sdp"
                 android:layout_marginHorizontal="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_9sdp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/reel"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivBack"
+                app:layout_constraintTop_toBottomOf="@+id/tvMessages"
                 app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
 
 
@@ -163,7 +180,7 @@
                     android:layout_height="wrap_content"
                     android:text="Price"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -175,7 +192,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="$165"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
 
@@ -196,7 +213,7 @@
                 android:singleLine="true"
                 android:text="Message"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_8ssp"
+                android:textSize="@dimen/_9ssp"
                 app:layout_constraintBottom_toBottomOf="@+id/consLocation"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/consLocation" />
@@ -228,7 +245,7 @@
                     android:layout_height="wrap_content"
                     android:text="Location"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -240,7 +257,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="Stockholm County, Sweden"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
 
@@ -274,7 +291,7 @@
                     android:layout_height="wrap_content"
                     android:text="Condition"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -286,7 +303,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="Good"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvCondition" />
 
@@ -318,7 +335,7 @@
                     android:layout_height="wrap_content"
                     android:text="Category"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -330,7 +347,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="Reels"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
 
@@ -362,7 +379,7 @@
                     android:layout_height="wrap_content"
                     android:text="Weight"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -374,7 +391,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="500g"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvWeight" />
 
@@ -410,7 +427,7 @@
                     android:layout_height="wrap_content"
                     android:text="Description"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -432,7 +449,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="High-quality Shimano 3000 XT spinning reel. Used twice, excellent drag system."
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
 
@@ -461,7 +478,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:text="Choose Payment Method"
                 android:textColor="@color/app_text_hint"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="@id/ivView1"
                 app:layout_constraintTop_toBottomOf="@+id/ivView1" />
 
@@ -476,6 +493,7 @@
                 android:gravity="center"
                 android:paddingHorizontal="@dimen/_12sdp"
                 android:text="Swish"
+                android:textSize="@dimen/_13ssp"
                 android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/app_text_hint"
                 app:layout_constraintEnd_toStartOf="@+id/tvOneMonth"
@@ -494,6 +512,7 @@
                 android:gravity="center"
                 android:paddingHorizontal="@dimen/_12sdp"
                 android:text="Stripe"
+                android:textSize="@dimen/_13ssp"
                 android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/app_text_hint"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -517,7 +536,6 @@
                     style="@style/InterTextView_500_Medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="@{v ->vm.onClick(v)}"
                     android:text="Confirm Purchase"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"

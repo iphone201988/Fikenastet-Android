@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.dashboard.profile.catch_log.CatchLogVM" />
+            type="com.fisken_astet.fikenastet.ui.dashboard.profile.catch_log.CatchLogVM" />
 
     </data>
 
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:text="Catch Log"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -83,7 +83,7 @@
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/iconFish"
                 app:layout_constraintStart_toStartOf="parent"
@@ -117,12 +117,10 @@
             app:tabGravity="fill"
             app:tabMode="fixed"
             app:tabIndicatorFullWidth="false"
-            android:textSize="@dimen/_12ssp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_15sdp"
-            app:tabTextColor="@color/app_text"
-            style="@style/TextView_600_SemiBold"
-            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextAppearance="@style/TabUnselectedStyle"
+            app:tabSelectedTextAppearance="@style/TabSelectedStyle"
             app:tabIndicatorColor="@color/transparent"
             app:tabRippleColor="@color/transparent"
             app:layout_constraintTop_toBottomOf="@id/consSearch" />

@@ -5,13 +5,13 @@
     <data>
         <variable
             name="bean"
-            type="com.example.fikenastet.data.model.ReplyModel"/>
+            type="com.fisken_astet.fikenastet.data.model.ReplyModel"/>
         <variable
             name="pos"
             type="Integer" />
         <variable
             name="callback"
-            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback"/>
+            type="com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
+            android:textSize="@dimen/_13ssp"
             android:text="Rapala Husky Jerk has been killer this year."
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -34,9 +35,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/TextView_400_Regular"
-            android:text="fiskaLisa"
+            android:text="\@fiskaLisa"
             android:textColor="@color/app_text_hint"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintTop_toBottomOf="@id/tvTitle"
             app:layout_constraintStart_toStartOf="parent"/>
         <View
@@ -62,7 +63,7 @@
             style="@style/TextView_400_Regular"
             android:layout_marginStart="@dimen/_3sdp"
             android:text="like"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintTop_toTopOf="@id/ivHeart"
             app:layout_constraintBottom_toBottomOf="@id/ivHeart"
             app:layout_constraintStart_toEndOf="@id/ivHeart"/>
@@ -73,7 +74,8 @@
             style="@style/TextView_400_Regular"
             android:layout_marginStart="@dimen/_3sdp"
             android:text="1h ago"
-            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/app_text_hint"
+            android:textSize="@dimen/_9ssp"
             app:layout_constraintTop_toTopOf="@id/ivHeart"
             app:layout_constraintBottom_toBottomOf="@id/ivHeart"
             app:layout_constraintEnd_toEndOf="parent"/>

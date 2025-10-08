@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.selling.inbox.InboxVM" />
+            type="com.fisken_astet.fikenastet.ui.selling.inbox.InboxVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,6 +24,7 @@
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:text="@string/overview"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,7 +35,7 @@
             android:layout_marginStart="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_8sdp"
             android:background="@drawable/radius_border_middle"
-            android:backgroundTint="@color/bg_home_card"
+            android:backgroundTint="@color/light_graph_color"
             app:layout_constraintEnd_toStartOf="@+id/consActiveListings"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvOverView">
@@ -72,7 +73,7 @@
                 android:layout_marginBottom="@dimen/_12sdp"
                 android:text="Chats to reply to"
                 android:textColor="@color/full_gray"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvCount" />
@@ -87,7 +88,7 @@
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:background="@drawable/radius_border_middle"
-            android:backgroundTint="@color/bg_home_card"
+            android:backgroundTint="@color/light_graph_color"
             app:layout_constraintBottom_toBottomOf="@+id/consChatsReply"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/consChatsReply"
@@ -125,7 +126,7 @@
                 android:layout_marginBottom="@dimen/_12sdp"
                 android:text="Active listiings"
                 android:textColor="@color/full_gray"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvCountActiveListings" />
@@ -139,7 +140,7 @@
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/_15sdp"
             android:background="@drawable/radius_border_middle"
-            android:backgroundTint="@color/bg_home_card"
+            android:backgroundTint="@color/light_graph_color"
             app:layout_constraintBottom_toBottomOf="@+id/consRepost"
             app:layout_constraintEnd_toStartOf="@+id/consRepost"
             app:layout_constraintStart_toStartOf="parent"
@@ -179,7 +180,7 @@
                 android:paddingBottom="@dimen/_12sdp"
                 android:text="Listing to renew"
                 android:textColor="@color/full_gray"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvCountListingRenew" />
 
@@ -194,7 +195,7 @@
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:background="@drawable/radius_border_middle"
-            android:backgroundTint="@color/bg_home_card"
+            android:backgroundTint="@color/light_graph_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/consListingRenew"
             app:layout_constraintTop_toBottomOf="@+id/consActiveListings">
@@ -232,7 +233,7 @@
                 android:paddingBottom="@dimen/_12sdp"
                 android:text="Listing to remove and repost"
                 android:textColor="@color/full_gray"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvCountRepost" />
 
@@ -248,18 +249,53 @@
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_16sdp"
             android:text="@string/results"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/consRepost" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/_6sdp"
+            android:onClick="@{v ->vm.onClick(v)}"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/radius_stroke_high"
+            app:layout_constraintStart_toStartOf="@id/tvResults"
+            app:layout_constraintTop_toBottomOf="@id/tvResults">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFilter"
+            style="@style/InterTextView_500_Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last 7 days"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/iv_drop"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintStart_toEndOf="@id/tvFilter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/consPayoutHistory"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/radius_border_middle"
-            android:backgroundTint="@color/bg_home_card"
+            android:backgroundTint="@color/light_graph_color"
             app:layout_constraintBottom_toBottomOf="@+id/consClicksListings"
             app:layout_constraintEnd_toStartOf="@+id/consClicksListings"
-            app:layout_constraintStart_toStartOf="@+id/tvResults"
+            app:layout_constraintStart_toStartOf="@+id/clFilter"
             app:layout_constraintTop_toTopOf="@+id/consClicksListings">
 
 
@@ -285,7 +321,7 @@
                 android:layout_marginBottom="@dimen/_12sdp"
                 android:text="No payout history"
                 android:textColor="@color/full_gray"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvPayoutPrice" />
 
@@ -301,10 +337,10 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:background="@drawable/radius_border_middle"
-            android:backgroundTint="@color/bg_home_card"
+            android:backgroundTint="@color/light_graph_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/consPayoutHistory"
-            app:layout_constraintTop_toBottomOf="@+id/tvResults">
+            app:layout_constraintTop_toBottomOf="@+id/clFilter">
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -330,7 +366,7 @@
                 android:layout_marginBottom="@dimen/_12sdp"
                 android:text="Clicks on listings"
                 android:textColor="@color/full_gray"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvClicksListingsPrice" />
@@ -362,7 +398,7 @@
             android:layout_marginStart="@dimen/_15sdp"
             android:layout_marginTop="8dp"
             android:background="@drawable/radius_border_middle"
-            android:backgroundTint="@color/bg_home_card"
+            android:backgroundTint="@color/light_graph_color"
             app:layout_constraintEnd_toStartOf="@+id/consNewFollowers"
             app:layout_constraintStart_toEndOf="@+id/consPayoutHistory"
             app:layout_constraintStart_toStartOf="parent"
@@ -392,7 +428,7 @@
                 android:layout_marginBottom="@dimen/_12sdp"
                 android:text="Seller rating"
                 android:textColor="@color/full_gray"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvSellerRatingPrice" />
@@ -424,7 +460,7 @@
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:background="@drawable/radius_border_middle"
-            android:backgroundTint="@color/bg_home_card"
+            android:backgroundTint="@color/light_graph_color"
             app:layout_constraintBottom_toBottomOf="@+id/consSellerRating"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/consSellerRating"
@@ -454,7 +490,7 @@
                 android:layout_marginBottom="@dimen/_12sdp"
                 android:text="New followers"
                 android:textColor="@color/full_gray"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvNewFollowersValue" />

@@ -6,7 +6,7 @@
 
         <variable
             name="bean"
-            type="com.example.fikenastet.data.model.DummyAllLake" />
+            type="com.fisken_astet.fikenastet.data.model.DummyAllLake" />
 
         <variable
             name="pos"
@@ -14,13 +14,12 @@
 
         <variable
             name="callback"
-            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+            type="com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_margin="@dimen/_6sdp"
         android:background="@drawable/radius_border"
         android:backgroundTint="@color/bg_home_card">
@@ -28,7 +27,7 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv1"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_120sdp"
+            android:layout_height="@dimen/_125sdp"
             android:padding="@dimen/_5sdp"
             android:scaleType="centerCrop"
             android:src="@drawable/reel"
@@ -54,31 +53,48 @@
             app:layout_constraintTop_toTopOf="@+id/iv1" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvDes"
-            style="@style/TextView_500_Medium"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:text="@{bean.name}"
-            android:gravity="start"
-            android:maxLines="2"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_10ssp"
-            android:layout_marginEnd="@dimen/_25sdp"
-            app:layout_constraintEnd_toStartOf="@+id/tvPrice"
-            app:layout_constraintStart_toStartOf="@+id/iv1"
-            app:layout_constraintTop_toBottomOf="@+id/iv1" />
-
-        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvPrice"
             style="@style/TextView_600_SemiBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
             android:text="$165"
             android:textSize="@dimen/_11ssp"
-            app:layout_constraintEnd_toEndOf="@+id/iv1"
-            app:layout_constraintTop_toBottomOf="@+id/iv1" />
+            app:layout_constraintTop_toBottomOf="@+id/iv1"
+            app:layout_constraintStart_toStartOf="@id/iv1"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDes"
+            style="@style/TextView_400_Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:text="@{bean.name}"
+            android:gravity="start"
+            android:maxLines="2"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iv1"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDes2"
+            style="@style/TextView_400_Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="Stockholm County, Sweden"
+            android:gravity="start"
+            android:maxLines="2"
+            android:textColor="@color/text_color_listing"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iv1"
+            app:layout_constraintTop_toBottomOf="@+id/tvDes" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -90,6 +106,7 @@
             android:layout_marginTop="@dimen/_7sdp"
             android:text="Buy now"
             android:textColor="@color/white"
+            android:visibility="gone"
             android:singleLine="true"
             android:paddingHorizontal="@dimen/_6sdp"
             android:layout_marginBottom="@dimen/_5sdp"
@@ -108,6 +125,7 @@
             android:layout_marginEnd="@dimen/_6sdp"
             android:text="View details"
             android:textColor="@color/white"
+            android:visibility="gone"
             android:singleLine="true"
             android:onClick="@{v ->callback.onItemClick(v, bean,pos)}"
             android:paddingHorizontal="@dimen/_6sdp"

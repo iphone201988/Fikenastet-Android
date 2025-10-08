@@ -14,7 +14,7 @@
             type="Integer" />
         <variable
             name="callback"
-            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback"/>
+            type="com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

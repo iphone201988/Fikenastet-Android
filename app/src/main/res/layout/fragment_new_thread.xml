@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.dashboard.profile.threads.ThreadsVM" />
+            type="com.fisken_astet.fikenastet.ui.dashboard.profile.threads.ThreadsVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,8 +34,8 @@
         <!-- Notification -->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivNotification"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:src="@drawable/notification"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:text="@string/start_a_new_thread"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -73,7 +73,7 @@
             android:layout_marginTop="@dimen/_25sdp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:text="@string/thread_title"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +113,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:text="@string/category"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -163,7 +163,7 @@
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:text="@string/post_content"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -198,7 +198,7 @@
                 style="@style/TextView_500_Medium"
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:text="@string/guidelines"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 android:textColor="@color/app_text_hint"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -210,7 +210,7 @@
                 android:layout_height="wrap_content"
                 style="@style/TextView_500_Medium"
                 android:text="@string/be_respectful_and_stay_on_topic"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="@id/tvGuidelineTitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvGuidelineTitle"
@@ -221,7 +221,7 @@
                 android:layout_height="wrap_content"
                 style="@style/TextView_500_Medium"
                 android:text="@string/no_spam_offensive_content_or_self_promotion"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="@id/tvGuidelineTitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvGuideline1"
@@ -232,7 +232,7 @@
                 android:layout_height="wrap_content"
                 style="@style/TextView_500_Medium"
                 android:text="@string/posts_are_pre_checked_by_ai_before_publishing"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="@id/tvGuidelineTitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvGuideline2"
@@ -256,7 +256,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/post_thread"
-                android:onClick="@{v ->vm.onClick(v)}"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

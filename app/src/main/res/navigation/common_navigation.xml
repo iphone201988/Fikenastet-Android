@@ -98,44 +98,60 @@
     <action
         android:id="@+id/navigateToNotifications"
         app:destination="@id/fragmentNotifications" />
+    <action
+        android:id="@+id/navigateToBlockedUser"
+        app:destination="@id/fragmentBlockedUser" />
+    <action
+        android:id="@+id/navigateToAccountIntegrity"
+        app:destination="@id/fragmentAccountIntegrity" />
+    <action
+        android:id="@+id/navigateToTwoFactorAuth"
+        app:destination="@id/fragmentTwoFactorAuth" />
+
+    <action
+        android:id="@+id/navigateToListingStatic"
+        app:destination="@id/fragmentListingStatic" />
+    <action
+        android:id="@+id/navigateToDevicePermissions"
+        app:destination="@id/fragmentDevicePermissions" />
 
 
     <fragment
         android:id="@+id/fragmentAllLake"
-        android:name="com.example.fikenastet.ui.dashboard.all_lake.AllLakeFragment"
+        android:name="com.fisken_astet.fikenastet.ui.dashboard.all_lake.AllLakeFragment"
         tools:layout="@layout/fragment_all_lake" />
 
     <fragment
         android:id="@+id/fragmentLakeDetails"
-        android:name="com.example.fikenastet.ui.common_classes.lake_details.LakeDetailsFragment"
+        android:name="com.fisken_astet.fikenastet.ui.common_classes.lake_details.LakeDetailsFragment"
         tools:layout="@layout/fragment_lake_details" />
 
     <fragment
         android:id="@+id/fragmentBuyPermit"
-        android:name="com.example.fikenastet.ui.dashboard.permits.buy_permit.BuyPermitFragment"
+        android:name="com.fisken_astet.fikenastet.ui.dashboard.permits.buy_permit.BuyPermitFragment"
         tools:layout="@layout/fragment_buy_permit" />
     <fragment
         android:id="@+id/fragmentPermitPurchased"
-        android:name="com.example.fikenastet.ui.dashboard.permits.purchased.PermitPurchasedFragment"
+        android:name="com.fisken_astet.fikenastet.ui.dashboard.permits.purchased.PermitPurchasedFragment"
         tools:layout="@layout/fragment_permit_purchased" />
 
     <fragment
         android:id="@+id/fragmentProductDetail"
-        android:name="com.example.fikenastet.ui.selling.p_details.ProductDetailFragment"
+        android:name="com.fisken_astet.fikenastet.ui.selling.p_details.ProductDetailFragment"
         tools:layout="@layout/fragment_product_detail" />
     <fragment
         android:id="@+id/fragmentOrderConfirmed"
-        android:name="com.example.fikenastet.ui.selling.order_confirmed.OrderConfirmedFragment"
+        android:name="com.fisken_astet.fikenastet.ui.selling.order_confirmed.OrderConfirmedFragment"
         tools:layout="@layout/fragment_order_confirmed" />
 
     <fragment
         android:id="@+id/fragmentTrackOrder"
-        android:name="com.example.fikenastet.ui.selling.track_order.TrackOrderFragment"
+        android:name="com.fisken_astet.fikenastet.ui.selling.track_order.TrackOrderFragment"
         tools:layout="@layout/fragment_track_order" />
 
     <fragment
         android:id="@+id/fragmentPostNewListing"
-        android:name="com.example.fikenastet.ui.selling.post_listing.PostNewListingFragment"
+        android:name="com.fisken_astet.fikenastet.ui.selling.post_listing.PostNewListingFragment"
         tools:layout="@layout/fragment_post_new_listing" />
 
 
@@ -143,90 +159,111 @@
     <!-- by M -->
     <fragment
         android:id="@+id/fragmentThreadDetail"
-        android:name="com.example.fikenastet.ui.dashboard.profile.threads.ThreadDetailFragment"
+        android:name="com.fisken_astet.fikenastet.ui.dashboard.profile.threads.ThreadDetailFragment"
         tools:layout="@layout/fragment_thread_detail" />
 
     <fragment
         android:id="@+id/fragmentReportAbuse"
-        android:name="com.example.fikenastet.ui.dashboard.profile.threads.ReportAbuseFragment"
+        android:name="com.fisken_astet.fikenastet.ui.dashboard.profile.threads.ReportAbuseFragment"
         tools:layout="@layout/fragment_report_abuse" />
 
     <fragment
         android:id="@+id/fragmentNewThread"
-        android:name="com.example.fikenastet.ui.dashboard.profile.threads.NewThreadFragment"
+        android:name="com.fisken_astet.fikenastet.ui.dashboard.profile.threads.NewThreadFragment"
         tools:layout="@layout/fragment_new_thread" />
     <fragment
         android:id="@+id/fragmentAllThreads"
-        android:name="com.example.fikenastet.ui.dashboard.profile.threads.AllThreadsFragment"
+        android:name="com.fisken_astet.fikenastet.ui.dashboard.profile.threads.AllThreadsFragment"
         tools:layout="@layout/fragment_all_threads" />
     <fragment
         android:id="@+id/fragmentChangePassword"
-        android:name="com.example.fikenastet.ui.settings.change_password.ChangePasswordFragment"
+        android:name="com.fisken_astet.fikenastet.ui.settings.change_password.ChangePasswordFragment"
         tools:layout="@layout/fragment_change_password" />
     <fragment
         android:id="@+id/fragmentNotificationsEnabled"
-        android:name="com.example.fikenastet.ui.settings.notification_enabled.NotificationFragment"
+        android:name="com.fisken_astet.fikenastet.ui.settings.notification_enabled.NotificationFragment"
         tools:layout="@layout/fragment_notification" />
     <fragment
         android:id="@+id/fragmentAddCard"
-        android:name="com.example.fikenastet.ui.settings.payment.AddCardFragment"
+        android:name="com.fisken_astet.fikenastet.ui.settings.payment.AddCardFragment"
         tools:layout="@layout/fragment_add_card" />
     <fragment
         android:id="@+id/fragmentPayment"
-        android:name="com.example.fikenastet.ui.settings.payment.PaymentFragment"
+        android:name="com.fisken_astet.fikenastet.ui.settings.payment.PaymentFragment"
         tools:layout="@layout/fragment_payment" />
     <fragment
         android:id="@+id/fragmentEditProfile"
-        android:name="com.example.fikenastet.ui.dashboard.profile.EditProfileFragment"
+        android:name="com.fisken_astet.fikenastet.ui.dashboard.profile.EditProfileFragment"
         tools:layout="@layout/fragment_edit_profile" />
     <fragment
         android:id="@+id/fragmentFollower"
-        android:name="com.example.fikenastet.ui.common_classes.follower_following.FollowersFragment"
+        android:name="com.fisken_astet.fikenastet.ui.common_classes.follower_following.FollowersFragment"
         tools:layout="@layout/fragment_followers" />
     <fragment
         android:id="@+id/fragmentFollowing"
-        android:name="com.example.fikenastet.ui.common_classes.follower_following.FollowingFragment"
+        android:name="com.fisken_astet.fikenastet.ui.common_classes.follower_following.FollowingFragment"
         tools:layout="@layout/fragment_following" />
     <fragment
         android:id="@+id/fragmentMyLakes"
-        android:name="com.example.fikenastet.ui.settings.lake_owner_panel.MyLakesFragment"
+        android:name="com.fisken_astet.fikenastet.ui.settings.lake_owner_panel.MyLakesFragment"
         tools:layout="@layout/fragment_my_lakes" />
     <fragment
         android:id="@+id/fragmentMyLakeDetail"
-        android:name="com.example.fikenastet.ui.settings.lake_owner_panel.MyLakeDetailFragment"
+        android:name="com.fisken_astet.fikenastet.ui.settings.lake_owner_panel.MyLakeDetailFragment"
         tools:layout="@layout/fragment_my_lake_detail" />
     <fragment
         android:id="@+id/fragmentAddNewLake"
-        android:name="com.example.fikenastet.ui.settings.lake_owner_panel.AddNewLakeFragment"
+        android:name="com.fisken_astet.fikenastet.ui.settings.lake_owner_panel.AddNewLakeFragment"
         tools:layout="@layout/fragment_add_new_lake" />
     <fragment
         android:id="@+id/fragmentAddFeed"
-        android:name="com.example.fikenastet.ui.dashboard.profile.feeds.AddFeedsFragment"
+        android:name="com.fisken_astet.fikenastet.ui.dashboard.profile.feeds.AddFeedsFragment"
         tools:layout="@layout/fragment_add_feeds" />
     <fragment
         android:id="@+id/fragmentMessageList"
-        android:name="com.example.fikenastet.ui.chat.MessageListFragment"
+        android:name="com.fisken_astet.fikenastet.ui.chat.MessageListFragment"
         tools:layout="@layout/fragment_message_list" />
     <fragment
         android:id="@+id/fragmentOtherUser"
-        android:name="com.example.fikenastet.ui.otherUserProfile.OtherUserFragment"
+        android:name="com.fisken_astet.fikenastet.ui.otherUserProfile.OtherUserFragment"
         tools:layout="@layout/fragment_other_user" />
     <fragment
         android:id="@+id/fragmentCatchLog"
-        android:name="com.example.fikenastet.ui.dashboard.profile.catch_log.CatchLogFragment"
+        android:name="com.fisken_astet.fikenastet.ui.dashboard.profile.catch_log.CatchLogFragment"
         tools:layout="@layout/fragment_catch_log" />
     <fragment
         android:id="@+id/fragmentAddCatchLog"
-        android:name="com.example.fikenastet.ui.dashboard.profile.catch_log.AddCatchLogFragment"
+        android:name="com.fisken_astet.fikenastet.ui.dashboard.profile.catch_log.AddCatchLogFragment"
         tools:layout="@layout/fragment_add_catch_log" />
     <fragment
         android:id="@+id/fragmentViewCatchLog"
-        android:name="com.example.fikenastet.ui.dashboard.profile.catch_log.ViewCatchReportFragment"
+        android:name="com.fisken_astet.fikenastet.ui.dashboard.profile.catch_log.ViewCatchReportFragment"
         tools:layout="@layout/fragment_view_catch_report" />
     <fragment
         android:id="@+id/fragmentNotifications"
-        android:name="com.example.fikenastet.ui.notifications.NotificationsFragment"
+        android:name="com.fisken_astet.fikenastet.ui.notifications.NotificationsFragment"
         tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/fragmentBlockedUser"
+        android:name="com.fisken_astet.fikenastet.ui.settings.blocked_user.BlockedUserFragment"
+        tools:layout="@layout/fragment_blocked_user" />
+    <fragment
+        android:id="@+id/fragmentAccountIntegrity"
+        android:name="com.fisken_astet.fikenastet.ui.settings.account_integrity.AccountIntegrityFragment"
+        tools:layout="@layout/fragment_account_integrity" />
+    <fragment
+        android:id="@+id/fragmentTwoFactorAuth"
+        android:name="com.fisken_astet.fikenastet.ui.settings.twoFactorAuth.TwoFactorAuthFragment"
+        tools:layout="@layout/fragment_two_factor_auth" />
+    <fragment
+        android:id="@+id/fragmentListingStatic"
+        android:name="com.fisken_astet.fikenastet.ui.selling.statistics.ListingStaticFragment"
+        tools:layout="@layout/fragment_listing_static" />
+    <fragment
+        android:id="@+id/fragmentDevicePermissions"
+        android:name="com.fisken_astet.fikenastet.ui.settings.device_permissions.DevicePermissionsFragment"
+        tools:layout="@layout/fragment_device_permissions" />
 
 
 </navigation>

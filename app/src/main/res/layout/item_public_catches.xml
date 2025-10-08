@@ -11,23 +11,29 @@
             type="Integer" />
         <variable
             name="callback"
-            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+            type="com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
 
     </data>
-
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:backgroundTint="@color/bg_home_card"
+        app:cardElevation="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_15sdp">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/_5sdp"
-        android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
-        android:layout_marginBottom="@dimen/_20sdp">
+        android:padding="@dimen/_8sdp"
+        android:onClick="@{v->callback.onItemClick(v,bean,pos)}">
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
             android:text="4.3kg Pike"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -37,7 +43,7 @@
             android:layout_height="wrap_content"
             style="@style/TextView_400_Regular"
             android:text="Lake Mälaren"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintTop_toBottomOf="@id/tvTitle"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +63,7 @@
             android:text="Date"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintTop_toBottomOf="@id/view1"
             app:layout_constraintStart_toStartOf="parent"
@@ -67,9 +73,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/TextView_400_Regular"
-            android:text="Time"
+            android:text="Weather"
             android:layout_marginTop="@dimen/_5sdp"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintTop_toBottomOf="@id/view1"
             app:layout_constraintStart_toEndOf="@id/tvDateLabel"
@@ -81,6 +87,7 @@
             style="@style/TextView_400_Regular"
             android:layout_marginStart="@dimen/_5sdp"
             android:text="Weather"
+            android:visibility="invisible"
             android:layout_marginTop="@dimen/_5sdp"
             android:textSize="@dimen/_12ssp"
             android:textColor="@color/app_text_hint"
@@ -93,6 +100,7 @@
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
             android:text="May 27, 2025"
+            android:textSize="@dimen/_13ssp"
             android:layout_marginEnd="@dimen/_10sdp"
             app:layout_constraintTop_toBottomOf="@id/tvDateLabel"
             app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +110,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
-            android:text="06:45"
+            android:text="Cloudy"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintTop_toBottomOf="@id/tvDateLabel"
             app:layout_constraintStart_toEndOf="@id/tvDate"
             app:layout_constraintEnd_toStartOf="@id/tvWeather"/>
@@ -112,6 +121,7 @@
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
             android:text="Cloudy"
+            android:visibility="invisible"
             android:layout_marginStart="@dimen/_5sdp"
             app:layout_constraintTop_toBottomOf="@id/tvWeatherLabel"
             app:layout_constraintStart_toEndOf="@id/tvTime"
@@ -131,7 +141,7 @@
             android:text="Bait"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintTop_toBottomOf="@id/view2"
             app:layout_constraintStart_toStartOf="parent"
@@ -142,6 +152,7 @@
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
             android:text="Spinner Bait"
+            android:textSize="@dimen/_13ssp"
             android:layout_marginEnd="@dimen/_10sdp"
             app:layout_constraintTop_toBottomOf="@id/tvBaitLabel"
             app:layout_constraintStart_toStartOf="parent"
@@ -153,7 +164,7 @@
             style="@style/TextView_400_Regular"
             android:text="Visibility"
             android:layout_marginTop="@dimen/_5sdp"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             android:textColor="@color/app_text_hint"
             app:layout_constraintTop_toBottomOf="@id/view2"
             app:layout_constraintStart_toEndOf="@id/tvBaitLabel"
@@ -178,6 +189,7 @@
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
             android:text="Public"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintTop_toBottomOf="@id/tvVisibilityLabel"
             app:layout_constraintStart_toEndOf="@id/tvBait"
             app:layout_constraintEnd_toStartOf="@id/tvVisibility2"/>
@@ -217,7 +229,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_3sdp"
             android:text="1.24k"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivHeart"
             app:layout_constraintStart_toEndOf="@id/ivHeart"
             app:layout_constraintTop_toTopOf="@id/ivHeart" />
@@ -242,9 +254,10 @@
             android:layout_marginStart="@dimen/_3sdp"
             android:text="1.26k"
             android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivEdit"
             app:layout_constraintStart_toEndOf="@id/ivEdit"
             app:layout_constraintTop_toTopOf="@id/ivEdit" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

@@ -11,14 +11,14 @@
             type="Integer" />
         <variable
             name="callback"
-            type="com.example.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+            type="com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/_2sdp">
+        android:layout_marginVertical="@dimen/_1sdp">
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/ivImage"
             style="@style/TextView_500_Medium"
@@ -27,7 +27,7 @@
             android:text="•"
             android:gravity="start"
             android:textColor="@color/app_text_hint"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintTop_toTopOf="@id/tvTitle"
             app:layout_constraintStart_toStartOf="parent"/>
         <androidx.appcompat.widget.AppCompatTextView
@@ -38,7 +38,7 @@
             android:layout_marginStart="@dimen/_4sdp"
             android:text="@{bean}"
             android:textColor="@color/app_text_hint"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintEnd_toStartOf="@id/tvRemove"
             app:layout_constraintStart_toEndOf="@id/ivImage"
             app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +51,7 @@
             android:text="Remove"
             android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvTitle"
             app:layout_constraintTop_toTopOf="parent" />

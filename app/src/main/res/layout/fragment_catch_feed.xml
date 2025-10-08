@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.dashboard.profile.catch_log.CatchLogVM" />
+            type="com.fisken_astet.fikenastet.ui.dashboard.profile.catch_log.CatchLogVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
             android:text="@string/feed"
+            android:textSize="@dimen/_13ssp"
             android:layout_marginTop="@dimen/_5sdp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -29,6 +30,7 @@
             android:layout_height="wrap_content"
             style="@style/TextView_300_Light"
             android:text="See all"
+            android:textSize="@dimen/_13ssp"
             android:onClick="@{v->vm.onClick(v)}"
             android:textColor="@color/colorPrimary"
             app:layout_constraintTop_toTopOf="@id/tvHeader"

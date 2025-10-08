@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.settings.lake_owner_panel.MyLakesVM" />
+            type="com.fisken_astet.fikenastet.ui.settings.lake_owner_panel.MyLakesVM" />
 
     </data>
 
@@ -37,8 +37,8 @@
         <!-- Notification -->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivNotification"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:src="@drawable/notification"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:text="@string/add_new_lake"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -78,7 +78,7 @@
                     android:layout_marginTop="@dimen/_25sdp"
                     android:text="Lake Name"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -108,7 +108,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Upload Lake photo (least 1 photos)"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintEnd_toStartOf="@id/tvAddMore"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/etTitle" />
@@ -152,7 +152,7 @@
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="Upload Photos"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_12ssp"
                         app:layout_constraintEnd_toEndOf="@+id/ivUpload"
                         app:layout_constraintStart_toStartOf="@+id/ivUpload"
                         app:layout_constraintTop_toBottomOf="@+id/ivUpload" />
@@ -166,7 +166,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="General Lake Information"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/consUploadPic" />
@@ -193,7 +193,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Lake Location"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/etLakeInfo" />
@@ -221,7 +221,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Depth Info"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/etLakeLocation" />
@@ -249,7 +249,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Season"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/etDepthInfo" />
@@ -282,9 +282,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:text="Permit"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_12ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvSeason" />
@@ -297,6 +296,7 @@
                     android:layout_marginTop="@dimen/_5sdp"
                     android:background="@drawable/radius_stroke"
                     android:hint="Required"
+                    android:textSize="@dimen/_13ssp"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="@dimen/_12sdp"
                     android:textColorHint="@color/app_text_hint"
@@ -319,7 +319,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Add Species"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvPermit"/>
@@ -340,7 +340,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Add Permit Prices"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/rvSpecies"/>
@@ -352,7 +352,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="For one day"
                     android:layout_marginEnd="@dimen/_5sdp"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/black"
                     app:layout_constraintEnd_toStartOf="@id/tvOneWeekLabel"
                     app:layout_constraintStart_toStartOf="parent"
@@ -384,7 +384,8 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:text="For one Week"
-                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/tvOneDayLabel"
                     app:layout_constraintTop_toBottomOf="@id/tvAddPermitPrices"/>
@@ -415,7 +416,8 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:text="For one month"
-                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/etOneDay"/>
@@ -446,7 +448,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Add Local Rules &amp; Regulations"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/etOneMonth"/>
@@ -474,10 +476,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/InterTextView_500_Medium"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_10ssp"
                     android:text="Add"
                     android:gravity="start"
-                    android:padding="@dimen/_5sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:paddingHorizontal="@dimen/_6sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:background="@drawable/radius_border"
                     android:onClick="@{v->vm.onClick(v)}"
@@ -488,7 +491,8 @@
                     android:id="@+id/rvAddRules"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@id/etAddRules"
                     />
@@ -500,7 +504,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Add lake hotspots for fissing"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/rvAddRules"/>
@@ -527,10 +531,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/InterTextView_500_Medium"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_10ssp"
                     android:text="Add"
                     android:gravity="start"
-                    android:padding="@dimen/_5sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:paddingHorizontal="@dimen/_6sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:background="@drawable/radius_border"
                     android:onClick="@{v->vm.onClick(v)}"
@@ -541,7 +546,8 @@
                     android:id="@+id/rvAddHotspots"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginHorizontal="@dimen/_8sdp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@id/etAddHotspots"
                     />
@@ -561,8 +567,7 @@
                         style="@style/InterTextView_500_Medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/post_thread"
-                        android:onClick="@{v ->vm.onClick(v)}"
+                        android:text="@string/submit_for_admin_approval"
                         android:textColor="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -586,7 +591,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Note:"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_12ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/consButton"/>
@@ -597,7 +602,7 @@
                     android:layout_height="wrap_content"
                     android:text="All new lakes must be approved by an admin before permits can be sold to users."
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_12ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvNoteLabel"

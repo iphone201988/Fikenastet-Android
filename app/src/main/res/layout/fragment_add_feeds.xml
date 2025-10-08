@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.dashboard.profile.feeds.FeedVM" />
+            type="com.fisken_astet.fikenastet.ui.dashboard.profile.feeds.FeedVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,8 +35,8 @@
         <!-- Notification -->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivNotification"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:src="@drawable/notification"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:text="@string/add_feed"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -64,7 +64,7 @@
             android:text="Upload Lake photo (least 1 photos)"
             android:textColor="@color/app_text_hint"
             android:layout_marginStart="@dimen/_15sdp"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintEnd_toStartOf="@id/tvAddMore"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivBack" />
@@ -107,9 +107,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
-                android:text="Upload Photos"
+                android:text="Upload Photos or Video(30 seconds)"
                 android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintEnd_toEndOf="@+id/ivUpload"
                 app:layout_constraintStart_toStartOf="@+id/ivUpload"
                 app:layout_constraintTop_toBottomOf="@+id/ivUpload" />
@@ -128,45 +128,37 @@
             tools:listitem="@layout/item_feed"
             app:layout_constraintTop_toBottomOf="@id/tvUploadLabel"/>
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvFishCaughtLabel"
+            android:id="@+id/tvCaption"
             style="@style/TextView_500_Medium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12sdp"
-            android:text="@string/fish_caught"
+            android:text="Caption"
             android:textColor="@color/app_text_hint"
             android:layout_marginHorizontal="@dimen/_15sdp"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/consUploadPic" />
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etFishCaught"
+            android:id="@+id/etCaption"
             style="@style/TextView_400_Regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="@dimen/_5sdp"
-            android:minHeight="@dimen/_43sdp"
+            android:paddingVertical="@dimen/_9sdp"
+            android:minHeight="@dimen/_80sdp"
             android:singleLine="true"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:paddingEnd="@dimen/_38sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:imeOptions="actionNext"
             android:nextFocusForward="@id/etTag"
+            android:gravity="start"
             android:background="@drawable/radius_stroke"
             android:hint="Enter here"
             android:paddingHorizontal="@dimen/_12sdp"
             android:textColorHint="@color/app_text_hint"
-            app:layout_constraintTop_toBottomOf="@+id/tvFishCaughtLabel" />
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/_18sdp"
-            android:layout_height="@dimen/_18sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:src="@drawable/famicons_fish"
-            app:tint="@color/colorPrimary"
-            app:layout_constraintBottom_toBottomOf="@+id/etFishCaught"
-            app:layout_constraintEnd_toEndOf="@+id/etFishCaught"
-            app:layout_constraintTop_toTopOf="@+id/etFishCaught" />
+            app:layout_constraintTop_toBottomOf="@+id/tvCaption" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvTagLabel"
@@ -174,13 +166,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_12sdp"
-            android:text="Add Tags"
+            android:text="Add tags"
             android:textColor="@color/app_text_hint"
             android:layout_marginStart="@dimen/_15sdp"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintEnd_toStartOf="@id/tvAddMoreTag"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etFishCaught" />
+            app:layout_constraintTop_toBottomOf="@id/etCaption" />
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvAddMoreTag"
             style="@style/TextView_500_Medium"
@@ -219,6 +211,58 @@
             app:layout_constraintBottom_toBottomOf="@+id/etTag"
             app:layout_constraintEnd_toEndOf="@+id/etTag"
             app:layout_constraintTop_toTopOf="@+id/etTag" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTagUsersLabel"
+            style="@style/TextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="Tag users"
+            android:textColor="@color/app_text_hint"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toStartOf="@id/tvAddUserTag"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etTag" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddUserTag"
+            style="@style/TextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="+ Add more"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTagUsersLabel"
+            app:layout_constraintBottom_toBottomOf="@id/tvTagUsersLabel"/>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etTagUser"
+            style="@style/TextView_400_Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/_5sdp"
+            android:minHeight="@dimen/_43sdp"
+            android:singleLine="true"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_38sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:imeOptions="actionDone"
+            android:background="@drawable/radius_stroke"
+            android:hint="Enter username"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:textColorHint="@color/app_text_hint"
+            app:layout_constraintTop_toBottomOf="@+id/tvTagUsersLabel" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:src="@drawable/iv_profile"
+            app:layout_constraintBottom_toBottomOf="@+id/etTagUser"
+            app:layout_constraintEnd_toEndOf="@+id/etTagUser"
+            app:layout_constraintTop_toTopOf="@+id/etTagUser" />
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/consButton"
             android:layout_width="match_parent"
@@ -237,7 +281,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Post Feed"
-                android:onClick="@{v ->vm.onClick(v)}"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

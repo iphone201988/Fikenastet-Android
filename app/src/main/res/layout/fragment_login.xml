@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.auth.AuthCommonVM" />
+            type="com.fisken_astet.fikenastet.ui.auth.AuthCommonVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -63,8 +63,13 @@
             android:layout_height="@dimen/_43sdp"
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_22sdp"
+            android:paddingEnd="@dimen/_30sdp"
             android:background="@drawable/radius_stroke"
             android:hint="Enter email"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@id/edtPassword"
             android:paddingHorizontal="@dimen/_12sdp"
             android:textColorHint="@color/app_text_hint"
             app:layout_constraintTop_toBottomOf="@+id/tvDes" />
@@ -85,19 +90,25 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_43sdp"
             android:layout_marginHorizontal="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:background="@drawable/radius_stroke"
             android:hint="Enter password"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
             android:paddingHorizontal="@dimen/_12sdp"
             android:textColorHint="@color/app_text_hint"
             app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPassword"
             android:layout_width="@dimen/_18sdp"
             android:layout_height="@dimen/_18sdp"
             android:layout_marginEnd="@dimen/_12sdp"
             android:src="@drawable/solar_eye"
+            android:onClick="@{v->vm.onClick(v)}"
             app:layout_constraintBottom_toBottomOf="@+id/edtPassword"
             app:layout_constraintEnd_toEndOf="@+id/edtPassword"
             app:layout_constraintTop_toTopOf="@+id/edtPassword" />

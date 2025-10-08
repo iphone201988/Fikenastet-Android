@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.fisken_astet.fikenastet.data.model.DummyAllLake" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="callback"
+            type="com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consViewDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_6sdp"
+        android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
+        android:background="@drawable/radius_border"
+        android:backgroundTint="@color/bg_home_card">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_125sdp"
+            android:padding="@dimen/_5sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/reel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize15Percent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrice"
+            style="@style/TextView_600_SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="$165"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintTop_toBottomOf="@+id/iv1"
+            app:layout_constraintStart_toStartOf="@id/iv1"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDes"
+            style="@style/TextView_400_Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:text="@{bean.name}"
+            android:gravity="start"
+            android:maxLines="2"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iv1"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDes2"
+            style="@style/TextView_400_Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="Stockholm County, Sweden"
+            android:gravity="start"
+            android:maxLines="2"
+            android:textColor="@color/text_color_listing"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iv1"
+            app:layout_constraintTop_toBottomOf="@+id/tvDes" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvViewDetails"
+            style="@style/InterTextView_500_Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remove"
+            android:textColor="@color/white"
+            android:singleLine="true"
+            android:onClick="@{v ->callback.onItemClick(v, bean,pos)}"
+            android:paddingHorizontal="@dimen/_6sdp"
+            android:paddingVertical="@dimen/_4sdp"
+            android:background="@drawable/radius_border"
+            android:textSize="@dimen/_8ssp"
+            android:backgroundTint="@color/app_text"
+            app:layout_constraintBottom_toBottomOf="@+id/tvBuyNow"
+            app:layout_constraintStart_toStartOf="@id/iv1"
+            app:layout_constraintTop_toTopOf="@+id/tvBuyNow" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBuyNow"
+            style="@style/InterTextView_500_Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="Edit"
+            android:textColor="@color/white"
+            android:singleLine="true"
+            android:paddingHorizontal="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_4sdp"
+            android:background="@drawable/radius_border"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvViewDetails"
+            app:layout_constraintTop_toBottomOf="@+id/tvDes2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

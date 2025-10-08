@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.selling.post_listing.PostListingVM" />
+            type="com.fisken_astet.fikenastet.ui.selling.post_listing.PostListingVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,8 +47,8 @@
                 <!-- Notification -->
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivNotification"
-                    android:layout_width="@dimen/_22sdp"
-                    android:layout_height="@dimen/_22sdp"
+                    android:layout_width="@dimen/_19sdp"
+                    android:layout_height="@dimen/_19sdp"
                     android:layout_marginEnd="@dimen/_15sdp"
                     android:src="@drawable/notification"
                     app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:text="Post New Listing"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/_16ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintBottom_toBottomOf="@id/ivNotification"
                     app:layout_constraintEnd_toStartOf="@id/ivNotification"
                     app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -76,6 +76,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:text="Category"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text_hint"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/ivBack" />
@@ -112,6 +113,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Upload photo (least 2 photos)"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text_hint"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/edtCategory" />
@@ -124,7 +126,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:text="+ Add more"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/_11ssp"
+                    android:textSize="@dimen/_9ssp"
                     app:layout_constraintBottom_toBottomOf="@+id/tvUploadPhoto"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/edtCategory"
@@ -175,6 +177,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Category"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text_hint"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/consUploadPic" />
@@ -212,6 +215,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Condition"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text_hint"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/edtCategoryDrop" />
@@ -249,6 +253,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Price"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text_hint"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/edtCondition" />
@@ -286,6 +291,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Location"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text_hint"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/edtPrice" />
@@ -323,6 +329,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Description"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text_hint"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/edtLocation" />
@@ -351,6 +358,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Shipping Option"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text_hint"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/edtDescription" />
@@ -372,6 +380,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="Offer Shipping"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text"
                     app:layout_constraintBottom_toBottomOf="@+id/ivTickPaymentConfirmed"
                     app:layout_constraintStart_toEndOf="@+id/ivTickPaymentConfirmed"
@@ -410,6 +419,7 @@
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="Choose Payment Method"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text_hint"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/edtWeight" />
@@ -431,6 +441,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="Stripe (Escrow)"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text"
                     app:layout_constraintBottom_toBottomOf="@+id/ivTickStripeEscrow"
                     app:layout_constraintStart_toEndOf="@+id/ivTickStripeEscrow"
@@ -460,6 +471,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="Swish (Manual)"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text"
                     app:layout_constraintBottom_toBottomOf="@+id/ivTickSwishManual"
                     app:layout_constraintStart_toEndOf="@+id/ivTickSwishManual"

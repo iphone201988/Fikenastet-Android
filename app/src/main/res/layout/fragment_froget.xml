@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.auth.AuthCommonVM" />
+            type="com.fisken_astet.fikenastet.ui.auth.AuthCommonVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,7 +65,11 @@
             android:layout_marginTop="@dimen/_25sdp"
             android:background="@drawable/radius_stroke"
             android:hint="Enter email"
-            android:paddingHorizontal="@dimen/_12sdp"
+            android:singleLine="true"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionDone"
+            android:paddingEnd="@dimen/_30sdp"
+            android:paddingStart="@dimen/_12sdp"
             android:textColorHint="@color/app_text_hint"
             app:layout_constraintTop_toBottomOf="@+id/tvDes" />
 

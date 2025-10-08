@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.fisken_astet.fikenastet.ui.settings.SettingsVM" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.settings.twoFactorAuth.TwoFactorAuthFragment">
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Back Button -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:onClick="@{v -> vm.onClick(v)}"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+        <!-- Title -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/TextView_600_SemiBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Set Up Two-factor\nAuthentication"
+            android:textStyle="bold"
+            android:textColor="@color/app_text"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="@id/ivBack"
+            app:layout_constraintEnd_toEndOf="@id/ivNotification"
+            app:layout_constraintTop_toBottomOf="@id/ivBack" />
+        <!-- Notification -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNotification"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:src="@drawable/notification"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvInfo"
+            style="@style/TextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Add an extra layer of protection to your\naccount."
+            android:textColor="@color/app_text_hint"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@id/ivBack"
+            app:layout_constraintEnd_toEndOf="@id/ivNotification"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvInstructions"
+            style="@style/TextView_400_Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="MFA Setup Instructions:\n\n1. Open your MFA app (e.g., Google Authenticator).\n\n2. First-time setup:\n   - Scan the QR code shown below.\n   - If you cannot scan, use the setup key displayed under the QR code.\n\n3. If using the same device:\n   - Take a screenshot of the QR code, then open your MFA app and add the account using the saved image.\n\n4. After setup, your MFA app will display a 6-digit code. Enter this code below to complete setup."
+            android:textColor="@color/app_text"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@id/ivBack"
+            app:layout_constraintEnd_toEndOf="@id/ivNotification"
+            app:layout_constraintTop_toBottomOf="@id/tvInfo" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivQr"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvInstructions"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQrCode"
+            style="@style/TextView_500_Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="GHXZVO6I3RW3ES4P"
+            android:textColor="@color/app_text"
+            android:textSize="@dimen/_13ssp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="@id/ivBack"
+            app:layout_constraintEnd_toEndOf="@id/ivNotification"
+            app:layout_constraintTop_toBottomOf="@id/ivQr" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etCode"
+            style="@style/TextView_400_Regular"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_43sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_30sdp"
+            android:background="@drawable/radius_stroke"
+            android:hint="Enter Authenticator Code"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:textColorHint="@color/app_text_hint"
+            app:layout_constraintTop_toBottomOf="@id/tvQrCode"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/radius_border"
+            android:onClick="@{v ->vm.onClick(v)}"
+            android:paddingHorizontal="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@id/etCode"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/textGetStarted"
+                style="@style/InterTextView_500_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verify"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iconFish"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:src="@drawable/famicons_fish"
+                app:layout_constraintBottom_toBottomOf="@id/textGetStarted"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textGetStarted" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

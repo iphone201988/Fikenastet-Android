@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.dashboard.profile.catch_log.CatchLogVM" />
+            type="com.fisken_astet.fikenastet.ui.dashboard.profile.catch_log.CatchLogVM" />
 
     </data>
 
@@ -35,8 +35,8 @@
         <!-- Notification -->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivNotification"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:src="@drawable/notification"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:text="View Catch Report"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -77,8 +77,8 @@
                     app:layout_constraintTop_toTopOf="parent"/>
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv1"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:layout_marginTop="@dimen/_23sdp"
                     android:src="@drawable/famicons_fish"
                     android:tint="@color/colorPrimary"
@@ -104,7 +104,7 @@
                         android:layout_height="wrap_content"
                         android:text="Species"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -116,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="Pike"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvSpecies" />
 
@@ -124,8 +124,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv2"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:layout_marginTop="@dimen/_23sdp"
                     android:src="@drawable/iv_weight"
                     app:layout_constraintStart_toEndOf="@id/cons1"
@@ -150,7 +150,7 @@
                         android:layout_height="wrap_content"
                         android:text="Weight"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -162,7 +162,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="4.3kg"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvWeight" />
 
@@ -170,8 +170,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv3"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:src="@drawable/fish_rev"
                     android:tint="@color/colorPrimary"
@@ -195,7 +195,7 @@
                         android:layout_height="wrap_content"
                         android:text="Bait Used"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -207,7 +207,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="Spinnerbait"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvBait" />
 
@@ -215,8 +215,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv4"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:src="@drawable/location"
                     android:tint="@color/colorPrimary"
@@ -240,7 +240,7 @@
                         android:layout_height="wrap_content"
                         android:text="Location"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -252,7 +252,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="Lake Mälaren"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
 
@@ -260,8 +260,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv5"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:src="@drawable/iv_calendar"
                     android:tint="@color/colorPrimary"
@@ -287,7 +287,7 @@
                         android:layout_height="wrap_content"
                         android:text="Date"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -299,7 +299,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="May 27, 2025"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvDate" />
 
@@ -307,8 +307,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv6"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:src="@drawable/iv_clock"
                     app:layout_constraintStart_toEndOf="@id/cons5"
@@ -333,7 +333,7 @@
                         android:layout_height="wrap_content"
                         android:text="Time"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -345,7 +345,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="06:45"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvTime" />
 
@@ -353,8 +353,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv7"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:src="@drawable/iv_clock"
                     android:tint="@color/colorPrimary"
@@ -378,7 +378,7 @@
                         android:layout_height="wrap_content"
                         android:text="Time took to catch "
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -390,7 +390,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="2 hours"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvTimeTook" />
 
@@ -398,8 +398,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv8"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:src="@drawable/iv_cloud"
                     android:tint="@color/colorPrimary"
@@ -423,7 +423,7 @@
                         android:layout_height="wrap_content"
                         android:text="Weather"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -435,7 +435,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="Cloudy"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvWeather" />
 
@@ -443,8 +443,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivRules"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:src="@drawable/iv_pdf"
                     app:layout_constraintStart_toStartOf="parent"
@@ -469,7 +469,7 @@
                         android:layout_height="wrap_content"
                         android:text="Description"
                         android:textColor="@color/app_text_hint"
-                        android:textSize="@dimen/_13ssp"
+                        android:textSize="@dimen/_11ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -491,7 +491,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever"
-                        android:textSize="@dimen/_14ssp"
+                        android:textSize="@dimen/_13ssp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
 
@@ -572,8 +572,42 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:background="@drawable/radius_border"
+                    android:onClick="@{v ->vm.onClick(v)}"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    app:layout_constraintTop_toBottomOf="@id/consRules">
+
+                    <TextView
+                        android:id="@+id/textGetStarted3"
+                        style="@style/InterTextView_500_Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="See All Comments"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iconFish3"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:src="@drawable/famicons_fish"
+                        app:layout_constraintBottom_toBottomOf="@id/textGetStarted3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/textGetStarted3" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     app:layout_constraintTop_toBottomOf="@id/consRules">
                     <View
                         android:id="@+id/viewLine"
@@ -642,6 +676,7 @@
             android:id="@+id/consChat"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_60sdp"
+            android:visibility="gone"
             android:background="@color/colorPrimary_alpha"
             app:layout_constraintBottom_toBottomOf="parent" />
 
@@ -651,6 +686,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_42sdp"
             android:layout_marginHorizontal="@dimen/_12sdp"
+            android:visibility="gone"
             android:background="@drawable/radius_border_chat"
             android:hint="Type your message here... "
             android:paddingHorizontal="@dimen/_15sdp"
@@ -666,6 +702,7 @@
             android:layout_height="@dimen/_18sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:src="@drawable/send"
+            android:visibility="gone"
             android:onClick="@{v->vm.onClick(v)}"
             app:layout_constraintBottom_toBottomOf="@+id/edtMessage"
             app:layout_constraintEnd_toEndOf="@+id/edtMessage"

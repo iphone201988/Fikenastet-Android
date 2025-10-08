@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.common_classes.lake_details.LakeDetailsVM" />
+            type="com.fisken_astet.fikenastet.ui.common_classes.lake_details.LakeDetailsVM" />
     </data>
 
     <ScrollView
@@ -42,8 +42,8 @@
             <!-- Notification -->
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivNotification"
-                android:layout_width="@dimen/_22sdp"
-                android:layout_height="@dimen/_22sdp"
+                android:layout_width="@dimen/_19sdp"
+                android:layout_height="@dimen/_19sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:src="@drawable/notification"
                 app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:text="Lake Details"
                 android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/_16ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintBottom_toBottomOf="@id/ivNotification"
                 app:layout_constraintEnd_toStartOf="@id/ivNotification"
                 app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -84,7 +84,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:text="Lake Mälaren"
                 android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/_18ssp"
+                android:textSize="@dimen/_16ssp"
                 app:layout_constraintStart_toStartOf="@+id/ivLakeImage"
                 app:layout_constraintTop_toBottomOf="@+id/ivLakeImage" />
 
@@ -113,7 +113,7 @@
                     android:layout_height="wrap_content"
                     android:text="Location"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -125,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="Stockholm County, Sweden"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
 
@@ -159,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:text="Species"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -171,7 +171,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="Pike, Zander, Perch"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvSpecies" />
 
@@ -205,7 +205,7 @@
                     android:layout_height="wrap_content"
                     android:text="Permit"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -216,9 +216,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
-                    android:text="Required (from $20/day)"
-                    android:textSize="@dimen/_14ssp"
+                    android:text="Required"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPermit" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFromDay"
+                    style="@style/TextView_600_SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text=" (from $20/day)"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintStart_toEndOf="@id/tvPermitValue"
                     app:layout_constraintTop_toBottomOf="@+id/tvPermit" />
 
 
@@ -249,7 +261,7 @@
                     android:layout_height="wrap_content"
                     android:text="Season"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -261,7 +273,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="Year-round"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvSeason" />
 
@@ -293,7 +305,7 @@
                     android:layout_height="wrap_content"
                     android:text="Depth Info"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -305,7 +317,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="12,10 feet"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvDepthInfo" />
 
@@ -339,7 +351,7 @@
                     android:layout_height="wrap_content"
                     android:text="Rules"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -372,7 +384,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="Max 3 fish/day"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvRules" />
 
@@ -384,7 +396,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="No motorboats near reeds"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvRulesValue" />
 
@@ -416,7 +428,7 @@
                     android:layout_height="wrap_content"
                     android:text="Hotspots"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -449,7 +461,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="North Bay Point"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvHotspots" />
 
@@ -461,7 +473,7 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:text="Deep Trench 12m"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvHotspotsValue" />
 
@@ -486,7 +498,7 @@
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:text="Buy Fishing Permit"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/viewPermit" />
 
@@ -499,7 +511,7 @@
                 android:layout_marginTop="@dimen/_8sdp"
                 android:text="Your active permit"
                 android:textColor="@color/app_text_hint"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toStartOf="@id/tvBuyFishingPermit"
                 app:layout_constraintTop_toBottomOf="@+id/tvBuyFishingPermit" />
 
@@ -522,7 +534,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_12sdp"
                     android:text="Lake Mälaren"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_13ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -535,7 +547,7 @@
                     android:layout_marginTop="@dimen/_5sdp"
                     android:text="Permits valid until Jul 8"
                     android:textColor="@color/app_text_hint"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvLakeName" />
 
@@ -547,7 +559,7 @@
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:text="Get pdf"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/_13ssp"
+                    android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -584,7 +596,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Buy Permit"
-                    android:onClick="@{v ->vm.onClick(v)}"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -620,7 +631,7 @@
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:text="Recent Public Catches"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/viewPermitBelow" />
 
@@ -630,7 +641,7 @@
                 android:layout_height="wrap_content"
                 android:text="See all"
                 android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintBottom_toBottomOf="@+id/tvRecentPublicCatches"
                 app:layout_constraintEnd_toEndOf="@id/viewPermitBelow"
                 app:layout_constraintTop_toTopOf="@+id/tvRecentPublicCatches" />

@@ -6,7 +6,10 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.otherUserProfile.OtherUserProfileVM" />
+            type="com.fisken_astet.fikenastet.ui.otherUserProfile.OtherUserProfileVM" />
+        <variable
+            name="bean"
+            type="com.fisken_astet.fikenastet.data.model.GetProfileModelData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,7 +27,7 @@
             android:id="@+id/ivBack"
             android:layout_width="@dimen/_28sdp"
             android:layout_height="@dimen/_28sdp"
-            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_18sdp"
             android:src="@drawable/ic_back"
             android:onClick="@{v->vm.onClick(v)}"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +38,7 @@
             android:id="@+id/ivDots"
             android:layout_width="@dimen/_22sdp"
             android:layout_height="@dimen/_22sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
             android:src="@drawable/iv_three_vertical_dots"
             android:onClick="@{v->vm.onClick(v)}"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -45,8 +48,8 @@
         <!-- Notifications -->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivNotification"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
             android:layout_marginEnd="@dimen/_8sdp"
             android:src="@drawable/notification"
             android:onClick="@{v->vm.onClick(v)}"
@@ -62,57 +65,37 @@
             android:layout_height="wrap_content"
             android:text="Profile"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
             app:layout_constraintTop_toTopOf="@id/ivNotification" />
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivImage"
-            android:layout_width="@dimen/_45sdp"
-            android:layout_height="@dimen/_45sdp"
-            android:background="@color/colorPrimary"
+            android:id="@+id/ivImage2"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            setImageFromUrl="@{bean.profile_picture}"
+            android:src="@drawable/iv_user_icon"
             android:scaleType="centerCrop"
             android:layout_marginTop="@dimen/_20sdp"
+            app:strokeColor="@color/colorPrimary"
+            app:strokeWidth="2dp"
             app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize12Percent"
             app:layout_constraintTop_toBottomOf="@id/ivBack"
             app:layout_constraintStart_toStartOf="@id/ivBack"
             />
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivImage2"
-            android:layout_width="@dimen/_45sdp"
-            android:layout_height="@dimen/_45sdp"
-            android:src="@drawable/iv_dummy"
-            android:scaleType="centerCrop"
-            android:padding="@dimen/_1sdp"
-            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize12Percent"
-            app:layout_constraintTop_toTopOf="@id/ivImage"
-            app:layout_constraintStart_toStartOf="@id/ivImage"
-            app:layout_constraintEnd_toEndOf="@id/ivImage"
-            app:layout_constraintBottom_toBottomOf="@id/ivImage"
-            />
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/TextView_400_Regular"
-            android:layout_marginTop="@dimen/_3sdp"
-            android:textSize="@dimen/_12ssp"
-            android:textColor="@color/app_text_hint"
-            android:text="Fishing since I could walk. Pike &amp; Zander fan."
-            app:layout_constraintTop_toBottomOf="@id/consProfileData"
-            android:layout_marginHorizontal="@dimen/_15sdp"/>
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/TextView_500_Medium"
-            android:text="johnDoe_007"
+            android:text="@{bean.username}"
             android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_13ssp"
             android:layout_marginStart="@dimen/_10sdp"
-            app:layout_constraintTop_toTopOf="@id/ivImage"
+            app:layout_constraintTop_toTopOf="@id/ivImage2"
             app:layout_constraintEnd_toEndOf="@id/ivDots"
-            app:layout_constraintStart_toEndOf="@id/ivImage"/>
+            app:layout_constraintStart_toEndOf="@id/ivImage2"/>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/consProfileData"
             android:layout_width="0dp"
@@ -120,24 +103,25 @@
             app:layout_constraintTop_toBottomOf="@id/tvName"
             app:layout_constraintStart_toStartOf="@id/tvName"
             app:layout_constraintEnd_toEndOf="@id/tvName">
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvPostlabel"
+                style="@style/TextView_400_Regular"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                style="@style/TextView_400_Regular"
-                android:textSize="@dimen/_12ssp"
-                android:textColor="@color/app_text_hint"
                 android:text="@string/posts"
-                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/app_text_hint"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toStartOf="@id/tvFollowersLabel"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/tvFollowersLabel"/>
+                app:layout_constraintTop_toTopOf="parent" />
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvFollowersLabel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 style="@style/TextView_400_Regular"
-
-                android:textSize="@dimen/_12ssp"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:textSize="@dimen/_11ssp"
                 android:textColor="@color/app_text_hint"
                 android:text="@string/followers"
                 app:layout_constraintTop_toTopOf="parent"
@@ -148,9 +132,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 style="@style/TextView_400_Regular"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
+                android:onClick="@{v->vm.onClick(v)}"
                 android:textColor="@color/app_text_hint"
-
                 android:text="@string/following"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tvFollowersLabel"
@@ -160,7 +144,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 style="@style/TextView_500_Medium"
-                android:text="2"
+                android:text="@{bean.posts_count.toString()}"
+                android:textSize="@dimen/_13ssp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/tvPostlabel"
                 app:layout_constraintStart_toStartOf="@id/tvPostlabel"
@@ -170,7 +155,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 style="@style/TextView_500_Medium"
-                android:text="128"
+                android:text="@{bean.followers_count.toString()}"
+                android:textSize="@dimen/_13ssp"
                 android:onClick="@{v->vm.onClick(v)}"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/tvPostlabel"
@@ -181,20 +167,32 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 style="@style/TextView_500_Medium"
-                android:text="65"
+                android:text="@{bean.following_count.toString()}"
+                android:textSize="@dimen/_13ssp"
                 android:onClick="@{v->vm.onClick(v)}"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/tvPostlabel"
                 app:layout_constraintStart_toEndOf="@id/tvFollowers"
                 app:layout_constraintEnd_toEndOf="@id/tvFollowingLabel"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextView_400_Regular"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/app_text_hint"
+            android:text="@{bean.short_bio}"
+            app:layout_constraintTop_toBottomOf="@id/consProfileData"
+            android:layout_marginHorizontal="@dimen/_18sdp"/>
         <View
             android:id="@+id/view1"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_1sdp"
             android:background="@color/colorPrimary"
             android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_18sdp"
             app:layout_constraintTop_toBottomOf="@id/tvDesc"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivClip"
@@ -209,10 +207,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/TextView_500_Medium"
-            android:text="YouTube/blog"
+            android:text=""
             android:textStyle="bold"
             android:layout_marginStart="@dimen/_3sdp"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintStart_toEndOf="@id/ivClip"
             app:layout_constraintEnd_toEndOf="@id/view1"
             app:layout_constraintTop_toTopOf="@id/ivClip"
@@ -223,7 +221,7 @@
             android:layout_height="@dimen/_1sdp"
             android:background="@color/colorPrimary"
             android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_18sdp"
             app:layout_constraintTop_toBottomOf="@id/tvLink"/>
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvFollow"
@@ -234,11 +232,11 @@
             android:background="@drawable/radius_stroke_high"
             android:gravity="center"
             android:paddingVertical="@dimen/_6sdp"
-            android:text="Follow"
+            android:text='@{bean.you_followed?"Following":"Follow"}'
             android:onClick="@{v ->vm.onClick(v)}"
             android:textColor="@color/colorPrimary"
             android:textColorHint="@color/colorPrimary"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintEnd_toStartOf="@+id/tvMessage"
             app:layout_constraintStart_toStartOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/view2" />
@@ -256,7 +254,7 @@
             android:text="Message"
             android:onClick="@{v->vm.onClick(v)}"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/tvFollow"
             app:layout_constraintEnd_toStartOf="@+id/tvReviews"
             app:layout_constraintStart_toEndOf="@+id/tvFollow"
@@ -274,7 +272,7 @@
             android:text="Reviews"
             android:onClick="@{v->vm.onClick(v)}"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/tvFollow"
             app:layout_constraintEnd_toEndOf="@+id/view2"
             app:layout_constraintStart_toEndOf="@+id/tvMessage"
@@ -287,7 +285,7 @@
             app:tabMode="fixed"
             app:tabIndicatorFullWidth="false"
             android:textSize="@dimen/_12ssp"
-            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_18sdp"
             android:layout_marginTop="@dimen/_20sdp"
             app:tabTextColor="@color/white"
             app:tabIndicatorColor="@color/colorPrimary"

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.fikenastet.ui.settings.lake_owner_panel.MyLakesVM" />
+            type="com.fisken_astet.fikenastet.ui.settings.lake_owner_panel.MyLakesVM" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,8 +34,8 @@
         <!-- Notification -->
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivNotification"
-            android:layout_width="@dimen/_22sdp"
-            android:layout_height="@dimen/_22sdp"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:src="@drawable/notification"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:text="Lake Details"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/ivNotification"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
@@ -69,9 +69,10 @@
             style="@style/TextView_500_Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_22sdp"
             android:layout_marginTop="@dimen/_15sdp"
             android:text="Lake Mälaren"
+            android:textSize="@dimen/_12ssp"
             android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -81,11 +82,11 @@
             style="@style/TextView_300_Light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_13sdp"
+            android:layout_marginStart="@dimen/_22sdp"
             android:layout_marginTop="@dimen/_2sdp"
             android:text="Fishes: Pike, Zander"
             android:textColor="@color/app_text_hint"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_9ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvLakeName" />
 
@@ -96,9 +97,9 @@
             android:layout_height="wrap_content"
             style="@style/TextView_500_Medium"
             android:text="Approved"
-            android:textSize="@dimen/_10ssp"
+            android:textSize="@dimen/_9ssp"
             android:textColor="@color/colorPrimary"
-            android:layout_marginEnd="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_22sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/tvLakeDes"
             app:layout_constraintTop_toTopOf="@+id/tvLakeName" />
@@ -122,8 +123,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:text="@string/sales"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv1" />
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -155,12 +157,14 @@
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_18sdp"
                 android:text="Statistics"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ivBackground" />
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingVertical="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:paddingHorizontal="@dimen/_12sdp"
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:background="@drawable/radius_border"
@@ -171,13 +175,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/TextView_600_SemiBold"
-                    android:textSize="@dimen/_18ssp"
+                    android:textSize="@dimen/_16ssp"
                     android:text="142"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"/>
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="@dimen/_18sdp"
-                    android:layout_height="@dimen/_18sdp"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
                     android:src="@drawable/iv_doc"
                     app:layout_constraintTop_toTopOf="@id/tvPermit"
                     app:layout_constraintEnd_toEndOf="parent"/>
@@ -186,7 +190,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/TextView_400_Regular"
-                    android:textSize="@dimen/_12ssp"
+                    android:textSize="@dimen/_11ssp"
                     android:textColor="@color/app_text_hint"
                     android:text="Permits Sold"
                     app:layout_constraintTop_toBottomOf="@id/tvPermit"

@@ -7,7 +7,7 @@
 
         <variable
             name="callback"
-            type="com.example.fikenastet.base.utils.BaseCustomBottomSheet.Listener" />
+            type="com.fisken_astet.fikenastet.base.utils.BaseCustomBottomSheet.Listener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,7 +35,7 @@
             android:gravity="center"
             android:text="Recipe"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_13ssp"
+            android:textSize="@dimen/_11ssp"
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -46,6 +46,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:gravity="center"
             android:text="1 day Permit"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
 
@@ -78,7 +79,7 @@
                 android:layout_marginTop="@dimen/_2sdp"
                 android:text="Active"
                 android:textColor="@color/app_text_hint"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toEndOf="@+id/ivCalender"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -89,6 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_3sdp"
                 android:text="June 2, 2025 – June 9, 2025"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintStart_toStartOf="@+id/tvLocation"
                 app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
 
@@ -124,7 +126,7 @@
                 android:layout_marginTop="@dimen/_2sdp"
                 android:text="Permit holder"
                 android:textColor="@color/app_text_hint"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toEndOf="@+id/ivPerson"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -135,6 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_3sdp"
                 android:text="John Doe"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintStart_toStartOf="@+id/tvPermitHolder"
                 app:layout_constraintTop_toBottomOf="@+id/tvPermitHolder" />
 
@@ -170,7 +173,7 @@
                 android:layout_marginTop="@dimen/_2sdp"
                 android:text="Permit ID"
                 android:textColor="@color/app_text_hint"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toEndOf="@+id/ivPermitID"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -180,6 +183,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_3sdp"
+                android:textSize="@dimen/_13ssp"
                 android:text="#MLR-0923812"
                 app:layout_constraintStart_toStartOf="@+id/tvPermitId"
                 app:layout_constraintTop_toBottomOf="@+id/tvPermitId" />
@@ -216,7 +220,7 @@
                 android:layout_marginTop="@dimen/_2sdp"
                 android:text="Payment Method"
                 android:textColor="@color/app_text_hint"
-                android:textSize="@dimen/_13ssp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintStart_toEndOf="@+id/ivPaymentMethod"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -227,6 +231,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_3sdp"
                 android:text="Swish"
+                android:textSize="@dimen/_13ssp"
                 app:layout_constraintStart_toStartOf="@+id/tvPaymentMethod"
                 app:layout_constraintTop_toBottomOf="@+id/tvPaymentMethod" />
 

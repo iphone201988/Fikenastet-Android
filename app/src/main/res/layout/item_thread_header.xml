@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             style="@style/TextView_600_SemiBold"
             android:text="Trending"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
