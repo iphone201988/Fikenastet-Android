@@ -55,7 +55,9 @@ class FollowingFragment : BaseFragment<FragmentFollowingBinding>() {
                 }
 
                 R.id.ivNotification -> {
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
             }
         }

@@ -1,5 +1,6 @@
 package com.fisken_astet.fikenastet.ui.settings.account_integrity
 
+import android.content.Intent
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.fisken_astet.fikenastet.BR
@@ -14,6 +15,7 @@ import com.fisken_astet.fikenastet.data.api.Constants
 import com.fisken_astet.fikenastet.data.model.AccountIntegrityModel
 import com.fisken_astet.fikenastet.databinding.FragmentAccountIntegrityBinding
 import com.fisken_astet.fikenastet.databinding.HolderSkillsBinding
+import com.fisken_astet.fikenastet.ui.dashboard.common_activity.CommonActivity
 import com.fisken_astet.fikenastet.ui.settings.SettingsVM
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -60,7 +62,9 @@ class AccountIntegrityFragment : BaseFragment<FragmentAccountIntegrityBinding>()
                 }
 
                 R.id.ivNotification->{
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
                 R.id.ivDropArrow,R.id.tvAccountType -> {
                     isClicked = !isClicked

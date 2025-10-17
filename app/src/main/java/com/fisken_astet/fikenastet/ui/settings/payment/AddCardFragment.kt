@@ -1,11 +1,13 @@
 package com.fisken_astet.fikenastet.ui.settings.payment
 
+import android.content.Intent
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.fisken_astet.fikenastet.R
 import com.fisken_astet.fikenastet.base.BaseFragment
 import com.fisken_astet.fikenastet.base.BaseViewModel
 import com.fisken_astet.fikenastet.databinding.FragmentAddCardBinding
+import com.fisken_astet.fikenastet.ui.dashboard.common_activity.CommonActivity
 import com.fisken_astet.fikenastet.ui.settings.SettingsVM
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,7 +39,9 @@ class AddCardFragment : BaseFragment<FragmentAddCardBinding>() {
                     requireActivity().onBackPressedDispatcher.onBackPressed()
                 }
                 R.id.ivNotification->{
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
                 R.id.consButton->{
                     requireActivity().onBackPressedDispatcher.onBackPressed()

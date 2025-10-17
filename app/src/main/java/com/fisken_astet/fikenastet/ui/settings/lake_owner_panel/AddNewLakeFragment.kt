@@ -1,5 +1,6 @@
 package com.fisken_astet.fikenastet.ui.settings.lake_owner_panel
 
+import android.content.Intent
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.fisken_astet.fikenastet.BR
@@ -12,6 +13,7 @@ import com.fisken_astet.fikenastet.data.model.ReplyModel
 import com.fisken_astet.fikenastet.databinding.FragmentAddNewLakeBinding
 import com.fisken_astet.fikenastet.databinding.ItemAddRulesBinding
 import com.fisken_astet.fikenastet.databinding.ItemReportBinding
+import com.fisken_astet.fikenastet.ui.dashboard.common_activity.CommonActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -46,7 +48,9 @@ class AddNewLakeFragment : BaseFragment<FragmentAddNewLakeBinding>() {
                     requireActivity().onBackPressedDispatcher.onBackPressed()
                 }
                 R.id.ivNotification->{
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
                 R.id.tvAddMore->{
 

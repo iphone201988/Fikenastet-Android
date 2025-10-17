@@ -51,7 +51,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
     /** handle view **/
     private fun initView(){
-        getProfile()
+//        getProfile()
         val adapter = ViewPagerAdapter(this)
         binding.viewPager.isUserInputEnabled = false
         binding.viewPager.adapter = adapter
@@ -99,11 +99,17 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
                     startActivity(intent)
                 }
                 R.id.ivNotification->{
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
 
                 R.id.ivSettings -> {
-                    (requireActivity() as DashBoardActivity).openExtraFragment(SettingsFragment())
+                    val activity = requireActivity() as? DashBoardActivity
+                    if (activity?.isExtraFragmentVisible == true) {
+                        return@observe
+                    }
+                    activity?.openExtraFragment(SettingsFragment())
                 }
 
                 R.id.tvPost -> {
@@ -228,6 +234,10 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
     override fun onResume() {
         super.onResume()
-//        getProfile()
+        val activity = requireActivity() as? DashBoardActivity
+        if (activity?.isExtraFragmentVisible == true) {
+            return
+        }
+        getProfile()
     }
 }

@@ -1,5 +1,8 @@
 package com.fisken_astet.fikenastet.ui.otherUserProfile
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -29,6 +32,8 @@ class OtherUserFragment : BaseFragment<FragmentOtherUserBinding>() {
     private val viewModel: OtherUserProfileVM by viewModels()
     private lateinit var profileOptionsBottomSheet: BaseCustomBottomSheet<ProfileOptionsBottomSheetBinding>
     private var userId:String?=null
+    private var isRestricted: Boolean? = false
+    private var isBlocked: Boolean? = false
     override fun getLayoutResource(): Int {
         return R.layout.fragment_other_user
     }
@@ -67,10 +72,13 @@ class OtherUserFragment : BaseFragment<FragmentOtherUserBinding>() {
                 }
 
                 R.id.ivNotification -> {
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
 
                 R.id.ivDots -> {
+                    handleBottomSheetUI()
                     profileOptionsBottomSheet.show()
                 }
 
@@ -121,6 +129,8 @@ class OtherUserFragment : BaseFragment<FragmentOtherUserBinding>() {
                                             binding.bean=modelData
                                             if (!modelData.links.isNullOrEmpty()){
                                                 binding.tvLink.setText(modelData.links[0]?.url)
+                                                isRestricted = modelData.you_restricted
+                                                isBlocked = modelData.you_blocked
                                             }
                                         }
                                     }
@@ -144,6 +154,74 @@ class OtherUserFragment : BaseFragment<FragmentOtherUserBinding>() {
                                         } else {
                                             binding.tvFollow.text="Follow"
                                         }
+                                    }
+                                }
+                            } catch (e: Exception) {
+                                showToast(e.message.toString())
+                                e.printStackTrace()
+                            }
+                        }
+                        "RESTRICT" -> {
+                            try {
+                                val myDataModel =
+                                    BindingUtils.parseJson<GetProfileModel>(it.data.toString())
+                                if (myDataModel != null) {
+                                    if (myDataModel.status == 200) {
+                                        showToast(myDataModel.message.toString())
+                                        isRestricted = true
+                                        handleBottomSheetUI()
+                                    }
+                                }
+
+                            } catch (e: Exception) {
+                                showToast(e.message.toString())
+                                e.printStackTrace()
+                            }
+                        }
+
+                        "UNRESTRICT" -> {
+                            try {
+                                val myDataModel =
+                                    BindingUtils.parseJson<GetProfileModel>(it.data.toString())
+                                if (myDataModel != null) {
+                                    if (myDataModel.status == 200) {
+                                        showToast(myDataModel.message.toString())
+                                        isRestricted = false
+                                        handleBottomSheetUI()
+                                    }
+                                }
+                            } catch (e: Exception) {
+                                showToast(e.message.toString())
+                                e.printStackTrace()
+                            }
+                        }
+
+                        "BLOCK" -> {
+                            try {
+                                val myDataModel =
+                                    BindingUtils.parseJson<GetProfileModel>(it.data.toString())
+                                if (myDataModel != null) {
+                                    if (myDataModel.status == 200) {
+                                        showToast(myDataModel.message.toString())
+                                        isBlocked = true
+                                        handleBottomSheetUI()
+                                    }
+                                }
+                            } catch (e: Exception) {
+                                showToast(e.message.toString())
+                                e.printStackTrace()
+                            }
+                        }
+
+                        "UNBLOCK" -> {
+                            try {
+                                val myDataModel =
+                                    BindingUtils.parseJson<GetProfileModel>(it.data.toString())
+                                if (myDataModel != null) {
+                                    if (myDataModel.status == 200) {
+                                        showToast(myDataModel.message.toString())
+                                        isBlocked = false
+                                        handleBottomSheetUI()
                                     }
                                 }
                             } catch (e: Exception) {
@@ -188,17 +266,62 @@ class OtherUserFragment : BaseFragment<FragmentOtherUserBinding>() {
     private fun initBottomSheet(){
         profileOptionsBottomSheet= BaseCustomBottomSheet(requireContext(),R.layout.profile_options_bottom_sheet,R.style.SheetDialog){
             when(it?.id){
+                R.id.tvRestrict -> {
+                    if (isRestricted == true) {
+                        apiRestrictBlockToggle(4)
+                    } else {
+                        apiRestrictBlockToggle(3)
+                    }
+                }
                 R.id.tvBlock->{
+                    if (isBlocked == true) {
+                        apiRestrictBlockToggle(2)
+                    } else {
+                        apiRestrictBlockToggle(1)
+                    }
 
                 }
                 R.id.tvReport->{
                     profileOptionsBottomSheet.dismiss()
-                                        val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
                     intent.putExtra("fromWhere", "ReportAbuse")
+                    intent.putExtra("id", userId)
+                    intent.putExtra("from", "1")
                     startActivity(intent)
                 }
-                R.id.tvRemove->{
 
+                R.id.tvSharedActivity -> {
+
+                }
+
+                R.id.tvCopy -> {
+                    val url = "https://dbt.teb.mybluehostin.me/share/profile/$userId"
+                    val shareText = """
+    FISKENASTET
+    Fiskenästet lets you capture your fishing moments and instantly share your catch status with others. $url
+""".trimIndent()
+
+                    val clipboard =
+                        requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                    val clip = ClipData.newPlainText("FISKENASTET", shareText)
+                    clipboard.setPrimaryClip(clip)
+                    showToast("Url Copied")
+                    profileOptionsBottomSheet.dismiss()
+                }
+
+                R.id.tvShare -> {
+                    profileOptionsBottomSheet.dismiss()
+                    val url = "https://dbt.teb.mybluehostin.me/share/profile/$userId"
+                    val shareText =
+                        """Fiskenästet lets you capture your fishing moments and instantly share your catch status with others."""
+                    val shareIntent = Intent(Intent.ACTION_SEND).apply {
+                        type = "text/plain"
+                        putExtra(Intent.EXTRA_TITLE, "FISKENASTET")
+                        putExtra(Intent.EXTRA_SUBJECT, shareText)
+                        putExtra(Intent.EXTRA_TEXT, url)
+                    }
+
+                    startActivity(Intent.createChooser(shareIntent, "FISKENASTET"))
                 }
             }
         }
@@ -217,10 +340,56 @@ class OtherUserFragment : BaseFragment<FragmentOtherUserBinding>() {
         viewModel.updateFollowActionApi(Constants.FOLLOW_ACTION, request)
     }
 
+    private fun apiRestrictBlockToggle(type: Int) {
+        val request = HashMap<String, Any>()
+        request["type"] = type
+        request["user_id"] = userId.toString()
+        viewModel.handleRestrictBlockToggle(Constants.RESTRICT_BLOCK, request, type)
+    }
+
+    /** handle bottom sheet toggle**/
+    private fun handleBottomSheetUI() {
+        if (isRestricted == true) {
+            profileOptionsBottomSheet.binding.tvRestrict.text = "Unrestrict"
+            profileOptionsBottomSheet.binding.tvRestrict.setTextColor(requireContext().getColor(R.color.colorPrimary))
+            profileOptionsBottomSheet.binding.tvRestrict.setBackgroundDrawable(
+                requireContext().getDrawable(
+                    R.drawable.radius_stroke_high
+                )
+            )
+        } else {
+            profileOptionsBottomSheet.binding.tvRestrict.text = "Restrict"
+            profileOptionsBottomSheet.binding.tvRestrict.setTextColor(requireContext().getColor(R.color.red))
+            profileOptionsBottomSheet.binding.tvRestrict.setBackgroundDrawable(
+                requireContext().getDrawable(
+                    R.drawable.bg_radius_stroke_red
+                )
+            )
+        }
+
+        if (isBlocked == true) {
+            profileOptionsBottomSheet.binding.tvBlock.text = "Unblock"
+            profileOptionsBottomSheet.binding.tvBlock.setTextColor(requireContext().getColor(R.color.colorPrimary))
+            profileOptionsBottomSheet.binding.tvBlock.setBackgroundDrawable(
+                requireContext().getDrawable(
+                    R.drawable.radius_stroke_high
+                )
+            )
+        } else {
+            profileOptionsBottomSheet.binding.tvBlock.text = "Block"
+            profileOptionsBottomSheet.binding.tvBlock.setTextColor(requireContext().getColor(R.color.red))
+            profileOptionsBottomSheet.binding.tvBlock.setBackgroundDrawable(
+                requireContext().getDrawable(
+                    R.drawable.bg_radius_stroke_red
+                )
+            )
+        }
+    }
+
     override fun onResume() {
         super.onResume()
         userId = arguments?.getString("id")
-        if (userId!=null) {
+        if (userId != null) {
             getProfileData(userId.toString())
         }
     }

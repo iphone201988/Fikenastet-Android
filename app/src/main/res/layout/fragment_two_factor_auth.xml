@@ -55,6 +55,7 @@
             android:layout_height="@dimen/_19sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:src="@drawable/notification"
+            android:onClick="@{v->vm.onClick(v)}"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/ivBack"
             app:layout_constraintEnd_toEndOf="parent"

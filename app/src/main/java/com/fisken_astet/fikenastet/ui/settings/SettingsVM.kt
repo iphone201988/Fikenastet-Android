@@ -25,7 +25,6 @@ class SettingsVM @Inject constructor(val apiHelper: ApiHelper) : BaseViewModel()
             try {
                 apiHelper.apiForPostMultipart(url,request,part).let {
                     if (it.isSuccessful) {
-                        Log.e("Complete profile", "Complete profile: ${it.body()}")
                         settingsObserver.postValue(Resource.success("UPDATE_PROFILE", it.body()))
                     } else
                         settingsObserver.postValue(  Resource.error(handleErrorResponse(it.errorBody(), it.code()), null))
@@ -147,6 +146,52 @@ class SettingsVM @Inject constructor(val apiHelper: ApiHelper) : BaseViewModel()
                         else{
                             settingsObserver.postValue(Resource.success("TWO_FA_ENABLE", it.body()))
                         }
+
+                    } else
+                        settingsObserver.postValue(  Resource.error(handleErrorResponse(it.errorBody(), it.code()), null))
+                }
+            } catch (e: Exception) {
+                settingsObserver.postValue(
+                    Resource.error(
+                        e.message, null
+                    )
+                )
+            }
+
+        }
+    }
+
+    /** handle restrict / block user toggle  **/
+    fun getBlockedUserList(url: String,request: HashMap<String, Any>) {
+        CoroutineScope(Dispatchers.IO).launch {
+            settingsObserver.postValue(Resource.loading(null))
+            try {
+                apiHelper.apiPostForRawBody(url,request).let {
+                    if (it.isSuccessful) {
+                            settingsObserver.postValue(Resource.success("BLOCKED_USERS", it.body()))
+
+                    } else
+                        settingsObserver.postValue(  Resource.error(handleErrorResponse(it.errorBody(), it.code()), null))
+                }
+            } catch (e: Exception) {
+                settingsObserver.postValue(
+                    Resource.error(
+                        e.message, null
+                    )
+                )
+            }
+
+        }
+    }
+
+    /** unblock User **/
+    fun unblockUserApi(url: String,request: HashMap<String, Any>) {
+        CoroutineScope(Dispatchers.IO).launch {
+            settingsObserver.postValue(Resource.loading(null))
+            try {
+                apiHelper.apiPostForRawBody(url,request).let {
+                    if (it.isSuccessful) {
+                            settingsObserver.postValue(Resource.success("UNBLOCK_USER", it.body()))
 
                     } else
                         settingsObserver.postValue(  Resource.error(handleErrorResponse(it.errorBody(), it.code()), null))

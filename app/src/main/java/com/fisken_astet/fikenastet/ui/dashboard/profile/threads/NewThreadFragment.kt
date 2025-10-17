@@ -1,5 +1,6 @@
 package com.fisken_astet.fikenastet.ui.dashboard.profile.threads
 
+import android.content.Intent
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.fisken_astet.fikenastet.BR
@@ -9,6 +10,7 @@ import com.fisken_astet.fikenastet.base.BaseViewModel
 import com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter
 import com.fisken_astet.fikenastet.databinding.FragmentNewThreadBinding
 import com.fisken_astet.fikenastet.databinding.ItemThreadsCategoryBinding
+import com.fisken_astet.fikenastet.ui.dashboard.common_activity.CommonActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -42,7 +44,9 @@ class NewThreadFragment : BaseFragment<FragmentNewThreadBinding>() {
                 }
 
                 R.id.ivNotification -> {
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
 
                 R.id.ivDropArrow -> {

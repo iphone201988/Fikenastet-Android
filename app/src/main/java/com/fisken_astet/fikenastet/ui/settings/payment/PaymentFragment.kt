@@ -47,7 +47,9 @@ class PaymentFragment : BaseFragment<FragmentPaymentBinding>() {
 
                 }
                 R.id.ivNotification->{
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
                 R.id.tvLoadMore->{
                     historyAdapter.list.addAll(listOf("","",""))

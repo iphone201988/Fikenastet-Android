@@ -19,6 +19,7 @@ import com.fisken_astet.fikenastet.databinding.CommonDialogDeleteLogoutBinding
 import com.fisken_astet.fikenastet.databinding.FragmentSettingsBinding
 import com.fisken_astet.fikenastet.databinding.ItemSettingsBinding
 import com.fisken_astet.fikenastet.ui.auth.WelcomeActivity
+import com.fisken_astet.fikenastet.ui.dashboard.DashBoardActivity
 import com.fisken_astet.fikenastet.ui.dashboard.common_activity.CommonActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -115,8 +116,11 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>() {
                 }
 
                 R.id.ivNotification -> {
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
+
                 R.id.tvExport->{
 //                    viewModel.exportDataApi(Constants.EXPORT_DATA)
                 }

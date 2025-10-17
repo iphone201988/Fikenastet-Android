@@ -22,6 +22,8 @@ object Constants {
     const val EXPORT_DATA ="export-data"
     const val PROFILE ="profile"
     const val FOLLOW_ACTION ="follow-action"
+    const val REPORT_USER ="report-user"
+    const val RESTRICT_BLOCK="users/block-restrict"
 
 
     var latitude = "000000"

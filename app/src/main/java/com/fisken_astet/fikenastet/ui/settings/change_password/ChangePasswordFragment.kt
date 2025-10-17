@@ -1,5 +1,6 @@
 package com.fisken_astet.fikenastet.ui.settings.change_password
 
+import android.content.Intent
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.fisken_astet.fikenastet.R
@@ -14,6 +15,7 @@ import com.fisken_astet.fikenastet.data.api.Constants
 import com.fisken_astet.fikenastet.data.model.ProfileCompleteModel
 import com.fisken_astet.fikenastet.databinding.DialogChangePasswordBinding
 import com.fisken_astet.fikenastet.databinding.FragmentChangePasswordBinding
+import com.fisken_astet.fikenastet.ui.dashboard.common_activity.CommonActivity
 import com.fisken_astet.fikenastet.ui.settings.SettingsVM
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.RequestBody
@@ -90,7 +92,9 @@ class ChangePasswordFragment : BaseFragment<FragmentChangePasswordBinding>() {
                     requireActivity().onBackPressedDispatcher.onBackPressed()
                 }
                 R.id.ivNotification->{
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
 
                 R.id.ivOldPassword->{

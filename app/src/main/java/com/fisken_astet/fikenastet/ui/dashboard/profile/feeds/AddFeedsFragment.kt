@@ -1,5 +1,6 @@
 package com.fisken_astet.fikenastet.ui.dashboard.profile.feeds
 
+import android.content.Intent
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.fisken_astet.fikenastet.BR
@@ -9,6 +10,7 @@ import com.fisken_astet.fikenastet.base.BaseViewModel
 import com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter
 import com.fisken_astet.fikenastet.databinding.FragmentAddFeedsBinding
 import com.fisken_astet.fikenastet.databinding.ItemAddImagesBinding
+import com.fisken_astet.fikenastet.ui.dashboard.common_activity.CommonActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -42,7 +44,9 @@ class AddFeedsFragment : BaseFragment<FragmentAddFeedsBinding>() {
                 }
 
                 R.id.ivNotification -> {
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
 
                 R.id.tvAddMore -> {

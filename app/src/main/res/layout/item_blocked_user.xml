@@ -5,7 +5,7 @@
     <data>
         <variable
             name="bean"
-            type="String" />
+            type="com.fisken_astet.fikenastet.data.model.BlockedUserListData" />
         <variable
             name="pos"
             type="Integer" />
@@ -22,40 +22,30 @@
         android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
         android:layout_marginBottom="@dimen/_10sdp">
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivImage"
-            android:layout_width="@dimen/_38sdp"
-            android:layout_height="@dimen/_38sdp"
-            android:background="@color/colorPrimary"
-            android:scaleType="centerCrop"
-            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize12Percent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivImage2"
             android:layout_width="@dimen/_38sdp"
             android:layout_height="@dimen/_38sdp"
-            android:src="@drawable/iv_dummy"
+            android:src="@drawable/iv_user_icon"
+            setImageFromUrl="@{bean.profile_picture}"
             android:scaleType="centerCrop"
-            android:padding="@dimen/_1sdp"
+            app:strokeColor="@color/colorPrimary"
+            app:strokeWidth="2dp"
             app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize12Percent"
-            app:layout_constraintTop_toTopOf="@id/ivImage"
-            app:layout_constraintStart_toStartOf="@id/ivImage"
-            app:layout_constraintEnd_toEndOf="@id/ivImage"
-            app:layout_constraintBottom_toBottomOf="@id/ivImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             />
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/TextView_500_Medium"
-            android:text="\@johnDoe_007"
+            android:text='@{"@"+bean.username}'
             android:textColor="@color/colorPrimary"
             android:layout_marginHorizontal="@dimen/_4sdp"
             android:textSize="@dimen/_10ssp"
-            app:layout_constraintTop_toTopOf="@id/ivImage"
-            app:layout_constraintStart_toEndOf="@id/ivImage"
-            app:layout_constraintBottom_toBottomOf="@id/ivImage"
+            app:layout_constraintTop_toTopOf="@id/ivImage2"
+            app:layout_constraintStart_toEndOf="@id/ivImage2"
+            app:layout_constraintBottom_toBottomOf="@id/ivImage2"
             app:layout_constraintEnd_toStartOf="@id/tvFollowStatus"/>
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvFollowStatus"
@@ -70,9 +60,9 @@
             android:text="@string/unblock"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_11ssp"
-            app:layout_constraintTop_toTopOf="@id/ivImage"
+            app:layout_constraintTop_toTopOf="@id/ivImage2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/ivImage" />
+            app:layout_constraintBottom_toBottomOf="@id/ivImage2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

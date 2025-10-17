@@ -164,7 +164,7 @@
 
     <fragment
         android:id="@+id/fragmentReportAbuse"
-        android:name="com.fisken_astet.fikenastet.ui.dashboard.profile.threads.ReportAbuseFragment"
+        android:name="com.fisken_astet.fikenastet.ui.report.ReportAbuseFragment"
         tools:layout="@layout/fragment_report_abuse" />
 
     <fragment

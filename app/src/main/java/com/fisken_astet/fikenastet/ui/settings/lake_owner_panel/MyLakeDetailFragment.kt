@@ -1,5 +1,6 @@
 package com.fisken_astet.fikenastet.ui.settings.lake_owner_panel
 
+import android.content.Intent
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
@@ -8,6 +9,7 @@ import com.fisken_astet.fikenastet.R
 import com.fisken_astet.fikenastet.base.BaseFragment
 import com.fisken_astet.fikenastet.base.BaseViewModel
 import com.fisken_astet.fikenastet.databinding.FragmentMyLakeDetailBinding
+import com.fisken_astet.fikenastet.ui.dashboard.common_activity.CommonActivity
 import com.fisken_astet.fikenastet.utils.TopRoundedBarChartRenderer
 import com.fisken_astet.fikenastet.utils.CustomYAxisRenderer
 import com.github.mikephil.charting.components.XAxis
@@ -47,7 +49,9 @@ class MyLakeDetailFragment : BaseFragment<FragmentMyLakeDetailBinding>() {
                     requireActivity().onBackPressedDispatcher.onBackPressed()
                 }
                 R.id.ivNotification->{
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
             }
         }

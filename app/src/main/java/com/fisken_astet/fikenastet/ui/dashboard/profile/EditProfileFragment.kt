@@ -147,7 +147,9 @@ class EditProfileFragment : BaseFragment<FragmentEditProfileBinding>() {
                     requireActivity().onBackPressedDispatcher.onBackPressed()
                 }
                 R.id.ivNotification->{
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
                 R.id.tvImageTitle->{
                     cameraGalleryBottomSheet.show()

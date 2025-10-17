@@ -84,6 +84,11 @@ class CommonActivity : BaseActivity<ActivityCommonBinding>() {
                                 }
 
                                 "ReportAbuse" -> {
+                                    //from  1 user profile  2 post 3 thread 4 catch
+                                    val userId = intent.getStringExtra("id")
+                                    val from = intent.getStringExtra("from")
+                                    bundle.putString("id", userId)
+                                    bundle.putString("from", from)
                                     setStartDestination(R.id.fragmentReportAbuse)
                                 }
 

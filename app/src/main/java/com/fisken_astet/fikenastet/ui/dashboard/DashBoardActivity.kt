@@ -14,76 +14,78 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DashBoardActivity : BaseActivity<ActivityDashBaordBinding>() {
-    private val viewModel: DashBoardActivityVM by viewModels()
-    override fun getLayoutResource(): Int {
-        return R.layout.activity_dash_baord
-    }
 
-    override fun getViewModel(): BaseViewModel {
-        return viewModel
-    }
+    private val viewModel: DashBoardActivityVM by viewModels()
+    var isExtraFragmentVisible = false
+        private set
+
+    override fun getLayoutResource(): Int = R.layout.activity_dash_baord
+
+    override fun getViewModel(): BaseViewModel = viewModel
 
     override fun onCreateView() {
         initView()
         initOnClick()
+
+        // ✅ Automatically sync the flag with fragment stack
+        supportFragmentManager.addOnBackStackChangedListener {
+            val currentFragment = supportFragmentManager.findFragmentById(R.id.extraFragment)
+            isExtraFragmentVisible = currentFragment != null
+            binding.extraFragment.visibility = if (currentFragment != null) View.VISIBLE else View.GONE
+        }
     }
 
     private fun initOnClick() {
-
+        // Set click listeners here if needed
     }
 
     private fun initView() {
         BindingUtils.statusBarStyleBlack(this)
         BindingUtils.styleSystemBars(this, getColor(R.color.black))
         setupNavigation()
+
         val data = intent.getStringExtra("from")
-        if (data == "purchased") {
-            binding.bottomNavigation.selectedItemId = R.id.nav_permit
-        }
-        if (data =="map"){
-            binding.bottomNavigation.selectedItemId=R.id.nav_map
+        when (data) {
+            "purchased" -> binding.bottomNavigation.selectedItemId = R.id.nav_permit
+            "map" -> binding.bottomNavigation.selectedItemId = R.id.nav_map
         }
     }
 
-
     private fun setupNavigation() {
         binding.apply {
-
             val adapter = ViewPagerAdapter(this@DashBoardActivity)
             viewPager.adapter = adapter
-
-            // Optional: Disable swipe if needed
-            viewPager.isUserInputEnabled = false
+            viewPager.isUserInputEnabled = false // disable swipe if needed
 
             bottomNavigation.setOnItemSelectedListener { item ->
                 clearExtraFragments()
                 when (item.itemId) {
                     R.id.nav_home -> {
-                        binding.viewLine.setBackgroundColor(getColor(R.color.colorPrimary))
+                        viewLine.setBackgroundColor(getColor(R.color.colorPrimary))
                         viewPager.setCurrentItem(0, false)
                         true
                     }
 
                     R.id.nav_permit -> {
-                        binding.viewLine.setBackgroundColor(getColor(R.color.colorPrimary))
+                        viewLine.setBackgroundColor(getColor(R.color.colorPrimary))
                         viewPager.setCurrentItem(1, false)
                         true
                     }
 
                     R.id.nav_map -> {
-                        binding.viewLine.setBackgroundColor(getColor(R.color.app_text_hint))
+                        viewLine.setBackgroundColor(getColor(R.color.app_text_hint))
                         viewPager.setCurrentItem(2, false)
                         true
                     }
 
                     R.id.nav_market -> {
-                        binding.viewLine.setBackgroundColor(getColor(R.color.colorPrimary))
+                        viewLine.setBackgroundColor(getColor(R.color.colorPrimary))
                         viewPager.setCurrentItem(3, false)
                         true
                     }
 
                     R.id.nav_profile -> {
-                        binding.viewLine.setBackgroundColor(getColor(R.color.colorPrimary))
+                        viewLine.setBackgroundColor(getColor(R.color.colorPrimary))
                         viewPager.setCurrentItem(4, false)
                         true
                     }
@@ -95,12 +97,12 @@ class DashBoardActivity : BaseActivity<ActivityDashBaordBinding>() {
             viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
-                    when (position) {
-                        0 -> bottomNavigation.selectedItemId = R.id.nav_home
-                        1 -> bottomNavigation.selectedItemId = R.id.nav_permit
-                        2 -> bottomNavigation.selectedItemId = R.id.nav_map
-                        3 -> bottomNavigation.selectedItemId = R.id.nav_market
-                        4 -> bottomNavigation.selectedItemId = R.id.nav_profile
+                    bottomNavigation.selectedItemId = when (position) {
+                        0 -> R.id.nav_home
+                        1 -> R.id.nav_permit
+                        2 -> R.id.nav_map
+                        3 -> R.id.nav_market
+                        else -> R.id.nav_profile
                     }
                 }
             })
@@ -116,25 +118,24 @@ class DashBoardActivity : BaseActivity<ActivityDashBaordBinding>() {
     }
 
     private fun clearExtraFragments() {
-        // Clear back stack only for extra container
         supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         binding.extraFragment.visibility = View.GONE
+        isExtraFragmentVisible = false
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.extraFragment)
+        isExtraFragmentVisible = currentFragment != null
+        binding.extraFragment.visibility = if (currentFragment != null) View.VISIBLE else View.GONE
     }
 
     override fun onBackPressed() {
         val extraFragment = supportFragmentManager.findFragmentById(R.id.extraFragment)
-
         if (extraFragment != null) {
-            // If an overlay fragment is active, pop it
             supportFragmentManager.popBackStack()
-            if (supportFragmentManager.findFragmentById(R.id.extraFragment) == null) {
-                binding.extraFragment.visibility = View.GONE
-            }
         } else {
-            // No overlay fragment → normal back behavior
             super.onBackPressed()
         }
     }
-
-
 }

@@ -13,6 +13,7 @@ import com.fisken_astet.fikenastet.base.SimpleRecyclerViewAdapter
 import com.fisken_astet.fikenastet.data.model.DummyComment
 import com.fisken_astet.fikenastet.databinding.FragmentMessageListBinding
 import com.fisken_astet.fikenastet.databinding.ItemMessageBinding
+import com.fisken_astet.fikenastet.ui.dashboard.common_activity.CommonActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -45,7 +46,9 @@ class MessageListFragment : BaseFragment<FragmentMessageListBinding>() {
                     requireActivity().onBackPressedDispatcher.onBackPressed()
                 }
                 R.id.ivNotification->{
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
             }
         }

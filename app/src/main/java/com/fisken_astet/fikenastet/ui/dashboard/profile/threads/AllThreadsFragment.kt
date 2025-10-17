@@ -48,7 +48,9 @@ class AllThreadsFragment : BaseFragment<FragmentAllThreadsBinding>(), AllThreads
                     requireActivity().onBackPressedDispatcher.onBackPressed()
                 }
                 R.id.ivNotification->{
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
                 R.id.consButton,R.id.textButton->{
                     val intent = Intent(requireContext(), CommonActivity::class.java)

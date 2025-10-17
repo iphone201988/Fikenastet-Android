@@ -284,4 +284,15 @@ object BindingUtils {
             e.printStackTrace()
         }
     }
+
+    @BindingAdapter("setAverageRating")
+    @JvmStatic
+    fun setAverageRating(textView: AppCompatTextView,rating:Double?){
+        if (rating!=null){
+            textView.setText(rating.toString().trim().take(4))
+        }
+        else{
+            textView.text="0"
+        }
+    }
 }

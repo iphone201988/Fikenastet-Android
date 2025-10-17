@@ -49,8 +49,6 @@ data class ThreadItemData( // your original model
     val postedByMe:Boolean=false
 )
 
-data class FollowersFragmentModel(var selected: Boolean? = false)
-
 data class MyLakesModel(val name :String?,val status : String?,val permitSold:String?,val revenue:String?)
 
 sealed class NotificationsItem {
@@ -59,3 +57,5 @@ sealed class NotificationsItem {
 }
 
 data class NotificationModelData( val name :String?,val title:String?,val createdAt:String?)
+
+data class PermissionsModel(val permissionName:String?,var isGranted:Boolean?=false)

@@ -1,5 +1,6 @@
 package com.fisken_astet.fikenastet.ui.dashboard.profile.catch_log
 
+import android.content.Intent
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -8,6 +9,7 @@ import com.fisken_astet.fikenastet.R
 import com.fisken_astet.fikenastet.base.BaseFragment
 import com.fisken_astet.fikenastet.base.BaseViewModel
 import com.fisken_astet.fikenastet.databinding.FragmentCatchLogBinding
+import com.fisken_astet.fikenastet.ui.dashboard.common_activity.CommonActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -47,7 +49,9 @@ class CatchLogFragment : BaseFragment<FragmentCatchLogBinding>() {
                 }
 
                 R.id.ivNotification -> {
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
 
             }

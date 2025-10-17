@@ -84,4 +84,6 @@ dependencies {
     //loader
     implementation(libs.android.loading.dots)
     implementation(libs.places)
+    // rating bar
+    implementation(libs.andratingbar)
 }

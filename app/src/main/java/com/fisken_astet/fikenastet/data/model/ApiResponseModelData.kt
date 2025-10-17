@@ -165,7 +165,8 @@ data class ExportDataModel(
 data class GetProfileModel(
     val badge_count: Int?,
     val `data`: GetProfileModelData?,
-    val status: Int?
+    val status: Int?,
+    val message: String?
 )
 
 data class GetProfileModelData(
@@ -240,6 +241,39 @@ data class FollowUnfollowToggleModel(
     val following_count: Int?,
     val message: String?,
     val status: Int?
+)
+
+/** report **/
+data class ReportModel(
+    val badge_count: Int?,
+    val `data`: List<ReportModelData?>?,
+    val message: String?,
+    val status: Int?
+)
+
+data class ReportModelData(
+    val created_at: String?,
+    val description: Any?,
+    val id: Int?,
+    val report_type_id: Int?,
+    val reported_by: Int?,
+    val reported_user_id: String?,
+    val updated_at: String?
+)
+
+/** blocked user list **/
+data class BlockedUserList(
+    val badge_count: Int?,
+    val `data`: List<BlockedUserListData?>?,
+    val message: String?,
+    val status: Int?
+)
+
+data class BlockedUserListData(
+    val id: Int?,
+    val profile_picture: String?,
+    val username: String?,
+    val you_blocked: Boolean?
 )
 
 

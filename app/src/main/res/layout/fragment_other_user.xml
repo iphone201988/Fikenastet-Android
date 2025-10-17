@@ -70,6 +70,38 @@
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toEndOf="@id/ivBack"
             app:layout_constraintTop_toTopOf="@id/ivNotification" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_border_chat"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_3sdp"
+            android:backgroundTint="@color/colorPrimary_50"
+            app:layout_constraintTop_toBottomOf="@id/ivBack"
+            app:layout_constraintEnd_toEndOf="@id/ivDots">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:src="@drawable/ic_star"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStarRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView_500_Medium"
+                android:layout_marginStart="@dimen/_2sdp"
+                setAverageRating="@{bean.average_rating}"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintStart_toEndOf="@id/ivStar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivStar"
+                app:layout_constraintBottom_toBottomOf="@id/ivStar"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivImage2"
             android:layout_width="@dimen/_48sdp"
@@ -77,12 +109,12 @@
             setImageFromUrl="@{bean.profile_picture}"
             android:src="@drawable/iv_user_icon"
             android:scaleType="centerCrop"
-            android:layout_marginTop="@dimen/_20sdp"
             app:strokeColor="@color/colorPrimary"
             app:strokeWidth="2dp"
             app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize12Percent"
-            app:layout_constraintTop_toBottomOf="@id/ivBack"
+            app:layout_constraintTop_toBottomOf="@id/clStar"
             app:layout_constraintStart_toStartOf="@id/ivBack"
+            android:layout_marginTop="@dimen/_3sdp"
             />
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvName"

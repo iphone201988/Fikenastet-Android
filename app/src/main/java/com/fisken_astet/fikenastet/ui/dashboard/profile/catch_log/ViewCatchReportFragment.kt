@@ -1,5 +1,6 @@
 package com.fisken_astet.fikenastet.ui.dashboard.profile.catch_log
 
+import android.content.Intent
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -15,6 +16,7 @@ import com.fisken_astet.fikenastet.databinding.CommonBottomLayoutBinding
 import com.fisken_astet.fikenastet.databinding.DialogDeleteCatchBinding
 import com.fisken_astet.fikenastet.databinding.FragmentViewCatchReportBinding
 import com.fisken_astet.fikenastet.databinding.ItemCommentBinding
+import com.fisken_astet.fikenastet.ui.dashboard.common_activity.CommonActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -69,8 +71,11 @@ class ViewCatchReportFragment : BaseFragment<FragmentViewCatchReportBinding>() {
                 }
 
                 R.id.ivNotification -> {
-
+                    val intent = Intent(requireActivity(), CommonActivity::class.java)
+                    intent.putExtra("fromWhere", "Notifications")
+                    startActivity(intent)
                 }
+
                 R.id.consButton2->{
                     deleteCatchLogDialog.show()
                 }

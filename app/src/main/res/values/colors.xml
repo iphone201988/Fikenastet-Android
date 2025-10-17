@@ -14,6 +14,7 @@
     <color name="full_gray">#9E9E9E</color>
     <color name="light_blue">#EAF5FF</color>
     <color name="light_graph_color">#F1F7FF</color>
+    <color name="colorPrimary_50">#8087BDF1</color>
 
     <color name="black_full83">#D4000000</color>
     <color name="black_full0">#00000000</color>
